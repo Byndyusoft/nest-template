@@ -1,0 +1,19 @@
+################################################################################
+
+HTTP_PORT:
+  default: 8080
+
+HTTP_HOST:
+  default: 0.0.0.0
+
+HTTP_DEFAULT_CLIENT_TIMEOUT:
+  default: 60000
+
+################################################################################
+
+LOGGER_LEVEL:
+  default: info
+
+LOGGER_PRETTY:
+  local: true
+  default: false
