@@ -1,31 +1,23 @@
 {
-  "name": "@byndyusoft/typescript-template",
-  "version": "0.0.0-development",
-  "description": "Base template for TypeScript packages",
-  "homepage": "https://github.com/Byndyusoft/node-typescript-template#readme",
+  "name": "root",
+  "version": "1.0.0",
+  "private": true,
+  "description": "root workspace",
+  "homepage": "https://github.com/Byndyusoft/ᐸRepository nameᐳ#readme",
   "bugs": {
-    "url": "https://github.com/Byndyusoft/node-typescript-template/issues"
+    "url": "https://github.com/Byndyusoft/ᐸRepository nameᐳ/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Byndyusoft/node-typescript-template.git"
+    "url": "https://github.com/Byndyusoft/ᐸRepository nameᐳ.git"
   },
   "license": "Apache-2.0",
   "author": "Byndyusoft",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "files": [
-    "dist",
-    "src",
-    "index.ts",
-    "tsconfig.json",
-    "!dist/*.tsbuildinfo",
-    "!**/__tests__",
-    "!**/*spec.ts"
+  "workspaces": [
+    "packages/*"
   ],
   "scripts": {
-    "prebuild": "shx rm -rf ./dist",
-    "build": "tsc --project ./tsconfig.build.json",
+    "build": "yarn packages/dtos run build && yarn packages/client run build && yarn packages/dtosTesting run build && yarn packages/app run build",
     "lint": "yarn run lint:eslint && yarn run lint:markdown && yarn run lint:prettier",
     "lint:fix": "yarn run lint:eslint:fix && yarn run lint:markdown:fix && yarn run lint:prettier:fix",
     "lint:eslint": "eslint --ignore-path ./.gitignore --max-warnings 0 --ext .ts,.js .",
@@ -34,76 +26,22 @@
     "lint:markdown:fix": "markdownlint --ignore-path ./.gitignore --fix \"./**/*.md\"",
     "lint:prettier": "prettier --ignore-path ./.gitignore --check \"./**/*.{ts,js,json,yaml,yml,md}\"",
     "lint:prettier:fix": "prettier --ignore-path ./.gitignore --write \"./**/*.{ts,js,json,yaml,yml,md}\"",
-    "postinstall": "husky install && shx rm -rf .git/hooks && shx ln -s ../.husky .git/hooks && ts-patch install",
-    "postpublish": "pinst --enable",
-    "prepublishOnly": "pinst --disable",
-    "test": "jest",
-    "test:cov": "jest --coverage"
-  },
-  "jest": {
-    "collectCoverageFrom": [
-      "./src/**/*.ts",
-      "!**/__tests__/**/*.ts",
-      "!**/index.ts"
-    ],
-    "coverageDirectory": "<rootDir>/coverage",
-    "coverageThreshold": {
-      "global": {
-        "branches": 100,
-        "functions": 100,
-        "lines": 100,
-        "statements": 100
-      }
-    },
-    "moduleFileExtensions": [
-      "ts",
-      "js"
-    ],
-    "resetMocks": true,
-    "rootDir": "./",
-    "roots": [
-      "<rootDir>/src",
-      "<rootDir>/test"
-    ],
-    "setupFilesAfterEnv": [
-      "jest-extended"
-    ],
-    "testEnvironment": "node",
-    "testRegex": ".*\\.spec\\.ts$",
-    "transform": {
-      "^.+\\.ts$": "ts-jest"
-    }
-  },
-  "dependencies": {
-    "tslib": "^2.3.0"
+    "postinstall": "(husky install && shx rm -rf .git/hooks && shx ln -s ../.husky .git/hooks) || true",
+    "start": "yarn packages/app run start",
+    "test": "yarn packages/app run test",
+    "test:cov": "yarn packages/app run test:cov"
   },
   "devDependencies": {
-    "@byndyusoft/eslint-config": "^1.0.0",
-    "@byndyusoft/tsconfig": "^1.0.0",
+    "@byndyusoft/eslint-config": "^1.1.0",
     "@commitlint/cli": "^13.1.0",
     "@commitlint/config-conventional": "^13.1.0",
-    "@types/jest": "^26.0.24",
-    "@types/node": "^16.4.13",
     "eslint": "^7.32.0",
-    "husky": "^7.0.1",
-    "jest": "^27.0.6",
-    "jest-extended": "^0.11.5",
+    "husky": "^7.0.2",
     "lint-staged": "^11.1.2",
     "markdownlint-cli": "^0.28.1",
-    "pinst": "^2.1.6",
-    "prettier": "^2.3.2",
-    "prettier-plugin-packagejson": "^2.2.11",
-    "semantic-release": "^17.4.4",
-    "shx": "^0.3.3",
-    "ts-jest": "^27.0.4",
-    "ts-patch": "^1.4.2",
-    "typescript": "^4.3.5",
-    "typescript-transform-paths": "^3.2.1"
+    "prettier": "^2.4.1",
+    "prettier-plugin-packagejson": "^2.2.12",
+    "shx": "^0.3.3"
   },
-  "engines": {
-    "node": ">=12"
-  },
-  "publishConfig": {
-    "access": "public"
-  }
+  "packageManager": "yarn@3.0.2"
 }

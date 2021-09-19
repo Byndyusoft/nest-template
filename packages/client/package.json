@@ -1,0 +1,70 @@
+{
+  "name": "ᐸClientᐳ",
+  "version": "1.0.0",
+  "description": "ᐸClient descriptionᐳ",
+  "homepage": "https://github.com/Byndyusoft/ᐸRepository nameᐳ#readme",
+  "bugs": {
+    "url": "https://github.com/Byndyusoft/ᐸRepository nameᐳ/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Byndyusoft/ᐸRepository nameᐳ.git"
+  },
+  "license": "Apache-2.0",
+  "author": "Byndyusoft",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "src",
+    "index.ts",
+    "tsconfig.json",
+    "!dist/*.tsbuildinfo",
+    "!**/__tests__",
+    "!**/*spec.ts"
+  ],
+  "scripts": {
+    "prebuild": "shx rm -rf ./dist",
+    "build": "yarn run prebuild && tsc --project ./tsconfig.build.json",
+    "postinstall": "(ts-patch install) || true",
+    "postpublish": "pinst --enable",
+    "prepublishOnly": "pinst --disable"
+  },
+  "dependencies": {
+    "@byndyusoft/nest-dynamic-module": "https://github.com/Byndyusoft/nest-dynamic-module/releases/download/init-snapshot/nest-dynamic-module-0.0.0-development-feature-init-1.tgz",
+    "lodash": "^4.17.21",
+    "qs": "^6.10.1",
+    "tslib": "^2.3.1"
+  },
+  "devDependencies": {
+    "@byndyusoft/class-validator-extended": "^1.0.0",
+    "@byndyusoft/tsconfig": "^1.1.0",
+    "@nestjs/axios": "^0.0.1",
+    "@nestjs/common": "^8.0.6",
+    "@nestjs/core": "^8.0.6",
+    "@nestjs/swagger": "https://github.com/KillWolfVlad/swagger/releases/download/support-external-dtos-snapshot/nestjs-swagger-5.0.9-feature-support-external-dtos-2.tgz",
+    "@types/lodash": "^4.14.173",
+    "@types/node": "^16.9.2",
+    "@types/qs": "^6.9.7",
+    "axios": "^0.21.4",
+    "class-transformer": "^0.4.0",
+    "class-validator": "^0.13.1",
+    "pinst": "^2.1.6",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^7.3.0",
+    "shx": "^0.3.3",
+    "ts-patch": "^1.4.4",
+    "typescript": "^4.4.3",
+    "typescript-transform-paths": "^3.3.1",
+    "ᐸDtosᐳ": "1.0.0"
+  },
+  "peerDependencies": {
+    "@nestjs/axios": "^0.0.1",
+    "@nestjs/common": "^8.0.6",
+    "rxjs": "^7.3.0",
+    "ᐸDtosᐳ": "1.0.0"
+  },
+  "engines": {
+    "node": ">=14"
+  }
+}

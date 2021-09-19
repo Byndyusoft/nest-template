@@ -1,0 +1,57 @@
+### root workspace
+
+.git
+.github
+.husky
+.yarn
+
+.commitlintrc.yaml
+.dockerignore
+.editorconfig
+.eslintrc.json
+.gitattributes
+.gitignore
+.lintstagedrc.yaml
+.markdownlint.yaml
+.prettierrc.yaml
+.yarnrc.yml
+Dockerfile
+LICENSE
+package.json
+README.md
+yarn.lock
+
+### other workspaces
+
+packages/*/.scannerwork
+packages/*/coverage
+packages/*/src
+packages/*/test
+
+packages/*/dist/*.tsbuildinfo
+packages/*/example.env
+packages/*/nest-cli.json
+packages/*/README.md
+packages/*/sonar-project.properties
+packages/*/tsconfig*.json
+
+### https://github.com/Byndyusoft/node-casc
+
+**/.casc/keys/private.pem
+**/.casc/values.override.yaml
+
+### https://github.com/github/gitignore/blob/master/Global/JetBrains.gitignore
+
+.idea
+
+### https://github.com/github/gitignore/blob/master/Global/VisualStudioCode.gitignore
+
+.vscode
+*.code-workspace
+
+# Local History for Visual Studio Code
+.history
+
+### https://github.com/github/gitignore/blob/master/Node.gitignore
+
+**/.env

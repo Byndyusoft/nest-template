@@ -1,0 +1,12 @@
+################################################################################
+
+http:
+  port: {{{HTTP_PORT}}}
+  host: {{{HTTP_HOST}}}
+  defaultClientTimeout: {{{HTTP_DEFAULT_CLIENT_TIMEOUT}}}
+
+################################################################################
+
+logger:
+  level: {{{LOGGER_LEVEL}}}
+  pretty: {{{LOGGER_PRETTY}}}

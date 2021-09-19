@@ -11,7 +11,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
-        node-version: ["12", "14", "16"]
+        node-version: ["14", "16"]
 
     runs-on: ${{ matrix.os }}
     steps:
@@ -24,7 +24,10 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: install dependencies
-        run: yarn install --production false --frozen-lockfile
+        run: yarn install --immutable
+
+      - name: build
+        run: yarn run build
 
       - name: lint
         run: yarn run lint

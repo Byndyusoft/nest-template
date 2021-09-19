@@ -1,34 +1,37 @@
 # ᐸRepository nameᐳ
 
-[![npm@latest](https://img.shields.io/npm/v/@byndyusoft/typescript-template/latest.svg)](https://www.npmjs.com/package/@byndyusoft/typescript-template)
-[![test workflow](https://github.com/Byndyusoft/node-typescript-template/actions/workflows/test.yaml/badge.svg?branch=master)](https://github.com/Byndyusoft/node-typescript-template/actions/workflows/test.yaml)
+[![test workflow](https://github.com/Byndyusoft/nest-template/actions/workflows/test.yaml/badge.svg?branch=master)](https://github.com/Byndyusoft/nest-template/actions/workflows/test.yaml)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
-[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
-ᐸRepository descriptionᐳ
+ᐸRepository descriptionᐳ.
 
-## Requirements
+## Monorepo
 
-- Node.js v12 LTS or later
-- npm or yarn
+Monorepo structure is described in root [package.json](./package.json) and contains the following packages:
 
-## Install
+- [app](./packages/app) - executable service
+- [client](./packages/client) - service client
+- [dtos](./packages/dtos) - common dtos between service and its client
+- [dtosTesting](./packages/dtosTesting) - dtos factories for unit tests
 
-```bash
-npm install ᐸPackage nameᐳ
-```
+## Prerequisites
 
-or
+Make sure you have installed all of the following prerequisites on your development machine:
 
-```bash
-yarn add ᐸPackage nameᐳ
-```
+- [Git](https://git-scm.com)
+- [Node.js](https://nodejs.org) (version 14 LTS or higher)
+- [Yarn 3+](https://yarnpkg.com) package manager
 
-## Usage
+## Code conventions
 
-```typescript
-// Usage example
-```
+Some code conventions are enforced automatically by ESLint + Prettier + markdownlint + husky + lint-staged stack.
+
+## Service development lifecycle
+
+- Implement business logic
+- Add or adapt unit-tests (prefer before and simultaneously with coding)
+- Add or change the documentation as needed
+- Open pull request in the correct branch. Target the project's `master` branch
 
 ## Maintainers
 
