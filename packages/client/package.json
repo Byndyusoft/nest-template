@@ -44,7 +44,7 @@
     "@nestjs/core": "^8.0.6",
     "@nestjs/swagger": "https://github.com/KillWolfVlad/swagger/releases/download/support-external-dtos-snapshot/nestjs-swagger-5.0.9-feature-support-external-dtos-2.tgz",
     "@types/lodash": "^4.14.173",
-    "@types/node": "^16.9.2",
+    "@types/node": "^16.9.3",
     "@types/qs": "^6.9.7",
     "axios": "^0.21.4",
     "class-transformer": "^0.4.0",
