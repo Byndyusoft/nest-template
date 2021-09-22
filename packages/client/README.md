@@ -15,7 +15,7 @@ You also need install all required peer dependencies.
 - [src](./src) - directory with source code
   - [providers](./src/providers) - clients
   - [tokens](./src/tokens) - injection tokens
-  - [clientModule.ts](./src/tokens) - main client module
+  - [clientModule.ts](./src/clientModule.ts) - main client module
 
 ## Dependencies
 
