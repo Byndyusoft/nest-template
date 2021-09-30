@@ -27,8 +27,8 @@
     "prebuild": "shx rm -rf ./dist",
     "build": "yarn run prebuild && tsc --project ./tsconfig.build.json",
     "postinstall": "(ts-patch install) || true",
-    "postpublish": "pinst --enable",
-    "prepublishOnly": "pinst --disable"
+    "prepublishOnly": "pinst --disable",
+    "postpublish": "pinst --enable"
   },
   "dependencies": {
     "factory.ts": "https://github.com/KillWolfVlad/factory.ts/releases/download/builder-factory-snapshot/factory.ts-0.5.2-feature-builder-factory-1.tgz",
@@ -39,11 +39,11 @@
   "devDependencies": {
     "@byndyusoft/class-validator-extended": "^1.0.0",
     "@byndyusoft/tsconfig": "^1.1.0",
-    "@nestjs/common": "^8.0.6",
-    "@nestjs/core": "^8.0.6",
+    "@nestjs/common": "^8.0.8",
+    "@nestjs/core": "^8.0.8",
     "@nestjs/swagger": "https://github.com/KillWolfVlad/swagger/releases/download/support-external-dtos-snapshot/nestjs-swagger-5.0.9-feature-support-external-dtos-2.tgz",
     "@types/faker": "^5.5.8",
-    "@types/lodash": "^4.14.173",
+    "@types/lodash": "^4.14.175",
     "class-transformer": "^0.4.0",
     "class-validator": "^0.13.1",
     "pinst": "^2.1.6",
