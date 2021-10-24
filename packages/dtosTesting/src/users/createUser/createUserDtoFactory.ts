@@ -22,5 +22,5 @@ import { CreateUserDto } from "ᐸDtosᐳ";
 import { userDtoFactory } from "../common";
 
 export const createUserDtoFactory = makeFactory<CreateUserDto>(() =>
-  _.omit(userDtoFactory.build(), "id"),
+  _.omit(userDtoFactory.build(), "userId", "userVersion"),
 );

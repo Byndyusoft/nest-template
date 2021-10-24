@@ -16,12 +16,14 @@
 
 import { Injectable } from "@nestjs/common";
 import _ from "lodash";
+import { keys } from "ts-transformer-keys";
 
 import {
   CreateUserDto,
   ListUsersQueryDto,
   ListUsersResponseDto,
   ParamsWithUserIdDto,
+  QueryWithUserVersionDto,
   UpdateUserDto,
   UserDto,
 } from "ᐸDtosᐳ";
@@ -36,8 +38,21 @@ export class UsersClient {
     return this.__httpClient.post("/users", request);
   }
 
+  public deleteUser(
+    request: ParamsWithUserIdDto & QueryWithUserVersionDto,
+  ): Promise<UserDto> {
+    return this.__httpClient.delete(
+      `/users/${encodeURIComponent(request.userId)}`,
+      {
+        params: _.pick(request, keys<QueryWithUserVersionDto>()),
+      },
+    );
+  }
+
   public getUserById(request: ParamsWithUserIdDto): Promise<UserDto> {
-    return this.__httpClient.get(`/users/${encodeURIComponent(request.id)}`);
+    return this.__httpClient.get(
+      `/users/${encodeURIComponent(request.userId)}`,
+    );
   }
 
   public listUsers(
@@ -49,11 +64,14 @@ export class UsersClient {
   }
 
   public updateUser(
-    request: ParamsWithUserIdDto & UpdateUserDto,
+    request: ParamsWithUserIdDto & QueryWithUserVersionDto & UpdateUserDto,
   ): Promise<UserDto> {
     return this.__httpClient.patch(
-      `/users/${encodeURIComponent(request.id)}`,
-      _.omit(request, "id"),
+      `/users/${encodeURIComponent(request.userId)}`,
+      _.pick(request, keys<UpdateUserDto>()),
+      {
+        params: _.pick(request, keys<QueryWithUserVersionDto>()),
+      },
     );
   }
 }

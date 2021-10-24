@@ -13,6 +13,8 @@ Monorepo structure is described in root [package.json](./package.json) and conta
 - [client](./packages/client) - service client
 - [dtos](./packages/dtos) - common dtos between service and its client
 - [dtosTesting](./packages/dtosTesting) - dtos factories for unit tests
+- [entities](./packages/dtosTesting) - entities
+- [migrator](./packages/migrator) - service migrator
 
 ## Prerequisites
 

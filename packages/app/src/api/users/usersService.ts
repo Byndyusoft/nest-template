@@ -17,7 +17,9 @@
 import { Injectable, NotFoundException } from "@nestjs/common";
 
 import {
+  CheckUserExistsQuery,
   CreateUserCommand,
+  DeleteUserCommand,
   GetUserByIdQuery,
   ListUsersQuery,
   UpdateUserCommand,
@@ -27,6 +29,7 @@ import {
   ListUsersQueryDto,
   ListUsersResponseDto,
   ParamsWithUserIdDto,
+  QueryWithUserVersionDto,
   UpdateUserDto,
   UserDto,
 } from "ᐸDtosᐳ";
@@ -34,24 +37,44 @@ import {
 @Injectable()
 export class UsersService {
   public constructor(
+    private readonly __checkUserExistsQuery: CheckUserExistsQuery,
     private readonly __createUserCommand: CreateUserCommand,
+    private readonly __deleteUserCommand: DeleteUserCommand,
     private readonly __getUserByIdQuery: GetUserByIdQuery,
     private readonly __listUsersQuery: ListUsersQuery,
     private readonly __updateUserCommand: UpdateUserCommand,
   ) {}
 
+  private static __throwUserNotFoundException(
+    options: ParamsWithUserIdDto,
+  ): never {
+    throw new NotFoundException(
+      `user with id ${options.userId} not found`,
+      "BYS_404",
+    );
+  }
+
   public createUser(body: CreateUserDto): Promise<UserDto> {
     return this.__createUserCommand.execute(body);
+  }
+
+  public async deleteUser(
+    params: ParamsWithUserIdDto,
+    query: QueryWithUserVersionDto,
+  ): Promise<UserDto> {
+    await this.__checkUserExists(params);
+
+    return this.__deleteUserCommand.execute({
+      ...params,
+      ...query,
+    });
   }
 
   public async getUserById(params: ParamsWithUserIdDto): Promise<UserDto> {
     const user = await this.__getUserByIdQuery.ask(params);
 
     if (!user) {
-      throw new NotFoundException(
-        `user with id ${params.id} not found`,
-        "BYS_404",
-      );
+      UsersService.__throwUserNotFoundException(params);
     }
 
     return user;
@@ -67,26 +90,29 @@ export class UsersService {
       nextPageToken:
         users.length < query.pageSize
           ? undefined
-          : (BigInt(users.length) + BigInt(query.pageToken)).toString(),
+          : users.length + query.pageToken,
     };
   }
 
   public async updateUser(
     params: ParamsWithUserIdDto,
+    query: QueryWithUserVersionDto,
     body: UpdateUserDto,
   ): Promise<UserDto> {
-    const user = await this.__updateUserCommand.execute({
+    await this.__checkUserExists(params);
+
+    return this.__updateUserCommand.execute({
       ...params,
+      ...query,
       ...body,
     });
+  }
 
-    if (!user) {
-      throw new NotFoundException(
-        `user with id ${params.id} not found`,
-        "BYS_404",
-      );
+  private async __checkUserExists(options: ParamsWithUserIdDto): Promise<void> {
+    const isUserExists = await this.__checkUserExistsQuery.ask(options);
+
+    if (!isUserExists) {
+      UsersService.__throwUserNotFoundException(options);
     }
-
-    return user;
   }
 }

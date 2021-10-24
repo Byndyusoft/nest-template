@@ -26,5 +26,6 @@ export class HttpConfigDto {
   public readonly host!: string;
 
   @IsInt()
+  @Min(0)
   public readonly defaultClientTimeout!: number;
 }

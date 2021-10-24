@@ -14,7 +14,8 @@
  * limitations under the License.
  */
 
-import { IsEmail, IsNumberString, IsString } from "class-validator";
+import { TransformToNumber } from "@byndyusoft/class-validator-extended";
+import { IsEmail, IsInt, IsNumberString, IsString } from "class-validator";
 
 export class UserDto {
   /**
@@ -22,7 +23,7 @@ export class UserDto {
    * @example 1
    */
   @IsNumberString({ no_symbols: true })
-  public readonly id!: string;
+  public readonly userId!: string;
 
   /**
    * User name
@@ -37,4 +38,12 @@ export class UserDto {
    */
   @IsEmail()
   public readonly email!: string;
+
+  /**
+   * User version
+   * @example 2
+   */
+  @TransformToNumber()
+  @IsInt()
+  public readonly userVersion!: number;
 }

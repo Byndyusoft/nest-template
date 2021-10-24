@@ -39,9 +39,5 @@ yarn run test:cov
 
 ## Configuring
 
-Service load configuration from:
-
-- [.env](./.env) - this [dotenv](https://www.npmjs.com/package/dotenv) file must contain following environment variables (you can use [example.env](./example.env) as example):
-  - `CASC_ENV` - environment for [node-casc](https://github.com/Byndyusoft/node-casc)
-  - `JAEGER_*` - see [jaeger-client](https://github.com/jaegertracing/jaeger-client-node#environment-variables) for more usage information
-- [.casc](./.casc) - service configuration, see [node-casc](https://github.com/Byndyusoft/node-casc) for more usage information
+You can configure service via environment variables (see [example.env](./example.env)) for more details.
+For local development you can pass environment variables via `.env` file (see [dotenv](https://www.npmjs.com/package/dotenv) for more details).

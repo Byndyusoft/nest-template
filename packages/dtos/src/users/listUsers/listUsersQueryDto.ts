@@ -33,7 +33,7 @@ export class ListUsersQueryDto {
   @TransformToArray()
   @IsNumberString({ no_symbols: true }, { each: true })
   @IsOptional()
-  public readonly ids?: string[];
+  public readonly userIds?: string[];
 
   @TransformToArray()
   @IsString({ each: true })
@@ -52,7 +52,9 @@ export class ListUsersQueryDto {
   @ApiPropertyOptional()
   public readonly pageSize: number = 10;
 
-  @IsNumberString({ no_symbols: true })
+  @TransformToNumber()
+  @IsInt()
+  @Min(0)
   @ApiPropertyOptional()
-  public readonly pageToken: string = "0";
+  public readonly pageToken: number = 0;
 }

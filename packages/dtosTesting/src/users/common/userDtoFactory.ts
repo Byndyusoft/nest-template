@@ -14,19 +14,16 @@
  * limitations under the License.
  */
 
-import { each, makeFactory } from "factory.ts";
+import { makeFactory } from "factory.ts";
 import faker from "faker";
 
 import { UserDto } from "ᐸDtosᐳ";
 
-export const userDtoFactory = makeFactory<UserDto>(
-  () => ({
-    id: each((seqNumber) => String(seqNumber)),
+export const userDtoFactory = makeFactory<UserDto>(() => ({
+  userId: String(faker.datatype.number()),
 
-    name: faker.name.findName(),
-    email: faker.internet.email(),
-  }),
-  {
-    startingSequenceNumber: 1,
-  },
-);
+  name: faker.name.findName(),
+  email: faker.internet.email(),
+
+  userVersion: faker.datatype.number(),
+}));

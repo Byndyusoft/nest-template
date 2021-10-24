@@ -15,6 +15,9 @@
  */
 
 import { Global, Module } from "@nestjs/common";
+import { TypeOrmModule } from "@nestjs/typeorm";
+
+import * as entities from "ᐸEntitiesᐳ";
 
 import * as users from "./users";
 
@@ -22,6 +25,7 @@ const providers = [...Object.values(users)];
 
 @Global()
 @Module({
+  imports: [TypeOrmModule.forFeature(Object.values(entities))],
   providers,
   exports: providers,
 })

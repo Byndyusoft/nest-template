@@ -1,0 +1,22 @@
+{
+  "extends": "@byndyusoft/tsconfig/tsconfig.node14.json",
+  "compilerOptions": {
+    // Modules
+    "baseUrl": "./",
+    "paths": {
+      "~/*": ["./*"]
+    },
+    // Emit
+    "declaration": false,
+    "declarationMap": false,
+    "outDir": "./dist",
+    "removeComments": true,
+    // Editor Support
+    "plugins": [
+      { "transform": "typescript-transform-paths" },
+      { "transform": "typescript-transform-paths", "afterDeclarations": true }
+    ]
+  },
+  "exclude": ["./dist", "./node_modules"],
+  "include": ["./**/*.ts"]
+}

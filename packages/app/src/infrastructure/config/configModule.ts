@@ -17,11 +17,11 @@
 import os from "os";
 import path from "path";
 
+import { LogLevel } from "@byndyusoft/pino-logger-factory";
 import { DynamicModule, Module } from "@nestjs/common";
 import { plainToClass } from "class-transformer";
 import { validate } from "class-validator";
 import dotenv from "dotenv";
-import execa from "execa";
 
 import { ConfigDto } from "./dtos";
 import { ConfigEnvToken } from "./tokens";
@@ -39,9 +39,7 @@ export class ConfigModule {
         },
         {
           provide: ConfigDto,
-          inject: [ConfigEnvToken],
-          useFactory: (configEnv: string) =>
-            ConfigModule.__configFactory(configEnv),
+          useFactory: () => ConfigModule.__configFactory(),
         },
       ],
       exports: [ConfigEnvToken, ConfigDto],
@@ -53,45 +51,38 @@ export class ConfigModule {
       path: path.join(process.cwd(), ".env"),
     });
 
-    if (!process.env.CASC_ENV) {
-      throw new TypeError("process.env.CASC_ENV must be provided");
-    }
-
-    return process.env.CASC_ENV;
+    return process.env.CONFIG_ENV ?? "unknown";
   }
 
-  private static async __configFactory(configEnv: string): Promise<ConfigDto> {
-    const config = await ConfigModule.__loadConfig(configEnv);
+  private static async __configFactory(): Promise<ConfigDto> {
+    const config = ConfigModule.__loadConfig();
     await ConfigModule.__validateConfig(config);
 
     return config;
   }
 
-  private static async __loadConfig(configEnv: string): Promise<ConfigDto> {
-    const cascBinPath = path.join(
-      path.dirname(require.resolve("@byndyusoft/casc")),
-      "bin",
-      "index.js",
-    );
-
-    const cascDirectory = path.join(process.cwd(), ".casc");
-
-    const { stdout } = await execa(
-      "node",
-      [
-        cascBinPath,
-        "config:build",
-        ...["--cascDir", cascDirectory],
-        ...["--env", configEnv],
-      ],
-      {
-        env: {
-          FORCE_COLOR: "false",
-        },
+  private static __loadConfig(): ConfigDto {
+    const plainConfig: ConfigDto = {
+      pg: {
+        writeConnectionString: process.env.PG_WRITE_CONNECTION_STRING as string,
+        readConnectionString: process.env.PG_READ_CONNECTION_STRING as string,
+        connectionTimeout: Number(process.env.PG_CONNECTION_TIMEOUT ?? "60000"),
+        poolSize: Number(process.env.PG_POOL_SIZE ?? "10"),
       },
-    );
+      http: {
+        port: Number(process.env.HTTP_PORT ?? "8080"),
+        host: process.env.HTTP_HOST ?? "0.0.0.0",
+        defaultClientTimeout: Number(
+          process.env.HTTP_DEFAULT_CLIENT_TIMEOUT ?? "60000",
+        ),
+      },
+      logger: {
+        level: (process.env.LOGGER_LEVEL ?? LogLevel.info) as LogLevel,
+        pretty: (process.env.LOGGER_PRETTY ?? "false") === "true",
+      },
+    };
 
-    return plainToClass(ConfigDto, JSON.parse(stdout));
+    return plainToClass(ConfigDto, plainConfig);
   }
 
   private static async __validateConfig(config: ConfigDto): Promise<void> {

@@ -17,8 +17,8 @@
 import {
   Body,
   Controller,
+  Delete,
   Get,
-  HttpCode,
   HttpStatus,
   Param,
   Patch,
@@ -33,6 +33,7 @@ import {
   ListUsersQueryDto,
   ListUsersResponseDto,
   ParamsWithUserIdDto,
+  QueryWithUserVersionDto,
   UpdateUserDto,
   UserDto,
 } from "ᐸDtosᐳ";
@@ -62,18 +63,35 @@ export class UsersController {
   }
 
   @ApiCommonResponses(HttpStatus.BAD_REQUEST, HttpStatus.NOT_FOUND)
-  @Get("/:id")
+  @Get("/:userId")
   public getUserById(@Param() params: ParamsWithUserIdDto): Promise<UserDto> {
     return this.__service.getUserById(params);
   }
 
-  @ApiCommonResponses(HttpStatus.BAD_REQUEST, HttpStatus.NOT_FOUND)
-  @HttpCode(HttpStatus.OK)
-  @Patch("/:id")
+  @ApiCommonResponses(
+    HttpStatus.BAD_REQUEST,
+    HttpStatus.NOT_FOUND,
+    HttpStatus.CONFLICT,
+  )
+  @Patch("/:userId")
   public updateUser(
     @Param() params: ParamsWithUserIdDto,
+    @Query() query: QueryWithUserVersionDto,
     @Body() body: UpdateUserDto,
   ): Promise<UserDto> {
-    return this.__service.updateUser(params, body);
+    return this.__service.updateUser(params, query, body);
+  }
+
+  @ApiCommonResponses(
+    HttpStatus.BAD_REQUEST,
+    HttpStatus.NOT_FOUND,
+    HttpStatus.CONFLICT,
+  )
+  @Delete("/:userId")
+  public deleteUser(
+    @Param() params: ParamsWithUserIdDto,
+    @Query() query: QueryWithUserVersionDto,
+  ): Promise<UserDto> {
+    return this.__service.deleteUser(params, query);
   }
 }

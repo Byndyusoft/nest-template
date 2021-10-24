@@ -17,7 +17,6 @@
 .yarnrc.yml
 Dockerfile
 LICENSE
-package.json
 README.md
 yarn.lock
 
