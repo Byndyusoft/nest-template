@@ -34,11 +34,6 @@ packages/*/README.md
 packages/*/sonar-project.properties
 packages/*/tsconfig*.json
 
-### https://github.com/Byndyusoft/node-casc
-
-**/.casc/keys/private.pem
-**/.casc/values.override.yaml
-
 ### https://github.com/github/gitignore/blob/master/Global/JetBrains.gitignore
 
 .idea

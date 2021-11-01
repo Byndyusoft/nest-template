@@ -1,7 +1,2 @@
 trailingComma: all
 endOfLine: auto
-
-overrides:
-  - files: "**/.casc/config.yaml"
-    options:
-      bracketSpacing: false
