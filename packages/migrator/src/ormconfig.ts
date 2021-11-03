@@ -29,6 +29,11 @@ const connectionOptions: ConnectionOptions = {
   type: "postgres",
   entities: Object.values(entities),
   migrations: ["dist/migrations/*.js"],
+  migrationsTransactionMode:
+    (process.env.TYPEORM_MIGRATIONS_TRANSACTION_MODE as
+      | "all"
+      | "each"
+      | undefined) ?? "each",
   logger: "advanced-console",
   cli: {
     migrationsDir: "src/migrations",
