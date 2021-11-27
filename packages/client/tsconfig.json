@@ -10,6 +10,7 @@
     "outDir": "./dist",
     // Editor Support
     "plugins": [
+      { "transform": "ts-transformer-keys/transformer" },
       { "transform": "typescript-transform-paths" },
       { "transform": "typescript-transform-paths", "afterDeclarations": true }
     ]

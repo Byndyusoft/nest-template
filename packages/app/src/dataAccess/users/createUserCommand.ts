@@ -16,23 +16,59 @@
 
 import { TracingService } from "@byndyusoft/nest-opentracing";
 import { Injectable } from "@nestjs/common";
+import { keys } from "ts-transformer-keys";
+import { Connection, EntityManager } from "typeorm";
 
+import {
+  UserEntityToUserDtoMapper,
+  UserEntityToUserOutboxDtoMapper,
+} from "~/src/mappers";
 import { CreateUserDto, UserDto } from "ᐸDtosᐳ";
+import { UserEntity, UserOutboxEntity } from "ᐸEntitiesᐳ";
 
 @Injectable()
 export class CreateUserCommand {
-  public constructor(private readonly __tracingService: TracingService) {}
+  public constructor(
+    private readonly __connection: Connection,
+    private readonly __tracingService: TracingService,
+  ) {}
+
+  private static async __execute(
+    entityManager: EntityManager,
+    options: CreateUserDto,
+  ): Promise<UserDto> {
+    const userRepository = entityManager.getRepository(UserEntity);
+
+    const userOutboxRepository = entityManager.getRepository(UserOutboxEntity);
+
+    const insertResult = await userRepository
+      .createQueryBuilder()
+      .insert()
+      .values(options)
+      .returning(keys<UserEntity>())
+      .execute();
+
+    const insertedEntities = insertResult.generatedMaps as UserEntity[];
+
+    const now = new Date();
+
+    await userOutboxRepository.insert(
+      UserEntityToUserOutboxDtoMapper.map(...insertedEntities).map((x) => ({
+        entity: x,
+        timestamp: now,
+      })),
+    );
+
+    return UserEntityToUserDtoMapper.map(...insertedEntities)[0];
+  }
 
   public execute(options: CreateUserDto): Promise<UserDto> {
     return this.__tracingService.traceAsyncFunction(
       nameof(CreateUserCommand),
-      () => {
-        return Promise.resolve({
-          id: "1",
-          name: options.name,
-          email: options.email,
-        });
-      },
+      () =>
+        this.__connection.transaction((entityManager) =>
+          CreateUserCommand.__execute(entityManager, options),
+        ),
     );
   }
 }

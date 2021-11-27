@@ -1,6 +1,6 @@
 ################################################################################
 
-ARG NODEJS_IMAGE=node:14.17.6-alpine3.14
+ARG NODEJS_IMAGE=node:14.18.1-alpine3.14
 
 ################################################################################
 
@@ -21,3 +21,11 @@ WORKDIR ./packages/app
 EXPOSE 8080
 
 CMD ["node", "./dist/main.js"]
+
+################################################################################
+
+FROM workspaces AS migrator
+
+WORKDIR ./packages/migrator
+
+CMD ["yarn", "start:prod"]

@@ -19,8 +19,14 @@ import { IsDefined, ValidateNested } from "class-validator";
 
 import { HttpConfigDto } from "./httpConfigDto";
 import { LoggerConfigDto } from "./loggerConfigDto";
+import { PgConfigDto } from "./pgConfigDto";
 
 export class ConfigDto {
+  @Type(() => PgConfigDto)
+  @IsDefined()
+  @ValidateNested()
+  public readonly pg!: PgConfigDto;
+
   @Type(() => HttpConfigDto)
   @IsDefined()
   @ValidateNested()

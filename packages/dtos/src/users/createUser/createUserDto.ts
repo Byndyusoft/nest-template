@@ -18,4 +18,7 @@ import { OmitType } from "@nestjs/swagger";
 
 import { UserDto } from "../common";
 
-export class CreateUserDto extends OmitType(UserDto, ["id"]) {}
+export class CreateUserDto extends OmitType(UserDto, [
+  "userId",
+  "userVersion",
+]) {}

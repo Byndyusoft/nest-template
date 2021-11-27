@@ -18,4 +18,4 @@ import { PickType } from "@nestjs/swagger";
 
 import { UserDto } from "./userDto";
 
-export class ParamsWithUserIdDto extends PickType(UserDto, ["id"]) {}
+export class ParamsWithUserIdDto extends PickType(UserDto, ["userId"]) {}

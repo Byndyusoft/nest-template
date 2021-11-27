@@ -16,3 +16,4 @@
 
 export * from "./dataAccess";
 export * from "./infrastructure";
+export * from "./mappers";

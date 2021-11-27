@@ -1,0 +1,54 @@
+{
+  "name": "ᐸMigratorᐳ",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ᐸMigrator descriptionᐳ",
+  "homepage": "https://github.com/Byndyusoft/ᐸRepository nameᐳ#readme",
+  "bugs": {
+    "url": "https://github.com/Byndyusoft/ᐸRepository nameᐳ/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Byndyusoft/ᐸRepository nameᐳ.git"
+  },
+  "license": "Apache-2.0",
+  "author": "Byndyusoft",
+  "scripts": {
+    "prebuild": "shx rm -rf ./dist",
+    "build": "yarn run prebuild && yarn run build:src",
+    "build:src": "tsc --project ./tsconfig.build.json",
+    "postinstall": "(ts-patch install) || true",
+    "migration:create": "yarn run build:src && typeorm migration:create --config ./dist/ormconfig.js",
+    "migration:generate": "yarn run build:src && typeorm migration:generate --config ./dist/ormconfig.js",
+    "start": "yarn run build:src && yarn run start:prod",
+    "start:prod": "typeorm migration:run --config ./dist/ormconfig.js"
+  },
+  "dependencies": {
+    "@byndyusoft/class-validator-extended": "^1.0.0",
+    "@nestjs/common": "^8.1.2",
+    "@nestjs/core": "^8.1.2",
+    "@nestjs/swagger": "https://github.com/KillWolfVlad/swagger/releases/download/support-external-dtos-snapshot/nestjs-swagger-5.0.9-feature-support-external-dtos-2.tgz",
+    "class-transformer": "^0.4.0",
+    "class-validator": "^0.13.1",
+    "dotenv": "^10.0.0",
+    "pg": "^8.7.1",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^7.4.0",
+    "tslib": "^2.3.1",
+    "typeorm": "^0.2.38",
+    "ᐸDtosᐳ": "1.0.0",
+    "ᐸEntitiesᐳ": "1.0.0"
+  },
+  "devDependencies": {
+    "@byndyusoft/tsconfig": "^1.1.0",
+    "@types/node": "^16.11.6",
+    "@types/pg": "^8.6.1",
+    "shx": "^0.3.3",
+    "ts-patch": "^1.4.5",
+    "typescript": "^4.4.4",
+    "typescript-transform-paths": "^3.3.1"
+  },
+  "engines": {
+    "node": ">=14"
+  }
+}

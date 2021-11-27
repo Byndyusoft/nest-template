@@ -17,7 +17,8 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "yarn packages/dtos run build && yarn packages/client run build && yarn packages/dtosTesting run build && yarn packages/app run build",
+    "build": "yarn packages/dtos run build && yarn packages/client run build && yarn packages/dtosTesting run build && yarn packages/entities run build && yarn packages/migrator run build && yarn packages/app run build",
+    "build:src": "yarn packages/dtos run build:src && yarn packages/client run build:src && yarn packages/dtosTesting run build:src && yarn packages/entities run build:src && yarn packages/migrator run build:src && yarn packages/app run build:src",
     "postinstall": "(husky install) || true",
     "lint": "yarn run lint:eslint && yarn run lint:markdown && yarn run lint:prettier",
     "lint:eslint": "eslint --ignore-path ./.gitignore --max-warnings 0 --ext .ts,.js .",
@@ -28,19 +29,20 @@
     "lint:prettier": "prettier --ignore-path ./.gitignore --check \"./**/*.{ts,js,json,yaml,yml,md}\"",
     "lint:prettier:fix": "prettier --ignore-path ./.gitignore --write \"./**/*.{ts,js,json,yaml,yml,md}\"",
     "start": "yarn packages/app run start",
+    "start:migrator": "yarn packages/migrator run start",
     "test": "yarn packages/app run test",
     "test:cov": "yarn packages/app run test:cov"
   },
   "devDependencies": {
     "@byndyusoft/eslint-config": "^1.1.0",
-    "@commitlint/cli": "^13.2.0",
+    "@commitlint/cli": "^13.2.1",
     "@commitlint/config-conventional": "^13.2.0",
     "eslint": "^7.32.0",
-    "husky": "^7.0.2",
-    "lint-staged": "^11.1.2",
-    "markdownlint-cli": "^0.28.1",
+    "husky": "^7.0.4",
+    "lint-staged": "^11.2.6",
+    "markdownlint-cli": "^0.29.0",
     "prettier": "^2.4.1",
     "prettier-plugin-packagejson": "^2.2.13"
   },
-  "packageManager": "yarn@3.0.2"
+  "packageManager": "yarn@3.1.0"
 }

@@ -22,5 +22,5 @@ import { ParamsWithUserIdDto } from "ᐸDtosᐳ";
 import { userDtoFactory } from "./userDtoFactory";
 
 export const paramsWithUserIdDtoFactory = makeFactory<ParamsWithUserIdDto>(() =>
-  _.pick(userDtoFactory.build(), "id"),
+  _.pick(userDtoFactory.build(), "userId"),
 );

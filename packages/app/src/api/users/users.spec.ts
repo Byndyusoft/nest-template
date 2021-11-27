@@ -17,7 +17,9 @@
 import { mock, MockProxy } from "jest-mock-extended";
 
 import {
+  CheckUserExistsQuery,
   CreateUserCommand,
+  DeleteUserCommand,
   GetUserByIdQuery,
   ListUsersQuery,
   UpdateUserCommand,
@@ -27,10 +29,10 @@ import {
   listUsersQueryDtoFactory,
   listUsersResponseDtoFactory,
   paramsWithUserIdDtoFactory,
+  queryWithUserVersionDtoFactory,
   updateUserDtoFactory,
   userDtoFactory,
 } from "ᐸDtos testingᐳ";
-import { UserDto } from "ᐸDtosᐳ";
 
 import { UsersController } from "./usersController";
 import { UsersService } from "./usersService";
@@ -39,19 +41,25 @@ describe("api/v1/users", () => {
   let controller: UsersController;
   let service: UsersService;
 
+  let checkUserExistsQuery: MockProxy<CheckUserExistsQuery>;
   let createUserCommand: MockProxy<CreateUserCommand>;
+  let deleteUserCommand: MockProxy<DeleteUserCommand>;
   let getUserByIdQuery: MockProxy<GetUserByIdQuery>;
   let listUsersQuery: MockProxy<ListUsersQuery>;
   let updateUserCommand: MockProxy<UpdateUserCommand>;
 
   beforeAll(() => {
+    checkUserExistsQuery = mock();
     createUserCommand = mock();
+    deleteUserCommand = mock();
     getUserByIdQuery = mock();
     listUsersQuery = mock();
     updateUserCommand = mock();
 
     service = new UsersService(
+      checkUserExistsQuery,
       createUserCommand,
+      deleteUserCommand,
       getUserByIdQuery,
       listUsersQuery,
       updateUserCommand,
@@ -63,10 +71,9 @@ describe("api/v1/users", () => {
     it("must create user", async () => {
       const createUserDto = createUserDtoFactory.build();
 
-      const userDto: UserDto = {
+      const userDto = userDtoFactory.build({
         ...createUserDto,
-        id: "1",
-      };
+      });
 
       createUserCommand.execute.mockResolvedValue(userDto);
 
@@ -78,12 +85,69 @@ describe("api/v1/users", () => {
     });
   });
 
+  describe("::deleteUser", () => {
+    it("must delete user", async () => {
+      const paramsWithUserIdDto = paramsWithUserIdDtoFactory.build();
+
+      const queryWithUserVersionDto = queryWithUserVersionDtoFactory.build();
+
+      const userDto = userDtoFactory.build({
+        userId: paramsWithUserIdDto.userId,
+        userVersion: queryWithUserVersionDto.userVersion + 1,
+      });
+
+      checkUserExistsQuery.ask.mockResolvedValue(true);
+
+      deleteUserCommand.execute.mockResolvedValue(userDto);
+
+      await expect(
+        controller.deleteUser(paramsWithUserIdDto, queryWithUserVersionDto),
+      ).resolves.toStrictEqual(userDto);
+
+      expect(checkUserExistsQuery.ask).toHaveBeenCalledWith(
+        paramsWithUserIdDto,
+      );
+
+      expect(deleteUserCommand.execute).toHaveBeenCalledWith({
+        ...paramsWithUserIdDto,
+        ...queryWithUserVersionDto,
+      });
+    });
+
+    it("must throw error if user not found", async () => {
+      const paramsWithUserIdDto = paramsWithUserIdDtoFactory.build({
+        userId: "99",
+      });
+
+      const queryWithUserVersionDto = queryWithUserVersionDtoFactory.build();
+
+      const userDto = userDtoFactory.build({
+        userId: paramsWithUserIdDto.userId,
+        userVersion: queryWithUserVersionDto.userVersion + 1,
+      });
+
+      checkUserExistsQuery.ask.mockResolvedValue(false);
+
+      deleteUserCommand.execute.mockResolvedValue(userDto);
+
+      await expect(
+        controller.deleteUser(paramsWithUserIdDto, queryWithUserVersionDto),
+      ).rejects.toThrowError("user with id 99 not found");
+
+      expect(checkUserExistsQuery.ask).toHaveBeenCalledWith(
+        paramsWithUserIdDto,
+      );
+
+      expect(deleteUserCommand.execute).not.toHaveBeenCalled();
+    });
+  });
+
   describe("::getUserById", () => {
     it("must find user by id", async () => {
       const paramsWithUserIdDto = paramsWithUserIdDtoFactory.build();
 
       const userDto = userDtoFactory.build({
-        id: paramsWithUserIdDto.id,
+        userId: paramsWithUserIdDto.userId,
       });
 
       getUserByIdQuery.ask.mockResolvedValue(userDto);
@@ -97,14 +161,14 @@ describe("api/v1/users", () => {
 
     it("must throw error if user not found", async () => {
       const paramsWithUserIdDto = paramsWithUserIdDtoFactory.build({
-        id: "99",
+        userId: "99",
       });
 
       getUserByIdQuery.ask.mockResolvedValue(null);
 
       await expect(
         controller.getUserById(paramsWithUserIdDto),
-      ).rejects.toThrowError(`user with id 99 not found`);
+      ).rejects.toThrowError("user with id 99 not found");
 
       expect(getUserByIdQuery.ask).toHaveBeenCalledWith(paramsWithUserIdDto);
     });
@@ -114,7 +178,7 @@ describe("api/v1/users", () => {
     it("must list user", async () => {
       const listUsersQueryDto = listUsersQueryDtoFactory.build({
         pageSize: 10,
-        pageToken: "0",
+        pageToken: 0,
       });
 
       const userDtos = userDtoFactory.buildList(10);
@@ -126,7 +190,7 @@ describe("api/v1/users", () => {
       ).resolves.toStrictEqual(
         listUsersResponseDtoFactory.build({
           users: userDtos,
-          nextPageToken: "10",
+          nextPageToken: 10,
         }),
       );
 
@@ -157,46 +221,73 @@ describe("api/v1/users", () => {
 
   describe("::updateUser", () => {
     it("must update user", async () => {
-      const paramsWithUserIdDto = paramsWithUserIdDtoFactory.build({
-        id: "99",
-      });
+      const paramsWithUserIdDto = paramsWithUserIdDtoFactory.build();
+
+      const queryWithUserVersionDto = queryWithUserVersionDtoFactory.build();
 
       const updateUserDto = updateUserDtoFactory.build();
 
-      const userDto: UserDto = userDtoFactory.build({
+      const userDto = userDtoFactory.build({
         ...updateUserDto,
-        id: paramsWithUserIdDto.id,
+        userId: paramsWithUserIdDto.userId,
+        userVersion: queryWithUserVersionDto.userVersion + 1,
       });
+
+      checkUserExistsQuery.ask.mockResolvedValue(true);
 
       updateUserCommand.execute.mockResolvedValue(userDto);
 
       await expect(
-        controller.updateUser(paramsWithUserIdDto, updateUserDto),
+        controller.updateUser(
+          paramsWithUserIdDto,
+          queryWithUserVersionDto,
+          updateUserDto,
+        ),
       ).resolves.toStrictEqual(userDto);
+
+      expect(checkUserExistsQuery.ask).toHaveBeenCalledWith(
+        paramsWithUserIdDto,
+      );
 
       expect(updateUserCommand.execute).toHaveBeenCalledWith({
         ...paramsWithUserIdDto,
+        ...queryWithUserVersionDto,
         ...updateUserDto,
       });
     });
 
     it("must throw error if user not found", async () => {
       const paramsWithUserIdDto = paramsWithUserIdDtoFactory.build({
-        id: "99",
+        userId: "99",
       });
+
+      const queryWithUserVersionDto = queryWithUserVersionDtoFactory.build();
 
       const updateUserDto = updateUserDtoFactory.build();
 
-      updateUserCommand.execute.mockResolvedValue(null);
+      const userDto = userDtoFactory.build({
+        ...updateUserDto,
+        userId: paramsWithUserIdDto.userId,
+        userVersion: queryWithUserVersionDto.userVersion + 1,
+      });
+
+      checkUserExistsQuery.ask.mockResolvedValue(false);
+
+      updateUserCommand.execute.mockResolvedValue(userDto);
 
       await expect(
-        controller.updateUser(paramsWithUserIdDto, updateUserDto),
+        controller.updateUser(
+          paramsWithUserIdDto,
+          queryWithUserVersionDto,
+          updateUserDto,
+        ),
       ).rejects.toThrowError("user with id 99 not found");
 
-      expect(updateUserCommand.execute).toHaveBeenCalledWith({
-        ...paramsWithUserIdDto,
-        ...updateUserDto,
-      });
+      expect(checkUserExistsQuery.ask).toHaveBeenCalledWith(
+        paramsWithUserIdDto,
+      );
+
+      expect(updateUserCommand.execute).not.toHaveBeenCalled();
     });
   });
 });
