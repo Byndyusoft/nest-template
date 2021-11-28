@@ -18,7 +18,7 @@ import {
   TransformToArray,
   TransformToNumber,
 } from "@byndyusoft/class-validator-extended";
-import { ApiPropertyOptional } from "@nestjs/swagger";
+import { ApiPropertyOptional } from "@byndyusoft/nest-swagger";
 import {
   IsEmail,
   IsInt,

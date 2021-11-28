@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-import { applyDecorators, HttpStatus } from "@nestjs/common";
 import {
   ApiBadRequestResponse,
   ApiConflictResponse,
   ApiForbiddenResponse,
   ApiInternalServerErrorResponse,
   ApiNotFoundResponse,
-} from "@nestjs/swagger";
+} from "@byndyusoft/nest-swagger";
+import { applyDecorators, HttpStatus } from "@nestjs/common";
 
 import {
   ApiBadRequestResponseDto,

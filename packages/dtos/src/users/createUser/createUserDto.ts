@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { OmitType } from "@nestjs/swagger";
+import { OmitType } from "@byndyusoft/nest-swagger";
 
 import { UserDto } from "../common";
 

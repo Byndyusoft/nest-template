@@ -18,6 +18,7 @@ import {
   OpenTracingModule,
   TracedHttpModule,
 } from "@byndyusoft/nest-opentracing";
+import { ApiTags } from "@byndyusoft/nest-swagger";
 import {
   PinoHttpLoggerOptionsBuilder,
   PinoLoggerFactory,
@@ -25,7 +26,6 @@ import {
 } from "@byndyusoft/pino-logger-factory";
 import { PromController, PromModule } from "@digikare/nestjs-prom";
 import { Module, OnApplicationShutdown } from "@nestjs/common";
-import { ApiTags } from "@nestjs/swagger";
 import { initTracerFromEnv } from "jaeger-client";
 import { Logger, LoggerModule } from "nestjs-pino";
 
