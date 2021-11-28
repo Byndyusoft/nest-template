@@ -15,7 +15,7 @@
  */
 
 import { AtLeastOneDefined } from "@byndyusoft/class-validator-extended";
-import { ApiHideProperty, PartialType } from "@nestjs/swagger";
+import { ApiHideProperty, PartialType } from "@byndyusoft/nest-swagger";
 
 import { CreateUserDto } from "../createUser";
 

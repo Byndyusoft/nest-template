@@ -25,9 +25,9 @@
   },
   "dependencies": {
     "@byndyusoft/class-validator-extended": "^1.0.0",
+    "@byndyusoft/nest-swagger": "^5.1.5-2",
     "@nestjs/common": "^8.2.3",
     "@nestjs/core": "^8.2.3",
-    "@nestjs/swagger": "https://github.com/KillWolfVlad/swagger/releases/download/support-external-dtos-snapshot/nestjs-swagger-5.0.9-feature-support-external-dtos-2.tgz",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.13.2",
     "dotenv": "^10.0.0",

@@ -605,6 +605,28 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@byndyusoft/nest-swagger@npm:^5.1.5-2":
+  version: 5.1.5-2
+  resolution: "@byndyusoft/nest-swagger@npm:5.1.5-2"
+  dependencies:
+    "@nestjs/mapped-types": 1.0.0
+    lodash: 4.17.21
+    path-to-regexp: 3.2.0
+  peerDependencies:
+    "@nestjs/common": ^8.0.0
+    "@nestjs/core": ^8.0.0
+    fastify-swagger: "*"
+    reflect-metadata: ^0.1.12
+    swagger-ui-express: "*"
+  peerDependenciesMeta:
+    fastify-swagger:
+      optional: true
+    swagger-ui-express:
+      optional: true
+  checksum: c7bb4b6d4ff252841d89c7cc335526dc5dd68053fc80767dc80bde755acc2f2d360f077e027aa686d8d4209562854c0d3bc558024d8a5e18ae2e27d99fef9e27
+  languageName: node
+  linkType: hard
+
 "@byndyusoft/pino-logger-factory@npm:^1.0.1":
   version: 1.0.1
   resolution: "@byndyusoft/pino-logger-factory@npm:1.0.1"
@@ -1257,28 +1279,6 @@ __metadata:
   peerDependencies:
     typescript: ^3.4.5 || ^4.3.5
   checksum: dc3b51f7d1e8b9c27192e6802e0f31e90b0ae709137b9e63ab2d52d1cc362a4297b90e3c2905c38f106c3e8f4789d348fcf71f3ba72fa9ebefcb16448cffaf3d
-  languageName: node
-  linkType: hard
-
-"@nestjs/swagger@https://github.com/KillWolfVlad/swagger/releases/download/support-external-dtos-snapshot/nestjs-swagger-5.0.9-feature-support-external-dtos-2.tgz":
-  version: 5.0.9-feature-support-external-dtos-2
-  resolution: "@nestjs/swagger@https://github.com/KillWolfVlad/swagger/releases/download/support-external-dtos-snapshot/nestjs-swagger-5.0.9-feature-support-external-dtos-2.tgz"
-  dependencies:
-    "@nestjs/mapped-types": 1.0.0
-    lodash: 4.17.21
-    path-to-regexp: 3.2.0
-  peerDependencies:
-    "@nestjs/common": ^8.0.0
-    "@nestjs/core": ^8.0.0
-    fastify-swagger: "*"
-    reflect-metadata: ^0.1.12
-    swagger-ui-express: "*"
-  peerDependenciesMeta:
-    fastify-swagger:
-      optional: true
-    swagger-ui-express:
-      optional: true
-  checksum: c1bf80f899b02f2263102b9214c89ed4633369665d23064704d9e0c6bf5592061badd2de0f1dbf5582ca6963a4dc4c07ecf407ec97b8fbf69d388562c4ad0c83
   languageName: node
   linkType: hard
 
@@ -3710,14 +3710,14 @@ __metadata:
   linkType: hard
 
 "debug@npm:4, debug@npm:^4.0.1, debug@npm:^4.1.0, debug@npm:^4.1.1, debug@npm:^4.3.1, debug@npm:^4.3.2":
-  version: 4.3.2
-  resolution: "debug@npm:4.3.2"
+  version: 4.3.3
+  resolution: "debug@npm:4.3.3"
   dependencies:
     ms: 2.1.2
   peerDependenciesMeta:
     supports-color:
       optional: true
-  checksum: 820ea160e267e23c953c9ed87e7ad93494d8cda2f7349af5e7e3bb236d23707ee3022f477d5a7d2ee86ef2bf7d60aa9ab22d1f58080d7deb9dccd073585e1e43
+  checksum: 14472d56fe4a94dbcfaa6dbed2dd3849f1d72ba78104a1a328047bb564643ca49df0224c3a17fa63533fd11dd3d4c8636cd861191232a2c6735af00cc2d4de16
   languageName: node
   linkType: hard
 
@@ -11672,6 +11672,7 @@ __metadata:
   dependencies:
     "@byndyusoft/class-validator-extended": ^1.0.0
     "@byndyusoft/nest-opentracing": ^2.3.0
+    "@byndyusoft/nest-swagger": ^5.1.5-2
     "@byndyusoft/pino-logger-factory": ^1.0.1
     "@byndyusoft/tsconfig": ^1.1.0
     "@digikare/nestjs-prom": ^1.0.0
@@ -11681,7 +11682,6 @@ __metadata:
     "@nestjs/core": ^8.2.3
     "@nestjs/platform-express": ^8.2.3
     "@nestjs/schematics": ^8.0.5
-    "@nestjs/swagger": "https://github.com/KillWolfVlad/swagger/releases/download/support-external-dtos-snapshot/nestjs-swagger-5.0.9-feature-support-external-dtos-2.tgz"
     "@nestjs/terminus": ^8.0.2
     "@nestjs/typeorm": ^8.0.2
     "@types/express": ^4.17.13
@@ -11731,11 +11731,11 @@ __metadata:
   dependencies:
     "@byndyusoft/class-validator-extended": ^1.0.0
     "@byndyusoft/nest-dynamic-module": ^1.0.0
+    "@byndyusoft/nest-swagger": ^5.1.5-2
     "@byndyusoft/tsconfig": ^1.1.0
     "@nestjs/axios": ^0.0.3
     "@nestjs/common": ^8.2.3
     "@nestjs/core": ^8.2.3
-    "@nestjs/swagger": "https://github.com/KillWolfVlad/swagger/releases/download/support-external-dtos-snapshot/nestjs-swagger-5.0.9-feature-support-external-dtos-2.tgz"
     "@types/lodash": ^4.14.177
     "@types/node": ^16.11.10
     "@types/qs": ^6.9.7
@@ -11767,10 +11767,10 @@ __metadata:
   resolution: "ᐸDtos testingᐳ@workspace:packages/dtosTesting"
   dependencies:
     "@byndyusoft/class-validator-extended": ^1.0.0
+    "@byndyusoft/nest-swagger": ^5.1.5-2
     "@byndyusoft/tsconfig": ^1.1.0
     "@nestjs/common": ^8.2.3
     "@nestjs/core": ^8.2.3
-    "@nestjs/swagger": "https://github.com/KillWolfVlad/swagger/releases/download/support-external-dtos-snapshot/nestjs-swagger-5.0.9-feature-support-external-dtos-2.tgz"
     "@types/faker": ^5.5.9
     "@types/lodash": ^4.14.177
     class-transformer: ^0.5.1
@@ -11797,12 +11797,12 @@ __metadata:
   resolution: "ᐸDtosᐳ@workspace:packages/dtos"
   dependencies:
     "@byndyusoft/class-validator-extended": ^1.0.0
+    "@byndyusoft/nest-swagger": ^5.1.5-2
     "@byndyusoft/tsconfig": ^1.1.0
     "@nestjs/cli": ^8.1.5
     "@nestjs/common": ^8.2.3
     "@nestjs/core": ^8.2.3
     "@nestjs/schematics": ^8.0.5
-    "@nestjs/swagger": "https://github.com/KillWolfVlad/swagger/releases/download/support-external-dtos-snapshot/nestjs-swagger-5.0.9-feature-support-external-dtos-2.tgz"
     class-transformer: ^0.5.1
     class-validator: ^0.13.2
     pinst: ^2.1.6
@@ -11815,7 +11815,7 @@ __metadata:
     typescript-transform-paths: ^3.3.1
   peerDependencies:
     "@byndyusoft/class-validator-extended": ^1.0.0
-    "@nestjs/swagger": "*"
+    "@byndyusoft/nest-swagger": ^5.1.5-2
     class-transformer: ^0.4.0
     class-validator: ^0.13.1
   languageName: unknown
@@ -11826,10 +11826,10 @@ __metadata:
   resolution: "ᐸEntitiesᐳ@workspace:packages/entities"
   dependencies:
     "@byndyusoft/class-validator-extended": ^1.0.0
+    "@byndyusoft/nest-swagger": ^5.1.5-2
     "@byndyusoft/tsconfig": ^1.1.0
     "@nestjs/common": ^8.2.3
     "@nestjs/core": ^8.2.3
-    "@nestjs/swagger": "https://github.com/KillWolfVlad/swagger/releases/download/support-external-dtos-snapshot/nestjs-swagger-5.0.9-feature-support-external-dtos-2.tgz"
     class-transformer: ^0.5.1
     class-validator: ^0.13.2
     pinst: ^2.1.6
@@ -11853,10 +11853,10 @@ __metadata:
   resolution: "ᐸMigratorᐳ@workspace:packages/migrator"
   dependencies:
     "@byndyusoft/class-validator-extended": ^1.0.0
+    "@byndyusoft/nest-swagger": ^5.1.5-2
     "@byndyusoft/tsconfig": ^1.1.0
     "@nestjs/common": ^8.2.3
     "@nestjs/core": ^8.2.3
-    "@nestjs/swagger": "https://github.com/KillWolfVlad/swagger/releases/download/support-external-dtos-snapshot/nestjs-swagger-5.0.9-feature-support-external-dtos-2.tgz"
     "@types/node": ^16.11.10
     "@types/pg": ^8.6.1
     class-transformer: ^0.5.1

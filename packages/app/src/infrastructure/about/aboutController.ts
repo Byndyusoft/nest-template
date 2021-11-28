@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
+import { ApiTags } from "@byndyusoft/nest-swagger";
 import { Controller, Get } from "@nestjs/common";
-import { ApiTags } from "@nestjs/swagger";
 
 import { AboutService } from "./aboutService";
 import { AboutDto } from "./dtos";
