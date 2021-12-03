@@ -9494,6 +9494,8 @@ __metadata:
     markdownlint-cli: ^0.30.0
     prettier: ^2.5.0
     prettier-plugin-packagejson: ^2.2.15
+    ts-patch: ^2.0.1
+    typescript: ^4.5.2
   languageName: unknown
   linkType: soft
 
@@ -11721,7 +11723,6 @@ __metadata:
     swagger-ui-express: ^4.2.0
     ts-jest: ^27.0.7
     ts-nameof: ^5.0.0
-    ts-patch: ^2.0.1
     ts-transformer-keys: ^0.4.3
     tslib: ^2.3.1
     typeorm: ^0.2.41
@@ -11756,7 +11757,6 @@ __metadata:
     reflect-metadata: ^0.1.13
     rxjs: ^7.4.0
     shx: ^0.3.3
-    ts-patch: ^2.0.1
     ts-transformer-keys: ^0.4.3
     tslib: ^2.3.1
     typescript: ^4.5.2
@@ -11790,7 +11790,6 @@ __metadata:
     reflect-metadata: ^0.1.13
     rxjs: ^7.4.0
     shx: ^0.3.3
-    ts-patch: ^2.0.1
     tslib: ^2.3.1
     typescript: ^4.5.2
     typescript-transform-paths: ^3.3.1
@@ -11817,7 +11816,6 @@ __metadata:
     reflect-metadata: ^0.1.13
     rxjs: ^7.4.0
     shx: ^0.3.3
-    ts-patch: ^2.0.1
     tslib: ^2.3.1
     typescript: ^4.5.2
     typescript-transform-paths: ^3.3.1
@@ -11844,7 +11842,6 @@ __metadata:
     reflect-metadata: ^0.1.13
     rxjs: ^7.4.0
     shx: ^0.3.3
-    ts-patch: ^2.0.1
     tslib: ^2.3.1
     typeorm: ^0.2.41
     typescript: ^4.5.2
@@ -11874,7 +11871,6 @@ __metadata:
     reflect-metadata: ^0.1.13
     rxjs: ^7.4.0
     shx: ^0.3.3
-    ts-patch: ^2.0.1
     tslib: ^2.3.1
     typeorm: ^0.2.41
     typescript: ^4.5.2

@@ -17,7 +17,6 @@
     "prebuild": "shx rm -rf ./dist",
     "build": "yarn run prebuild && yarn run build:src",
     "build:src": "tsc --project ./tsconfig.build.json",
-    "postinstall": "(ts-patch install) || true",
     "migration:create": "yarn run build:src && typeorm migration:create --config ./dist/ormconfig.js",
     "migration:generate": "yarn run build:src && typeorm migration:generate --config ./dist/ormconfig.js",
     "start": "yarn run build:src && yarn run start:prod",
@@ -44,7 +43,6 @@
     "@types/node": "^16.11.11",
     "@types/pg": "^8.6.1",
     "shx": "^0.3.3",
-    "ts-patch": "^2.0.1",
     "typescript": "^4.5.2",
     "typescript-transform-paths": "^3.3.1"
   },
