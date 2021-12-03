@@ -45,7 +45,7 @@
     "@nestjs/common": "^8.2.3",
     "@nestjs/core": "^8.2.3",
     "@types/lodash": "^4.14.177",
-    "@types/node": "^16.11.10",
+    "@types/node": "^16.11.11",
     "@types/qs": "^6.9.7",
     "axios": "^0.24.0",
     "class-transformer": "^0.5.1",
