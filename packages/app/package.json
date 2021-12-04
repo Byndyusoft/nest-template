@@ -58,7 +58,7 @@
       "reflect-metadata"
     ],
     "setupFilesAfterEnv": [
-      "jest-extended"
+      "jest-extended/all"
     ],
     "testEnvironment": "node",
     "testRegex": ".*\\.spec\\.ts$",
