@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-import { makeFactory } from "factory.ts";
+import { makeDtoFactory } from "@byndyusoft/dto-factory";
 import faker from "faker";
 
 import { ListUsersResponseDto } from "ᐸDtosᐳ";
 
 import { userDtoFactory } from "../common";
 
-export const listUsersResponseDtoFactory = makeFactory<ListUsersResponseDto>(
+export const listUsersResponseDtoFactory = makeDtoFactory<ListUsersResponseDto>(
   () => ({
     users: userDtoFactory.buildList(faker.datatype.number(10)),
 

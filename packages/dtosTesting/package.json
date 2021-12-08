@@ -31,7 +31,7 @@
     "postpublish": "pinst --enable"
   },
   "dependencies": {
-    "factory.ts": "https://github.com/KillWolfVlad/factory.ts/releases/download/builder-factory-snapshot/factory.ts-0.5.2-feature-builder-factory-1.tgz",
+    "@byndyusoft/dto-factory": "^1.0.0",
     "faker": "^5.5.3",
     "lodash": "^4.17.21",
     "tslib": "^2.3.1"

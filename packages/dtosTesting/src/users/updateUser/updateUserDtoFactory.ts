@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-import { makeFactory } from "factory.ts";
+import { makeDtoFactory } from "@byndyusoft/dto-factory";
 
 import { UpdateUserDto } from "ᐸDtosᐳ";
 
 import { createUserDtoFactory } from "../createUser";
 
-export const updateUserDtoFactory = makeFactory<UpdateUserDto>(() =>
+export const updateUserDtoFactory = makeDtoFactory<UpdateUserDto>(() =>
   createUserDtoFactory.build(),
 );

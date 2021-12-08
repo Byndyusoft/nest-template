@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-import { makeFactory } from "factory.ts";
+import { makeDtoFactory } from "@byndyusoft/dto-factory";
 import faker from "faker";
 
 import { UserDto } from "ᐸDtosᐳ";
 
-export const userDtoFactory = makeFactory<UserDto>(() => ({
+export const userDtoFactory = makeDtoFactory<UserDto>(() => ({
   userId: String(faker.datatype.number()),
 
   name: faker.name.findName(),
