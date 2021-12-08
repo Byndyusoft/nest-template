@@ -33,7 +33,7 @@
   "dependencies": {
     "@byndyusoft/nest-dynamic-module": "^1.0.0",
     "lodash": "^4.17.21",
-    "qs": "^6.10.1",
+    "qs": "^6.10.2",
     "tslib": "^2.3.1"
   },
   "devDependencies": {
@@ -44,7 +44,7 @@
     "@nestjs/common": "^8.2.3",
     "@nestjs/core": "^8.2.3",
     "@types/lodash": "^4.14.177",
-    "@types/node": "^16.11.11",
+    "@types/node": "^16.11.12",
     "@types/qs": "^6.9.7",
     "axios": "^0.24.0",
     "class-transformer": "^0.5.1",

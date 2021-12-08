@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-import { makeFactory } from "factory.ts";
+import { makeDtoFactory } from "@byndyusoft/dto-factory";
 import _ from "lodash";
 
 import { ParamsWithUserIdDto } from "ᐸDtosᐳ";
 
 import { userDtoFactory } from "./userDtoFactory";
 
-export const paramsWithUserIdDtoFactory = makeFactory<ParamsWithUserIdDto>(() =>
-  _.pick(userDtoFactory.build(), "userId"),
+export const paramsWithUserIdDtoFactory = makeDtoFactory<ParamsWithUserIdDto>(
+  () => _.pick(userDtoFactory.build(), "userId"),
 );

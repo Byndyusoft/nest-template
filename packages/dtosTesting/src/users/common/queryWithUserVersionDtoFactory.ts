@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { makeFactory } from "factory.ts";
+import { makeDtoFactory } from "@byndyusoft/dto-factory";
 import _ from "lodash";
 
 import { QueryWithUserVersionDto } from "ᐸDtosᐳ";
@@ -22,6 +22,6 @@ import { QueryWithUserVersionDto } from "ᐸDtosᐳ";
 import { userDtoFactory } from "./userDtoFactory";
 
 export const queryWithUserVersionDtoFactory =
-  makeFactory<QueryWithUserVersionDto>(() =>
+  makeDtoFactory<QueryWithUserVersionDto>(() =>
     _.pick(userDtoFactory.build(), "userVersion"),
   );

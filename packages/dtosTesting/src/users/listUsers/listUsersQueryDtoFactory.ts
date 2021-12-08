@@ -14,22 +14,24 @@
  * limitations under the License.
  */
 
-import { makeFactory } from "factory.ts";
+import { makeDtoFactory } from "@byndyusoft/dto-factory";
 import faker from "faker";
 
 import { ListUsersQueryDto } from "ᐸDtosᐳ";
 
-export const listUsersQueryDtoFactory = makeFactory<ListUsersQueryDto>(() => ({
-  userIds: Array.from({ length: faker.datatype.number(10) }).map(() =>
-    String(faker.datatype.number()),
-  ),
-  names: Array.from({ length: faker.datatype.number(10) }).map(() =>
-    faker.name.findName(),
-  ),
-  emails: Array.from({ length: faker.datatype.number(10) }).map(() =>
-    faker.internet.email(),
-  ),
+export const listUsersQueryDtoFactory = makeDtoFactory<ListUsersQueryDto>(
+  () => ({
+    userIds: Array.from({ length: faker.datatype.number(10) }).map(() =>
+      String(faker.datatype.number()),
+    ),
+    names: Array.from({ length: faker.datatype.number(10) }).map(() =>
+      faker.name.findName(),
+    ),
+    emails: Array.from({ length: faker.datatype.number(10) }).map(() =>
+      faker.internet.email(),
+    ),
 
-  pageSize: faker.datatype.number(),
-  pageToken: faker.datatype.number(),
-}));
+    pageSize: faker.datatype.number(),
+    pageToken: faker.datatype.number(),
+  }),
+);
