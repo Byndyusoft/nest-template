@@ -86,8 +86,8 @@ async function bootstrap(): Promise<void> {
 
   logger.log(
     "Nest application listening on %s",
-    "NestApplication",
     await app.getUrl(),
+    "NestApplication",
   );
 }
 

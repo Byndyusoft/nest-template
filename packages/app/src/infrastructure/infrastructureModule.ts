@@ -19,24 +19,20 @@ import {
   TracedHttpModule,
 } from "@byndyusoft/nest-opentracing";
 import { ApiTags } from "@byndyusoft/nest-swagger";
-import {
-  PinoHttpLoggerOptionsBuilder,
-  PinoLoggerFactory,
-  PinoLoggerOptionsBuilder,
-} from "@byndyusoft/pino-logger-factory";
 import { PromController, PromModule } from "@digikare/nestjs-prom";
-import { Module, OnApplicationShutdown } from "@nestjs/common";
+import { Module } from "@nestjs/common";
 import { initTracerFromEnv } from "jaeger-client";
-import { Logger, LoggerModule } from "nestjs-pino";
+import { Logger } from "nestjs-pino";
 
 import { AboutModule } from "./about/aboutModule";
 import { ClientsModule } from "./clients/clientsModule";
 import { ConfigModule } from "./config/configModule";
 import { ExceptionsModule } from "./exceptions/exceptionsModule";
 import { HealthCheckModule } from "./healthCheck/healthCheckModule";
+import { LoggerModule } from "./logger/loggerModule";
 import { PackageJsonModule } from "./packageJson/packageJsonModule";
 import { PgModule } from "./pg/pgModule";
-import { ConfigDto, ConfigEnvToken } from "./config";
+import { ConfigEnvToken } from "./config";
 import { PackageJsonDto } from "./packageJson";
 
 ApiTags("Infrastructure")(PromController);
@@ -74,30 +70,7 @@ ApiTags("Infrastructure")(PromController);
       }),
     }),
     // LoggerModule must be registered after @byndyusoft/nest-opentracing, to get trace id
-    LoggerModule.forRootAsync({
-      inject: [ConfigEnvToken, ConfigDto, PackageJsonDto],
-      useFactory: (
-        configEnv: string,
-        config: ConfigDto,
-        packageJson: PackageJsonDto,
-      ) => ({
-        pinoHttp: new PinoHttpLoggerOptionsBuilder()
-          .withLogger(
-            new PinoLoggerFactory().create(
-              new PinoLoggerOptionsBuilder()
-                .withBase({
-                  name: packageJson.name,
-                  version: packageJson.version,
-                  env: configEnv,
-                })
-                .withLevel(config.logger.level)
-                .withPrettyPrint(config.logger.pretty)
-                .build(),
-            ),
-          )
-          .build(),
-      }),
-    }),
+    LoggerModule,
     // Infrastructure controllers
     AboutModule,
     PromModule.forRoot({
@@ -113,14 +86,14 @@ ApiTags("Infrastructure")(PromController);
     ExceptionsModule,
   ],
 })
-export class InfrastructureModule implements OnApplicationShutdown {
+export class InfrastructureModule {
   public constructor(private readonly __logger: Logger) {}
 
   public onApplicationShutdown(signal?: string): void {
     this.__logger.log(
       "Nest application stopped by %s",
-      "NestApplication",
       signal ?? "???",
+      "NestApplication",
     );
   }
 }
