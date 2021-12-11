@@ -14,68 +14,8 @@
  * limitations under the License.
  */
 
-import {
-  ArgumentsHost,
-  Catch,
-  ExceptionFilter,
-  HttpException,
-  HttpStatus,
-  Inject,
-} from "@nestjs/common";
-import { isObject } from "@nestjs/common/utils/shared.utils";
-import { AbstractHttpAdapter, HttpAdapterHost } from "@nestjs/core";
-import { MESSAGES } from "@nestjs/core/constants";
-import { InjectPinoLogger, PinoLogger } from "nestjs-pino";
+import { Catch } from "@nestjs/common";
+import { BaseExceptionFilter as SuperBaseExceptionFilter } from "@nestjs/core";
 
 @Catch()
-export class BaseExceptionFilter implements ExceptionFilter<unknown> {
-  @Inject()
-  protected readonly httpAdapterHost!: HttpAdapterHost;
-
-  public constructor(
-    @InjectPinoLogger("ExceptionsHandler")
-    private readonly __logger: PinoLogger,
-  ) {}
-
-  private static __handleHttpException(
-    exception: HttpException,
-    host: ArgumentsHost,
-    httpAdapter: AbstractHttpAdapter,
-  ): void {
-    const response = exception.getResponse();
-
-    const message = isObject(response)
-      ? response
-      : {
-          statusCode: exception.getStatus(),
-          message: response,
-        };
-
-    httpAdapter.reply(host.getArgByIndex(1), message, exception.getStatus());
-  }
-
-  public catch(exception: unknown, host: ArgumentsHost): void {
-    const { httpAdapter } = this.httpAdapterHost;
-
-    if (exception instanceof HttpException) {
-      BaseExceptionFilter.__handleHttpException(exception, host, httpAdapter);
-    } else {
-      this.__handleUnknownException(exception, host, httpAdapter);
-    }
-  }
-
-  private __handleUnknownException(
-    exception: unknown,
-    host: ArgumentsHost,
-    httpAdapter: AbstractHttpAdapter,
-  ): void {
-    const body = {
-      statusCode: HttpStatus.INTERNAL_SERVER_ERROR,
-      message: MESSAGES.UNKNOWN_EXCEPTION_MESSAGE,
-    };
-
-    httpAdapter.reply(host.getArgByIndex(1), body, body.statusCode);
-
-    this.__logger.error(exception as Error);
-  }
-}
+export class BaseExceptionFilter extends SuperBaseExceptionFilter<unknown> {}
