@@ -5,7 +5,7 @@
 ## Install
 
 ```bash
-yarn add --dev ᐸEntitiesᐳ ᐸDtosᐳ typeorm
+yarn add ᐸEntitiesᐳ ᐸDtosᐳ typeorm
 ```
 
 You also need install all required peer dependencies.
