@@ -631,6 +631,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@byndyusoft/sonar-coverage-reporter@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@byndyusoft/sonar-coverage-reporter@npm:1.0.0"
+  dependencies:
+    istanbul-lib-report: ^3.0.0
+    tslib: ^2.3.1
+  checksum: 2163157dd04507940a9e02741d6584f312b2a774e492540141c1c37483540b080d55177944bf20b8148afd77edfb94f23519b4a3a9667f8e99a9df1d968c4424
+  languageName: node
+  linkType: hard
+
 "@byndyusoft/tsconfig@npm:^1.1.0":
   version: 1.1.0
   resolution: "@byndyusoft/tsconfig@npm:1.1.0"
@@ -11569,6 +11579,7 @@ __metadata:
     "@byndyusoft/nest-opentracing": ^2.3.0
     "@byndyusoft/nest-swagger": ^5.1.5-2
     "@byndyusoft/pino-logger-factory": ^2.0.0
+    "@byndyusoft/sonar-coverage-reporter": ^1.0.0
     "@byndyusoft/tsconfig": ^1.1.0
     "@digikare/nestjs-prom": ^1.0.0
     "@nestjs/axios": ^0.0.3
