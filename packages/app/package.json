@@ -36,14 +36,11 @@
       "!**/index.ts"
     ],
     "coverageDirectory": "<rootDir>/coverage",
-    "coverageThreshold": {
-      "global": {
-        "branches": 100,
-        "functions": 100,
-        "lines": 100,
-        "statements": 100
-      }
-    },
+    "coverageReporters": [
+      "lcov",
+      "text",
+      "@byndyusoft/sonar-coverage-reporter"
+    ],
     "moduleFileExtensions": [
       "ts",
       "js"
@@ -99,6 +96,7 @@
     "ᐸEntitiesᐳ": "1.0.0"
   },
   "devDependencies": {
+    "@byndyusoft/sonar-coverage-reporter": "^1.0.0",
     "@byndyusoft/tsconfig": "^1.1.0",
     "@nestjs/cli": "^8.1.6",
     "@nestjs/schematics": "^8.0.5",
