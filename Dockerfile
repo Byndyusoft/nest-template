@@ -14,18 +14,14 @@ USER node
 
 ################################################################################
 
-FROM workspaces AS app
+FROM workspaces AS migrator
 
-WORKDIR ./packages/app
-
-EXPOSE 8080
-
-CMD ["node", "./dist/main.js"]
+CMD ["yarn", "run", "start:migrator:prod"]
 
 ################################################################################
 
-FROM workspaces AS migrator
+FROM workspaces AS app
 
-WORKDIR ./packages/migrator
+EXPOSE 8080
 
-CMD ["yarn", "start:prod"]
+CMD ["yarn", "run", "start:prod"]
