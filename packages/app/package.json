@@ -18,6 +18,7 @@
     "build": "yarn run prebuild && yarn run build:src",
     "build:src": "nest build",
     "start": "nest start",
+    "start:prod": "yarn node ./dist/main.js",
     "test": "jest",
     "test:cov": "jest --coverage"
   },

@@ -4,6 +4,9 @@
 .github
 .husky
 .yarn
+!.yarn/plugins
+!.yarn/releases
+!.yarn/install-state.gz
 
 .commitlintrc.yaml
 .dockerignore
@@ -14,11 +17,9 @@
 .lintstagedrc.yaml
 .markdownlint.yaml
 .prettierrc.yaml
-.yarnrc.yml
 Dockerfile
 LICENSE
 README.md
-yarn.lock
 
 ### other workspaces
 
