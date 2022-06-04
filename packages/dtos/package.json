@@ -26,9 +26,7 @@
   "scripts": {
     "prebuild": "shx rm -rf ./dist",
     "build": "yarn run prebuild && yarn run build:src",
-    "build:src": "nest build",
-    "prepublishOnly": "pinst --disable",
-    "postpublish": "pinst --enable"
+    "build:src": "nest build"
   },
   "dependencies": {
     "tslib": "^2.4.0"
@@ -43,7 +41,6 @@
     "@nestjs/schematics": "^8.0.11",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.13.2",
-    "pinst": "^3.0.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.5.5",
     "shx": "^0.3.4",

@@ -26,9 +26,7 @@
   "scripts": {
     "prebuild": "shx rm -rf ./dist",
     "build": "yarn run prebuild && yarn run build:src",
-    "build:src": "tsc --project ./tsconfig.build.json",
-    "prepublishOnly": "pinst --disable",
-    "postpublish": "pinst --enable"
+    "build:src": "tsc --project ./tsconfig.build.json"
   },
   "dependencies": {
     "@byndyusoft/nest-dynamic-module": "^1.0.0",
@@ -50,7 +48,6 @@
     "axios": "^0.27.2",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.13.2",
-    "pinst": "^3.0.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.5.5",
     "shx": "^0.3.4",
