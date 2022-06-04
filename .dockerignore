@@ -19,6 +19,7 @@
 .prettierrc.yaml
 Dockerfile
 LICENSE
+Makefile
 README.md
 
 ### other workspaces
