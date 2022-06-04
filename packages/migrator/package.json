@@ -35,8 +35,8 @@
     "rxjs": "^7.5.5",
     "tslib": "^2.4.0",
     "typeorm": "^0.3.6",
-    "ᐸDtosᐳ": "1.0.0",
-    "ᐸEntitiesᐳ": "1.0.0"
+    "ᐸDtosᐳ": "workspace:*",
+    "ᐸEntitiesᐳ": "workspace:*"
   },
   "devDependencies": {
     "@byndyusoft/tsconfig": "^1.1.0",
