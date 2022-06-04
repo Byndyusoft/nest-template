@@ -116,7 +116,6 @@
     "jest-sonar-reporter": "^2.0.0",
     "pino-pretty": "^8.0.0",
     "shx": "^0.3.4",
-    "sonarqube-scanner": "^2.8.1",
     "ts-jest": "^28.0.5",
     "ts-nameof": "^5.0.0",
     "ts-transformer-keys": "^0.4.3",
