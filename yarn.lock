@@ -11315,9 +11315,9 @@ __metadata:
     typeorm: ^0.3.6
     typescript: ^4.7.3
     typescript-transform-paths: ^3.3.1
-    ᐸDtos testingᐳ: 1.0.0
-    ᐸDtosᐳ: 1.0.0
-    ᐸEntitiesᐳ: 1.0.0
+    ᐸDtos testingᐳ: "workspace:*"
+    ᐸDtosᐳ: "workspace:*"
+    ᐸEntitiesᐳ: "workspace:*"
   languageName: unknown
   linkType: soft
 
@@ -11349,7 +11349,7 @@ __metadata:
     tslib: ^2.4.0
     typescript: ^4.7.3
     typescript-transform-paths: ^3.3.1
-    ᐸDtosᐳ: 1.0.0
+    ᐸDtosᐳ: "workspace:*"
   peerDependencies:
     "@byndyusoft/nest-http-client": ^1.0.0
     "@nestjs/common": ^8.4.7
@@ -11358,7 +11358,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"ᐸDtos testingᐳ@1.0.0, ᐸDtos testingᐳ@workspace:packages/dtosTesting":
+"ᐸDtos testingᐳ@workspace:*, ᐸDtos testingᐳ@workspace:packages/dtosTesting":
   version: 0.0.0-use.local
   resolution: "ᐸDtos testingᐳ@workspace:packages/dtosTesting"
   dependencies:
@@ -11380,13 +11380,13 @@ __metadata:
     tslib: ^2.4.0
     typescript: ^4.7.3
     typescript-transform-paths: ^3.3.1
-    ᐸDtosᐳ: 1.0.0
+    ᐸDtosᐳ: "workspace:*"
   peerDependencies:
-    ᐸDtosᐳ: 1.0.0
+    ᐸDtosᐳ: "workspace:*"
   languageName: unknown
   linkType: soft
 
-"ᐸDtosᐳ@1.0.0, ᐸDtosᐳ@workspace:packages/dtos":
+"ᐸDtosᐳ@workspace:*, ᐸDtosᐳ@workspace:packages/dtos":
   version: 0.0.0-use.local
   resolution: "ᐸDtosᐳ@workspace:packages/dtos"
   dependencies:
@@ -11414,7 +11414,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"ᐸEntitiesᐳ@1.0.0, ᐸEntitiesᐳ@workspace:packages/entities":
+"ᐸEntitiesᐳ@workspace:*, ᐸEntitiesᐳ@workspace:packages/entities":
   version: 0.0.0-use.local
   resolution: "ᐸEntitiesᐳ@workspace:packages/entities"
   dependencies:
@@ -11433,7 +11433,7 @@ __metadata:
     typeorm: ^0.3.6
     typescript: ^4.7.3
     typescript-transform-paths: ^3.3.1
-    ᐸDtosᐳ: 1.0.0
+    ᐸDtosᐳ: "workspace:*"
   peerDependencies:
     typeorm: ^0.3.6
     ᐸDtosᐳ: 1.0.0
@@ -11462,7 +11462,7 @@ __metadata:
     typeorm: ^0.3.6
     typescript: ^4.7.3
     typescript-transform-paths: ^3.3.1
-    ᐸDtosᐳ: 1.0.0
-    ᐸEntitiesᐳ: 1.0.0
+    ᐸDtosᐳ: "workspace:*"
+    ᐸEntitiesᐳ: "workspace:*"
   languageName: unknown
   linkType: soft
