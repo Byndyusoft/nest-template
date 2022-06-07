@@ -14,54 +14,68 @@
  * limitations under the License.
  */
 
-import { URL } from "url";
-
 import {
   DynamicModuleHelper,
   TRegisterAsyncOptions,
 } from "@byndyusoft/nest-dynamic-module";
-import { HttpModule } from "@nestjs/axios";
+import {
+  HttpClientModule,
+  IHttpClientOptions,
+} from "@byndyusoft/nest-http-client";
 import { DynamicModule, Module } from "@nestjs/common";
-import { AxiosRequestConfig } from "axios";
+import urlJoin from "proper-url-join";
 import qs from "qs";
 
 import * as providers from "./providers";
-import { AxiosBaseRequestConfigToken, AxiosRequestConfigToken } from "./tokens";
+import { ClientBaseOptionsToken, ClientOptionsToken } from "./tokens";
 
 @Module({
+  imports: [
+    HttpClientModule.registerAsync({
+      inject: [ClientOptionsToken],
+      useFactory: (options: IHttpClientOptions) => options,
+    }),
+  ],
   providers: Object.values(providers),
   exports: Object.values(providers),
 })
 export class ClientModule {
   public static registerAsync(
-    options?: TRegisterAsyncOptions<AxiosRequestConfig>,
+    options?: TRegisterAsyncOptions<IHttpClientOptions>,
   ): DynamicModule {
     return DynamicModuleHelper.registerAsync(
       {
         module: ClientModule,
         global: true,
-        imports:
-          options?.imports && options.imports.length > 0 ? [] : [HttpModule],
         providers: [
           {
-            provide: AxiosRequestConfigToken,
-            inject: [AxiosBaseRequestConfigToken],
-            useFactory: (
-              baseAxiosRequestConfig: AxiosRequestConfig,
-            ): AxiosRequestConfig => ({
-              ...baseAxiosRequestConfig,
-              baseURL: new URL("/api/v1", baseAxiosRequestConfig.baseURL).href,
-              paramsSerializer: (params) =>
-                qs.stringify(params, {
-                  skipNulls: true,
-                  arrayFormat: "repeat",
-                }),
-            }),
+            provide: ClientOptionsToken,
+            inject: [ClientBaseOptionsToken],
+            useFactory: (baseOptions: IHttpClientOptions) =>
+              ClientModule.__clientOptionsFactory(baseOptions),
           },
         ],
+        exports: [ClientOptionsToken],
       },
-      AxiosBaseRequestConfigToken,
+      ClientBaseOptionsToken,
       options,
     );
+  }
+
+  private static __clientOptionsFactory(
+    baseOptions: IHttpClientOptions,
+  ): IHttpClientOptions {
+    return {
+      ...baseOptions,
+      config: {
+        ...baseOptions.config,
+        baseURL: urlJoin(baseOptions.config?.baseURL as string, "/api/v1"),
+        paramsSerializer: (params) =>
+          qs.stringify(params, {
+            skipNulls: true,
+            arrayFormat: "repeat",
+          }),
+      },
+    };
   }
 }
