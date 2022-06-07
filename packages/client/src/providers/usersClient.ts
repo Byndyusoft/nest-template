@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+import { HttpClient } from "@byndyusoft/nest-http-client";
 import { Injectable } from "@nestjs/common";
 import _ from "lodash";
 import { keys } from "ts-transformer-keys";
@@ -27,8 +28,6 @@ import {
   UpdateUserDto,
   UserDto,
 } from "ᐸDtosᐳ";
-
-import { HttpClient } from "./httpClient";
 
 @Injectable()
 export class UsersClient {

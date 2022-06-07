@@ -14,4 +14,4 @@
  * limitations under the License.
  */
 
-export const AxiosRequestConfigToken = Symbol("AxiosRequestConfigToken");
+export const ClientBaseOptionsToken = Symbol("ClientBaseOptionsToken");

@@ -14,5 +14,5 @@
  * limitations under the License.
  */
 
-export * from "./axiosBaseRequestConfigToken";
-export * from "./axiosRequestConfigToken";
+export * from "./clientBaseOptionsToken";
+export * from "./clientOptionsToken";
