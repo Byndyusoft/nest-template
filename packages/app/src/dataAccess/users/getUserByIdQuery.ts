@@ -35,7 +35,9 @@ export class GetUserByIdQuery {
     return this.__tracingService.traceAsyncFunction(
       nameof(GetUserByIdQuery),
       async () => {
-        const user = await this.__userRepository.findOne(options.userId);
+        const user = await this.__userRepository.findOneBy({
+          userId: options.userId,
+        });
 
         return user ? UserEntityToUserDtoMapper.map(user)[0] : null;
       },

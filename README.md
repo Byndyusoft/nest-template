@@ -21,7 +21,7 @@ Monorepo structure is described in root [package.json](./package.json) and conta
 Make sure you have installed all of the following prerequisites on your development machine:
 
 - [Git](https://git-scm.com)
-- [Node.js](https://nodejs.org) (version 14 LTS or higher)
+- [Node.js](https://nodejs.org) (version 16 LTS or higher)
 - [Yarn 3+](https://yarnpkg.com) package manager
 
 ## Code conventions

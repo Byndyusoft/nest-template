@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-/* eslint-disable no-console,no-process-exit,unicorn/no-process-exit */
+/* eslint-disable no-console,n/no-process-exit,unicorn/no-process-exit */
 
 import "reflect-metadata";
 import "source-map-support/register";
@@ -27,7 +27,7 @@ import {
   NestExpressApplication,
 } from "@nestjs/platform-express";
 import helmet from "helmet";
-import { Logger } from "nestjs-pino";
+import { Logger, LoggerErrorInterceptor } from "nestjs-pino";
 
 import { ConfigDto, PackageJsonDto } from "~/src";
 
@@ -52,6 +52,8 @@ function setupApp(app: NestExpressApplication): void {
       whitelist: true,
     }),
   );
+
+  app.useGlobalInterceptors(new LoggerErrorInterceptor());
 }
 
 function setupSwagger(app: NestExpressApplication): void {

@@ -15,7 +15,7 @@
  */
 
 import { makeDtoFactory } from "@byndyusoft/dto-factory";
-import faker from "faker";
+import { faker } from "@faker-js/faker";
 
 import { ListUsersQueryDto } from "ᐸDtosᐳ";
 
