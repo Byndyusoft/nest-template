@@ -22,7 +22,7 @@ import {
 } from "@nestjs/common";
 import _ from "lodash";
 import { keys } from "ts-transformer-keys";
-import { Connection, EntityManager } from "typeorm";
+import { DataSource, EntityManager } from "typeorm";
 
 import {
   UserEntityToUserDtoMapper,
@@ -34,7 +34,7 @@ import { UserEntity, UserOutboxEntity } from "ᐸEntitiesᐳ";
 @Injectable()
 export class DeleteUserCommand {
   public constructor(
-    private readonly __connection: Connection,
+    private readonly __dataSource: DataSource,
     private readonly __tracingService: TracingService,
   ) {}
 
@@ -89,7 +89,7 @@ export class DeleteUserCommand {
     return this.__tracingService.traceAsyncFunction(
       nameof(DeleteUserCommand),
       () =>
-        this.__connection.transaction((entityManager) =>
+        this.__dataSource.transaction((entityManager) =>
           DeleteUserCommand.__execute(entityManager, options),
         ),
     );

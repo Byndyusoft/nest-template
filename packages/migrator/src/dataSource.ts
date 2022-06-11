@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Byndyusoft
+ * Copyright 2022 Byndyusoft
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,10 +14,12 @@
  * limitations under the License.
  */
 
+import "reflect-metadata";
+
 import path from "path";
 
 import dotenv from "dotenv";
-import { ConnectionOptions } from "typeorm";
+import { DataSource } from "typeorm";
 
 import * as entities from "ᐸEntitiesᐳ";
 
@@ -25,7 +27,7 @@ dotenv.config({
   path: path.join(process.cwd(), ".env"),
 });
 
-const connectionOptions: ConnectionOptions = {
+export const AppDataSource = new DataSource({
   type: "postgres",
   entities: Object.values(entities),
   migrations: ["dist/migrations/*.js"],
@@ -35,11 +37,6 @@ const connectionOptions: ConnectionOptions = {
       | "each"
       | undefined) ?? "each",
   logger: "advanced-console",
-  cli: {
-    migrationsDir: "src/migrations",
-  },
   url: process.env.PG_CONNECTION_STRING as string,
   connectTimeoutMS: Number(process.env.PG_CONNECTION_TIMEOUT ?? "60000"),
-};
-
-export default connectionOptions;
+});

@@ -17,7 +17,7 @@
 import { TracingService } from "@byndyusoft/nest-opentracing";
 import { Injectable } from "@nestjs/common";
 import { keys } from "ts-transformer-keys";
-import { Connection, EntityManager } from "typeorm";
+import { DataSource, EntityManager } from "typeorm";
 
 import {
   UserEntityToUserDtoMapper,
@@ -29,7 +29,7 @@ import { UserEntity, UserOutboxEntity } from "ᐸEntitiesᐳ";
 @Injectable()
 export class CreateUserCommand {
   public constructor(
-    private readonly __connection: Connection,
+    private readonly __dataSource: DataSource,
     private readonly __tracingService: TracingService,
   ) {}
 
@@ -66,7 +66,7 @@ export class CreateUserCommand {
     return this.__tracingService.traceAsyncFunction(
       nameof(CreateUserCommand),
       () =>
-        this.__connection.transaction((entityManager) =>
+        this.__dataSource.transaction((entityManager) =>
           CreateUserCommand.__execute(entityManager, options),
         ),
     );

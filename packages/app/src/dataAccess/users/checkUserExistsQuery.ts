@@ -34,8 +34,13 @@ export class CheckUserExistsQuery {
     return this.__tracingService.traceAsyncFunction(
       nameof(CheckUserExistsQuery),
       async () => {
-        const user = await this.__userRepository.findOne(options.userId, {
-          select: ["userId"],
+        const user = await this.__userRepository.findOne({
+          where: {
+            userId: options.userId,
+          },
+          select: {
+            userId: true,
+          },
         });
 
         return !!user;

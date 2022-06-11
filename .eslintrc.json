@@ -2,7 +2,7 @@
   "root": true,
   "extends": ["@byndyusoft/eslint-config/header-apache-2.0", "@byndyusoft/eslint-config/backend"],
   "parserOptions": {
-    "ecmaVersion": 2020, // Node.js v14 LTS
+    "ecmaVersion": 2021, // Node.js v16 LTS
     "project": ["./packages/*/tsconfig.json"]
   },
   "overrides": [

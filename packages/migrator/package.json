@@ -17,36 +17,36 @@
     "prebuild": "shx rm -rf ./dist",
     "build": "yarn run prebuild && yarn run build:src",
     "build:src": "tsc --project ./tsconfig.build.json",
-    "migration:create": "yarn run build:src && typeorm migration:create --config ./dist/ormconfig.js",
-    "migration:generate": "yarn run build:src && typeorm migration:generate --config ./dist/ormconfig.js",
+    "migration:create": "typeorm migration:create",
+    "migration:generate": "yarn run build:src && typeorm migration:generate -d ./dist/dataSource.js",
     "start": "yarn run build:src && yarn run start:prod",
-    "start:prod": "typeorm migration:run --config ./dist/ormconfig.js"
+    "start:prod": "typeorm migration:run -d ./dist/dataSource.js"
   },
   "dependencies": {
     "@byndyusoft/class-validator-extended": "^1.0.0",
     "@byndyusoft/nest-swagger": "^5.1.5-2",
-    "@nestjs/common": "^8.2.3",
-    "@nestjs/core": "^8.2.3",
+    "@nestjs/common": "^8.4.7",
+    "@nestjs/core": "^8.4.7",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.13.2",
-    "dotenv": "^10.0.0",
-    "pg": "^8.7.1",
+    "dotenv": "^16.0.1",
+    "pg": "^8.7.3",
     "reflect-metadata": "^0.1.13",
-    "rxjs": "^7.4.0",
-    "tslib": "^2.3.1",
-    "typeorm": "^0.2.41",
+    "rxjs": "^7.5.5",
+    "tslib": "^2.4.0",
+    "typeorm": "^0.3.6",
     "ᐸDtosᐳ": "1.0.0",
     "ᐸEntitiesᐳ": "1.0.0"
   },
   "devDependencies": {
     "@byndyusoft/tsconfig": "^1.1.0",
-    "@types/node": "^16.11.12",
-    "@types/pg": "^8.6.1",
-    "shx": "^0.3.3",
-    "typescript": "^4.5.4",
+    "@types/node": "^17.0.42",
+    "@types/pg": "^8.6.5",
+    "shx": "^0.3.4",
+    "typescript": "^4.7.3",
     "typescript-transform-paths": "^3.3.1"
   },
   "engines": {
-    "node": ">=14"
+    "node": ">=16"
   }
 }
