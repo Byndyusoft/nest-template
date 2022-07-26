@@ -25,17 +25,17 @@ import {
 @ApiTags("Infrastructure")
 @Controller("/")
 export class HealthCheckController {
-  public constructor(private __service: HealthCheckService) {}
+  public constructor(private service: HealthCheckService) {}
 
   @Get("/_healthz")
   @HealthCheck()
   public healthz(): Promise<HealthCheckResult> {
-    return this.__service.check([]);
+    return this.service.check([]);
   }
 
   @Get("/_readiness")
   @HealthCheck()
   public readiness(): Promise<HealthCheckResult> {
-    return this.__service.check([]);
+    return this.service.check([]);
   }
 }

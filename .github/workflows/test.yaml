@@ -1,36 +1,42 @@
-name: test workflow
+name: test
 
 on:
   - push
   - pull_request
 
 jobs:
-  test:
-    name: test
+  ##############################################################################
+  unit-tests:
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - uses: Byndyusoft/node-reusable-workflows/.github/actions/install@master
+        with:
+          node-version: ${{ matrix.node }}
+
+      - run: yarn run build
+
+      - run: yarn run test:cov
 
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
-        node-version: ["16", "18"]
+        os:
+          - ubuntu-latest
+          - macos-latest
+          - windows-latest
+        node:
+          - lts/*
+          - current
 
-    runs-on: ${{ matrix.os }}
+  ##############################################################################
+  lint:
+    runs-on: ubuntu-latest
+
     steps:
-      - name: checkout
-        uses: actions/checkout@v3
-
-      - name: install nodejs
-        uses: actions/setup-node@v3
+      - uses: Byndyusoft/node-reusable-workflows/.github/actions/install@master
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: lts/*
 
-      - name: install dependencies
-        run: yarn install --immutable
+      - run: yarn run build
 
-      - name: build
-        run: yarn run build
-
-      - name: lint
-        run: yarn run lint
-
-      - name: test
-        run: yarn run test:cov
+      - run: yarn run lint

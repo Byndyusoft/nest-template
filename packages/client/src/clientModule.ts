@@ -14,68 +14,38 @@
  * limitations under the License.
  */
 
-import {
-  DynamicModuleHelper,
-  TRegisterAsyncOptions,
-} from "@byndyusoft/nest-dynamic-module";
+import { TRegisterAsyncOptions } from "@byndyusoft/nest-dynamic-module";
 import {
   HttpClientModule,
   IHttpClientOptions,
 } from "@byndyusoft/nest-http-client";
-import { DynamicModule, Module } from "@nestjs/common";
+import { DynamicModule, Global, Module } from "@nestjs/common";
 import urlJoin from "proper-url-join";
 import qs from "qs";
 
-import * as providers from "./providers";
-import { ClientBaseOptionsToken, ClientOptionsToken } from "./tokens";
+import { UsersClient } from "./usersClient";
 
+@Global()
 @Module({
-  imports: [
-    HttpClientModule.registerAsync({
-      inject: [ClientOptionsToken],
-      useFactory: (options: IHttpClientOptions) => options,
-    }),
-  ],
-  providers: Object.values(providers),
-  exports: Object.values(providers),
+  providers: [UsersClient],
+  exports: [UsersClient],
 })
 export class ClientModule {
   public static registerAsync(
     options?: TRegisterAsyncOptions<IHttpClientOptions>,
   ): DynamicModule {
-    return DynamicModuleHelper.registerAsync(
-      {
-        module: ClientModule,
-        global: true,
-        providers: [
-          {
-            provide: ClientOptionsToken,
-            inject: [ClientBaseOptionsToken],
-            useFactory: (baseOptions: IHttpClientOptions) =>
-              ClientModule.__clientOptionsFactory(baseOptions),
-          },
-        ],
-        exports: [ClientOptionsToken],
-      },
-      ClientBaseOptionsToken,
+    return HttpClientModule.registerClientModule(
+      { module: ClientModule },
       options,
-    );
-  }
-
-  private static __clientOptionsFactory(
-    baseOptions: IHttpClientOptions,
-  ): IHttpClientOptions {
-    return {
-      ...baseOptions,
-      config: {
-        ...baseOptions.config,
-        baseURL: urlJoin(baseOptions.config?.baseURL as string, "/api/v1"),
+      (config) => ({
+        ...config,
+        baseURL: urlJoin(config?.baseURL as string, "/api/v1"),
         paramsSerializer: (params) =>
           qs.stringify(params, {
             skipNulls: true,
             arrayFormat: "repeat",
           }),
-      },
-    };
+      }),
+    );
   }
 }

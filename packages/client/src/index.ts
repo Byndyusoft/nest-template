@@ -15,5 +15,4 @@
  */
 
 export * from "./clientModule";
-export * from "./providers";
-export * from "./tokens";
+export * from "./usersClient";

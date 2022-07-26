@@ -1,15 +1,10 @@
 # ᐸAppᐳ
 
-ᐸApp descriptionᐳ.
+ᐸApp descriptionᐳ
 
 ## General folders layout
 
 - [src](./src) - directory with source code
-  - [api](./src/api) - API controllers and services
-  - [dataAccess](./src/dataAccess) - commands and queries to work with DB
-  - [infrastructure](./src/infrastructure) - infrastructure code
-  - [appModule.ts](./src/appModule.ts) - main module
-  - [main.ts](./src/main.ts) - entrypoint where NestJS applications are bootstrapped and started
 - [test](./test) - directory for tests
 
 ## Dependencies
