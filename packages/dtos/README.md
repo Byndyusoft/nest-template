@@ -1,6 +1,6 @@
 # ᐸDtosᐳ
 
-ᐸDtos descriptionᐳ.
+ᐸDtos descriptionᐳ
 
 ## Install
 

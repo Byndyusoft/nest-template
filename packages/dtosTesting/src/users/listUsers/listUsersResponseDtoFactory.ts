@@ -25,6 +25,6 @@ export const listUsersResponseDtoFactory = makeDtoFactory<ListUsersResponseDto>(
   () => ({
     users: userDtoFactory.buildList(faker.datatype.number(10)),
 
-    nextPageToken: faker.datatype.number(),
+    nextPageToken: String(faker.datatype.number()),
   }),
 );

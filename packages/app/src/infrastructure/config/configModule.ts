@@ -35,18 +35,18 @@ export class ConfigModule {
       providers: [
         {
           provide: ConfigEnvToken,
-          useFactory: () => ConfigModule.__configEnvFactory(),
+          useFactory: () => ConfigModule.configEnvFactory(),
         },
         {
           provide: ConfigDto,
-          useFactory: () => ConfigModule.__configFactory(),
+          useFactory: () => ConfigModule.configFactory(),
         },
       ],
       exports: [ConfigEnvToken, ConfigDto],
     };
   }
 
-  private static __configEnvFactory(): string {
+  private static configEnvFactory(): string {
     dotenv.config({
       path: path.join(process.cwd(), ".env"),
     });
@@ -54,14 +54,14 @@ export class ConfigModule {
     return process.env.CONFIG_ENV ?? "unknown";
   }
 
-  private static async __configFactory(): Promise<ConfigDto> {
-    const config = ConfigModule.__loadConfig();
-    await ConfigModule.__validateConfig(config);
+  private static async configFactory(): Promise<ConfigDto> {
+    const config = ConfigModule.loadConfig();
+    await ConfigModule.validateConfig(config);
 
     return config;
   }
 
-  private static __loadConfig(): ConfigDto {
+  private static loadConfig(): ConfigDto {
     const plainConfig: ConfigDto = {
       pg: {
         writeConnectionString: process.env.PG_WRITE_CONNECTION_STRING as string,
@@ -85,7 +85,7 @@ export class ConfigModule {
     return plainToClass(ConfigDto, plainConfig);
   }
 
-  private static async __validateConfig(config: ConfigDto): Promise<void> {
+  private static async validateConfig(config: ConfigDto): Promise<void> {
     const errors = await validate(config, {
       whitelist: true,
       forbidNonWhitelisted: true,

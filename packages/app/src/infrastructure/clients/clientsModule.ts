@@ -24,12 +24,12 @@ import { ConfigDto } from "../config";
 })
 export class ClientsModule implements OnModuleInit {
   public constructor(
-    private readonly __config: ConfigDto,
-    private readonly __httpService: HttpService,
+    private readonly config: ConfigDto,
+    private readonly httpService: HttpService,
   ) {}
 
   public onModuleInit(): void {
-    this.__httpService.axiosRef.defaults.timeout =
-      this.__config.http.defaultClientTimeout;
+    this.httpService.axiosRef.defaults.timeout =
+      this.config.http.defaultClientTimeout;
   }
 }

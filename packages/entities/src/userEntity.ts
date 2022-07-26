@@ -26,6 +26,10 @@ import {
   name: "users",
 })
 export class UserEntity {
+  public static get columns(): Array<keyof UserEntity> {
+    return ["userId", "name", "email", "userVersion", "deletedAt"];
+  }
+
   @PrimaryGeneratedColumn({
     type: "bigint",
     name: "id",

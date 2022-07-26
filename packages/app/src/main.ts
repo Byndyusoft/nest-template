@@ -29,9 +29,8 @@ import {
 import helmet from "helmet";
 import { Logger, LoggerErrorInterceptor } from "nestjs-pino";
 
-import { ConfigDto, PackageJsonDto } from "~/src";
-
 import { AppModule } from "./appModule";
+import { ConfigDto, PackageJsonDto } from "./infrastructure";
 
 function setupApp(app: NestExpressApplication): void {
   app.enableShutdownHooks();
@@ -63,6 +62,7 @@ function setupSwagger(app: NestExpressApplication): void {
     .setTitle(packageJson.name)
     .setVersion(packageJson.version)
     .setDescription(packageJson.description)
+    .addServer(process.env.SWAGGER_SERVER ?? "/")
     .build();
 
   SwaggerModule.setup("api", app, SwaggerModule.createDocument(app, options));

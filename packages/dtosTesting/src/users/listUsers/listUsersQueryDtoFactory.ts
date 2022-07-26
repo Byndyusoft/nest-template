@@ -32,6 +32,6 @@ export const listUsersQueryDtoFactory = makeDtoFactory<ListUsersQueryDto>(
     ),
 
     pageSize: faker.datatype.number(),
-    pageToken: faker.datatype.number(),
+    pageToken: String(faker.datatype.number()),
   }),
 );

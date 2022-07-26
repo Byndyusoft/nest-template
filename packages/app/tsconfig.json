@@ -1,23 +1,11 @@
 {
   "extends": "@byndyusoft/tsconfig/tsconfig.node16.json",
   "compilerOptions": {
-    // Modules
-    "baseUrl": "./",
-    "paths": {
-      "~/*": ["./*"]
-    },
     // Emit
     "declaration": false,
     "declarationMap": false,
     "outDir": "./dist",
-    "removeComments": true,
-    // Editor Support
-    "plugins": [
-      { "transform": "ts-nameof", "type": "raw" },
-      { "transform": "ts-transformer-keys/transformer" },
-      { "transform": "typescript-transform-paths" },
-      { "transform": "typescript-transform-paths", "afterDeclarations": true }
-    ]
+    "removeComments": true
   },
   "exclude": ["./dist", "./node_modules"],
   "include": ["./**/*.ts"]
