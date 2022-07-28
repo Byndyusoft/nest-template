@@ -63,7 +63,7 @@ publish-packages:
 
 ################################################################################
 
-DOCKER_IMAGE_TAG := app:latest
+IMAGE_NAME := app:latest
 
 .PHONY: build-image
 
@@ -71,4 +71,4 @@ build-image:
 	$(call docker-inside, $(YARN) workspaces focus --all --production)
 	docker build . \
 		--build-arg RUNTIME_IMAGE=$(RUNTIME_IMAGE) \
-		-t $(DOCKER_IMAGE_TAG)
+		-t $(IMAGE_NAME)
