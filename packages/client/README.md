@@ -1,6 +1,6 @@
 # ᐸClientᐳ
 
-ᐸClient descriptionᐳ.
+ᐸClient descriptionᐳ
 
 ## Install
 
@@ -13,9 +13,6 @@ You also need install all required peer dependencies.
 ## General folders layout
 
 - [src](./src) - directory with source code
-  - [providers](./src/providers) - clients
-  - [tokens](./src/tokens) - injection tokens
-  - [clientModule.ts](./src/clientModule.ts) - main client module
 
 ## Dependencies
 

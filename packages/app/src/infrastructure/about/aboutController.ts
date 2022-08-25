@@ -23,10 +23,10 @@ import { AboutDto } from "./dtos";
 @ApiTags("Infrastructure")
 @Controller("/about")
 export class AboutController {
-  public constructor(private readonly __service: AboutService) {}
+  public constructor(private readonly service: AboutService) {}
 
   @Get("/")
   public about(): AboutDto {
-    return this.__service.about();
+    return this.service.about();
   }
 }
