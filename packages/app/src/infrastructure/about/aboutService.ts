@@ -16,22 +16,23 @@
 
 import { Inject, Injectable } from "@nestjs/common";
 
-import { ConfigEnvToken, PackageJsonDto } from "~/src";
+import { ConfigEnvToken } from "../config";
+import { PackageJsonDto } from "../packageJson";
 
 import { AboutDto } from "./dtos";
 
 @Injectable()
 export class AboutService {
   public constructor(
-    @Inject(ConfigEnvToken) private readonly __configEnv: string,
-    private readonly __packageJson: PackageJsonDto,
+    @Inject(ConfigEnvToken) private readonly configEnv: string,
+    private readonly packageJson: PackageJsonDto,
   ) {}
 
   public about(): AboutDto {
     return {
-      name: this.__packageJson.name,
-      version: this.__packageJson.version,
-      env: this.__configEnv,
+      name: this.packageJson.name,
+      version: this.packageJson.version,
+      env: this.configEnv,
     };
   }
 }

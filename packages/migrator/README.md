@@ -1,6 +1,6 @@
 # ᐸMigratorᐳ
 
-ᐸMigrator descriptionᐳ.
+ᐸMigrator descriptionᐳ
 
 ## General folders layout
 

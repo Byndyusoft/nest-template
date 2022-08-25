@@ -1,6 +1,6 @@
 # ᐸDtos testingᐳ
 
-ᐸDtos testing descriptionᐳ.
+ᐸDtos testing descriptionᐳ
 
 ## Install
 

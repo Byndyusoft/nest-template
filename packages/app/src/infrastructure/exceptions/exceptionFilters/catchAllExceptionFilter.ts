@@ -22,12 +22,12 @@ import { PrometheusExceptionFilter } from "./prometheusExceptionFilter";
 @Catch()
 export class CatchAllExceptionFilter implements ExceptionFilter<unknown> {
   public constructor(
-    private readonly __baseExceptionFilter: BaseExceptionFilter,
-    private readonly __prometheusExceptionFilter: PrometheusExceptionFilter,
+    private readonly baseExceptionFilter: BaseExceptionFilter,
+    private readonly prometheusExceptionFilter: PrometheusExceptionFilter,
   ) {}
 
   public catch(exception: unknown, host: ArgumentsHost): void {
-    this.__prometheusExceptionFilter.catch(exception, host);
-    this.__baseExceptionFilter.catch(exception, host);
+    this.prometheusExceptionFilter.catch(exception, host);
+    this.baseExceptionFilter.catch(exception, host);
   }
 }

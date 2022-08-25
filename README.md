@@ -1,9 +1,9 @@
 # ᐸRepository nameᐳ
 
-[![test workflow](https://github.com/Byndyusoft/nest-template/actions/workflows/test.yaml/badge.svg?branch=master)](https://github.com/Byndyusoft/nest-template/actions/workflows/test.yaml)
+[![test](https://github.com/Byndyusoft/nest-template/actions/workflows/test.yaml/badge.svg?branch=master)](https://github.com/Byndyusoft/nest-template/actions/workflows/test.yaml)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
-ᐸRepository descriptionᐳ.
+ᐸRepository descriptionᐳ
 
 ## Monorepo
 
@@ -22,7 +22,7 @@ Make sure you have installed all of the following prerequisites on your developm
 
 - [Git](https://git-scm.com)
 - [Node.js](https://nodejs.org) (version 16 LTS or higher)
-- [Yarn 3+](https://yarnpkg.com) package manager
+- [Yarn](https://yarnpkg.com) package manager
 
 ## Code conventions
 
@@ -39,6 +39,7 @@ Some code conventions are enforced automatically by ESLint + Prettier + markdown
 
 - [@Byndyusoft/owners](https://github.com/orgs/Byndyusoft/teams/owners) <<github.maintain@byndyusoft.com>>
 - [@Byndyusoft/team](https://github.com/orgs/Byndyusoft/teams/team)
+- [@KillWolfVlad](https://github.com/KillWolfVlad)
 
 ## License
 

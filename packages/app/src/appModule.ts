@@ -16,8 +16,7 @@
 
 import { DynamicModule, Module } from "@nestjs/common";
 
-import { ApiModule } from "./api/apiModule";
-import { DataAccessModule } from "./dataAccess/dataAccessModule";
+import { UsersModule } from "./users/usersModule";
 
 @Module({})
 export class AppModule {
@@ -29,7 +28,7 @@ export class AppModule {
 
     return {
       module: AppModule,
-      imports: [ApiModule, DataAccessModule, InfrastructureModule],
+      imports: [UsersModule, InfrastructureModule],
     };
   }
 }

@@ -25,13 +25,13 @@ export const listUsersQueryDtoFactory = makeDtoFactory<ListUsersQueryDto>(
       String(faker.datatype.number()),
     ),
     names: Array.from({ length: faker.datatype.number(10) }).map(() =>
-      faker.name.findName(),
+      faker.name.fullName(),
     ),
     emails: Array.from({ length: faker.datatype.number(10) }).map(() =>
       faker.internet.email(),
     ),
 
     pageSize: faker.datatype.number(),
-    pageToken: faker.datatype.number(),
+    pageToken: String(faker.datatype.number()),
   }),
 );

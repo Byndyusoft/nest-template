@@ -87,10 +87,10 @@ ApiTags("Infrastructure")(PromController);
   ],
 })
 export class InfrastructureModule {
-  public constructor(private readonly __logger: Logger) {}
+  public constructor(private readonly logger: Logger) {}
 
   public onApplicationShutdown(signal?: string): void {
-    this.__logger.log(
+    this.logger.log(
       "Nest application stopped by %s",
       signal ?? "???",
       "NestApplication",

@@ -1,6 +1,6 @@
 # ᐸEntitiesᐳ
 
-ᐸEntities descriptionᐳ.
+ᐸEntities descriptionᐳ
 
 ## Install
 

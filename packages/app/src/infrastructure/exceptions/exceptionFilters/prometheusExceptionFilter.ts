@@ -27,10 +27,10 @@ import { Request } from "express";
 
 @Catch()
 export class PrometheusExceptionFilter implements ExceptionFilter<unknown> {
-  private readonly __counter: CounterMetric;
+  private readonly counter: CounterMetric;
 
   public constructor(promService: PromService) {
-    this.__counter = promService.getCounter({
+    this.counter = promService.getCounter({
       name: "http_exceptions",
       labelNames: ["method", "status", "path"],
     });
@@ -47,7 +47,7 @@ export class PrometheusExceptionFilter implements ExceptionFilter<unknown> {
 
     const path = normalizePath(request.url, [], "#val");
 
-    this.__counter.inc({
+    this.counter.inc({
       method: request.method,
       path,
       status,
