@@ -21,6 +21,7 @@ Dockerfile
 LICENSE
 Makefile
 README.md
+renovate.json
 
 ### other workspaces
 
