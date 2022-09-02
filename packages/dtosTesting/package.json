@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "@byndyusoft/dto-factory": "^1.0.1",
-    "@faker-js/faker": "^7.4.0",
+    "@faker-js/faker": "^7.5.0",
     "lodash": "^4.17.21",
     "tslib": "^2.4.0"
   },
