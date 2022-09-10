@@ -17,9 +17,7 @@
   "files": [
     "dist",
     "src",
-    "!dist/*.tsbuildinfo",
-    "!**/__tests__",
-    "!**/*spec.ts"
+    "!dist/*.tsbuildinfo"
   ],
   "scripts": {
     "prebuild": "shx rm -rf ./dist",

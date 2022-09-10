@@ -22,9 +22,8 @@ import {
   userDtoFactory,
 } from "ᐸDtos testingᐳ";
 
-import { ListUsersQuery } from "../../dataAccess";
-
-import { ListUsersUseCase } from "./listUsersUseCase";
+import { ListUsersQuery } from "../../../src/users/dataAccess";
+import { ListUsersUseCase } from "../../../src/users/useCases";
 
 describe("ListUsersUseCase", () => {
   let useCase: ListUsersUseCase;

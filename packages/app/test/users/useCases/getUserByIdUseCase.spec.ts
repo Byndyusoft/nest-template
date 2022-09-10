@@ -18,10 +18,9 @@ import { mock, MockProxy } from "jest-mock-extended";
 
 import { paramsWithUserIdDtoFactory, userDtoFactory } from "ᐸDtos testingᐳ";
 
-import { ListUsersQuery } from "../../dataAccess";
-import { UserNotFoundException } from "../../exceptions";
-
-import { GetUserByIdUseCase } from "./getUserByIdUseCase";
+import { ListUsersQuery } from "../../../src/users/dataAccess";
+import { UserNotFoundException } from "../../../src/users/exceptions";
+import { GetUserByIdUseCase } from "../../../src/users/useCases";
 
 describe("GetUserByIdUseCase", () => {
   let useCase: GetUserByIdUseCase;

@@ -16,24 +16,32 @@
 
 import { Injectable } from "@nestjs/common";
 
-import { ParamsWithUserIdDto } from "ᐸDtosᐳ";
+import { ParamsWithUserIdDto, QueryWithUserVersionDto, UserDto } from "ᐸDtosᐳ";
 
-import { CheckUserExistsQuery } from "../../dataAccess";
-import { UserNotFoundException } from "../../exceptions";
+import { UpdateUserCommand } from "../dataAccess";
+
+import { CheckUserExistsUseCase } from "./checkUserExistsUseCase";
 
 @Injectable()
-export class CheckUserExistsUseCase {
+export class DeleteUserUseCase {
   public constructor(
-    private readonly checkUserExistsQuery: CheckUserExistsQuery,
+    private readonly checkUserExistsUseCase: CheckUserExistsUseCase,
+    private readonly updateUserCommand: UpdateUserCommand,
   ) {}
 
-  public async execute(params: ParamsWithUserIdDto): Promise<void> {
-    const isUserExists = await this.checkUserExistsQuery.ask({
-      userId: params.userId,
-    });
+  public async execute(
+    params: ParamsWithUserIdDto,
+    query: QueryWithUserVersionDto,
+  ): Promise<UserDto> {
+    await this.checkUserExistsUseCase.execute(params);
 
-    if (!isUserExists) {
-      throw new UserNotFoundException(params.userId);
-    }
+    return this.updateUserCommand.execute({
+      userId: params.userId,
+      userVersion: query.userVersion,
+
+      payload: {
+        deletedAt: new Date(),
+      },
+    });
   }
 }

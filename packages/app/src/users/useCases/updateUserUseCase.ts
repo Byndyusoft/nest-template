@@ -23,8 +23,9 @@ import {
   UserDto,
 } from "ᐸDtosᐳ";
 
-import { UpdateUserCommand } from "../../dataAccess";
-import { CheckUserExistsUseCase } from "../checkUserExistsUseCase";
+import { UpdateUserCommand } from "../dataAccess";
+
+import { CheckUserExistsUseCase } from "./checkUserExistsUseCase";
 
 @Injectable()
 export class UpdateUserUseCase {

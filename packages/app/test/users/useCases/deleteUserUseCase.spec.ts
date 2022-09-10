@@ -22,10 +22,11 @@ import {
   userDtoFactory,
 } from "ᐸDtos testingᐳ";
 
-import { UpdateUserCommand } from "../../dataAccess";
-import { CheckUserExistsUseCase } from "../checkUserExistsUseCase";
-
-import { DeleteUserUseCase } from "./deleteUserUseCase";
+import { UpdateUserCommand } from "../../../src/users/dataAccess";
+import {
+  CheckUserExistsUseCase,
+  DeleteUserUseCase,
+} from "../../../src/users/useCases";
 
 describe("DeleteUserUseCase", () => {
   let useCase: DeleteUserUseCase;

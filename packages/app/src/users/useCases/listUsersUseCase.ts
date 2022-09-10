@@ -18,7 +18,7 @@ import { Injectable } from "@nestjs/common";
 
 import { ListUsersQueryDto, ListUsersResponseDto } from "ᐸDtosᐳ";
 
-import { ListUsersQuery } from "../../dataAccess";
+import { ListUsersQuery } from "../dataAccess";
 
 @Injectable()
 export class ListUsersUseCase {

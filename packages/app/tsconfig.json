@@ -7,6 +7,5 @@
     "outDir": "./dist",
     "removeComments": true
   },
-  "exclude": ["./dist", "./node_modules"],
-  "include": ["./**/*.ts"]
+  "include": ["src", "test"]
 }

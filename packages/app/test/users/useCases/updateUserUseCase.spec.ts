@@ -23,10 +23,11 @@ import {
   userDtoFactory,
 } from "ᐸDtos testingᐳ";
 
-import { UpdateUserCommand } from "../../dataAccess";
-import { CheckUserExistsUseCase } from "../checkUserExistsUseCase";
-
-import { UpdateUserUseCase } from "./updateUserUseCase";
+import { UpdateUserCommand } from "../../../src/users/dataAccess";
+import {
+  CheckUserExistsUseCase,
+  UpdateUserUseCase,
+} from "../../../src/users/useCases";
 
 describe("UpdateUserCommand", () => {
   let useCase: UpdateUserUseCase;
