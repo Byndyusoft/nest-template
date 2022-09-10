@@ -27,7 +27,6 @@
       "./src/**/*.ts",
       "!./src/infrastructure/**/*.ts",
       "!./src/main.ts",
-      "!**/__tests__/**/*.ts",
       "!**/*Command.ts",
       "!**/*Dto.ts",
       "!**/*Entity.ts",
@@ -47,9 +46,7 @@
       "js"
     ],
     "resetMocks": true,
-    "rootDir": "./",
     "roots": [
-      "<rootDir>/src",
       "<rootDir>/test"
     ],
     "setupFiles": [

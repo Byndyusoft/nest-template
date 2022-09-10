@@ -32,9 +32,9 @@ import {
   GetUserByIdUseCase,
   ListUsersUseCase,
   UpdateUserUseCase,
-} from "./useCases";
-import { UsersController } from "./usersController";
-import { UsersService } from "./usersService";
+} from "../../src/users/useCases";
+import { UsersController } from "../../src/users/usersController";
+import { UsersService } from "../../src/users/usersService";
 
 describe("UsersController", () => {
   let controller: UsersController;

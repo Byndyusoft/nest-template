@@ -4,6 +4,5 @@
     // Emit
     "outDir": "./dist"
   },
-  "exclude": ["./dist", "./node_modules"],
-  "include": ["./**/*.ts"]
+  "include": ["src", "test"]
 }

@@ -18,8 +18,8 @@ import { Injectable } from "@nestjs/common";
 
 import { ParamsWithUserIdDto, UserDto } from "ᐸDtosᐳ";
 
-import { ListUsersQuery } from "../../dataAccess";
-import { UserNotFoundException } from "../../exceptions";
+import { ListUsersQuery } from "../dataAccess";
+import { UserNotFoundException } from "../exceptions";
 
 @Injectable()
 export class GetUserByIdUseCase {

@@ -18,9 +18,8 @@ import { mock, MockProxy } from "jest-mock-extended";
 
 import { createUserDtoFactory, userDtoFactory } from "ᐸDtos testingᐳ";
 
-import { CreateUserCommand } from "../../dataAccess";
-
-import { CreateUserUseCase } from "./createUserUseCase";
+import { CreateUserCommand } from "../../../src/users/dataAccess";
+import { CreateUserUseCase } from "../../../src/users/useCases";
 
 describe("CreateUserUseCase", () => {
   let useCase: CreateUserUseCase;
