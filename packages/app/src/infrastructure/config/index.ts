@@ -15,4 +15,4 @@
  */
 
 export * from "./dtos";
-export * from "./tokens";
+export * from "./plainConfig";
