@@ -14,11 +14,7 @@ All internal dependencies must be built before run service and unit tests.
 
 ## Running locally
 
-Service can be run locally using the following command:
-
-```bash
-yarn run start
-```
+See [Root readme](../../README.md)
 
 API routes and documentation can be obtained via Swagger, hosted on route `/api`.
 
