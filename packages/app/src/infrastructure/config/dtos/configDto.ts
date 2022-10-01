@@ -25,9 +25,6 @@ export class ConfigDto {
   @IsString()
   public readonly configEnv!: string;
 
-  @IsString()
-  public readonly swaggerServer!: string;
-
   @Type(() => PgConfigDto)
   @IsDefined()
   @ValidateNested()

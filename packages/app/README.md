@@ -14,7 +14,7 @@ All internal dependencies must be built before run service and unit tests.
 
 ## Running locally
 
-See [Root readme](../../README.md)
+See [Root readme](../../README.md).
 
 API routes and documentation can be obtained via Swagger, hosted on route `/api`.
 

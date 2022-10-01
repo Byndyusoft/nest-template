@@ -17,7 +17,7 @@
     "prebuild": "shx rm -rf ./dist",
     "build": "yarn run prebuild && yarn run build:src",
     "build:src": "nest build",
-    "start": "nest start --exec \"node -r dotenv/config\"",
+    "start": "nest start --exec \"yarn node -r dotenv/config\"",
     "start:prod": "yarn node ./dist/main.js",
     "test": "jest",
     "test:cov": "jest --coverage"

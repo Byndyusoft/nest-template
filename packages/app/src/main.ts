@@ -56,14 +56,14 @@ function setupApp(app: NestExpressApplication): void {
 }
 
 function setupSwagger(app: NestExpressApplication): void {
-  const packageJson = app.get(PackageJsonDto);
   const config = app.get(ConfigDto);
+  const packageJson = app.get(PackageJsonDto);
 
   const options = new DocumentBuilder()
     .setTitle(packageJson.name)
     .setVersion(packageJson.version)
     .setDescription(packageJson.description)
-    .addServer(config.swaggerServer)
+    .addServer(config.http.swaggerServer)
     .build();
 
   SwaggerModule.setup("api", app, SwaggerModule.createDocument(app, options));

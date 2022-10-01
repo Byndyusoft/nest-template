@@ -41,7 +41,7 @@ Service can be run locally using the following command:
 
 ```bash
 yarn install
-yarn build
+yarn run build
 yarn run start
 ```
 

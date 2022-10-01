@@ -15,4 +15,3 @@
  */
 
 export * from "./dtos";
-export * from "./plainConfig";
