@@ -22,5 +22,5 @@ import { CreateUserDto } from "../createUser";
 export class UpdateUserDto extends PartialType(CreateUserDto) {
   @ApiHideProperty()
   @AtLeastOneDefined()
-  protected readonly _atLeastOneDefined?: unknown;
+  protected readonly atLeastOneDefined?: unknown;
 }
