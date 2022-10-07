@@ -45,6 +45,9 @@
       "ts",
       "js"
     ],
+    "reporters": [
+      "@casualbot/jest-sonar-reporter"
+    ],
     "resetMocks": true,
     "roots": [
       "<rootDir>/test"
@@ -57,7 +60,6 @@
     ],
     "testEnvironment": "node",
     "testRegex": ".*\\.spec\\.ts$",
-    "testResultsProcessor": "jest-sonar-reporter",
     "transform": {
       "^.+\\.ts$": "ts-jest"
     }
@@ -96,6 +98,7 @@
   "devDependencies": {
     "@byndyusoft/sonar-coverage-reporter": "1.0.0",
     "@byndyusoft/tsconfig": "1.2.0",
+    "@casualbot/jest-sonar-reporter": "^2.2.5",
     "@nestjs/cli": "8.2.8",
     "@nestjs/schematics": "8.0.11",
     "@types/express": "4.17.14",
@@ -109,7 +112,6 @@
     "jest": "29.1.2",
     "jest-extended": "3.1.0",
     "jest-mock-extended": "3.0.1",
-    "jest-sonar-reporter": "2.0.0",
     "pino-pretty": "9.1.0",
     "shx": "0.3.4",
     "ts-jest": "29.0.3",
@@ -119,9 +121,8 @@
   "engines": {
     "node": ">=16"
   },
-  "jestSonar": {
-    "reportPath": "./coverage",
-    "reportFile": "test-report.xml",
-    "indent": 2
+  "@casualbot/jest-sonar-reporter": {
+    "outputDirectory": "./coverage",
+    "outputName": "test-report.xml"
   }
 }
