@@ -46,7 +46,15 @@
       "js"
     ],
     "reporters": [
-      "@casualbot/jest-sonar-reporter"
+      "default",
+      [
+        "@casualbot/jest-sonar-reporter",
+      {
+        "relativePaths": true,
+        "outputDirectory": "coverage",
+        "outputName": "test-report.xml"
+      }
+      ]
     ],
     "resetMocks": true,
     "roots": [
@@ -120,9 +128,5 @@
   },
   "engines": {
     "node": ">=16"
-  },
-  "@casualbot/jest-sonar-reporter": {
-    "outputDirectory": "./coverage",
-    "outputName": "test-report.xml"
   }
 }
