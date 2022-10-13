@@ -31,7 +31,6 @@ import { ExceptionsModule } from "./exceptions/exceptionsModule";
 import { HealthCheckModule } from "./healthCheck/healthCheckModule";
 import { LoggerModule } from "./logger/loggerModule";
 import { PackageJsonModule } from "./packageJson/packageJsonModule";
-import { PgModule } from "./pg/pgModule";
 import { ConfigEnvToken } from "./config";
 import { PackageJsonDto } from "./packageJson";
 
@@ -80,8 +79,6 @@ ApiTags("Infrastructure")(PromController);
       },
     }),
     HealthCheckModule,
-    // Extra modules
-    PgModule,
     // ExceptionsModule must be registered after all modules with exception filters
     ExceptionsModule,
   ],
