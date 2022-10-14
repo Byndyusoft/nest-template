@@ -16,8 +16,9 @@
 
 import { TracingService } from "@byndyusoft/nest-opentracing";
 import { Injectable } from "@nestjs/common";
-import { DataSource, EntityManager } from "typeorm";
-import { QueryDeepPartialEntity } from "typeorm/query-builder/QueryPartialEntity";
+import {
+  QueryDeepPartialEntity,
+} from "typeorm/query-builder/QueryPartialEntity";
 
 import { UserDto } from "ᐸDtosᐳ";
 import { UserEntity, UserOutboxEntity } from "ᐸEntitiesᐳ";
@@ -26,6 +27,8 @@ import {
   UserEntityToUserDtoMapper,
   UserEntityToUserOutboxDtoMapper,
 } from "../mappers";
+
+import { DataSource, EntityManager } from "./dataSource";
 
 export interface ICreateUserCommandOptions {
   readonly payload: QueryDeepPartialEntity<UserEntity>;
@@ -42,7 +45,7 @@ export class CreateUserCommand {
 
   public execute(options: ICreateUserCommandOptions): Promise<UserDto> {
     return this.tracingService.traceAsyncFunction(CreateUserCommand.name, () =>
-      this.dataSource.transaction((entityManager) =>
+      this.dataSource.transaction((entityManager: EntityManager) =>
         this.executeTransaction(entityManager, options),
       ),
     );
