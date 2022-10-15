@@ -49,11 +49,11 @@
       "default",
       [
         "@casualbot/jest-sonar-reporter",
-      {
-        "relativePaths": true,
-        "outputDirectory": "coverage",
-        "outputName": "test-report.xml"
-      }
+        {
+          "relativePaths": true,
+          "outputDirectory": "coverage",
+          "outputName": "test-report.xml"
+        }
       ]
     ],
     "resetMocks": true,
