@@ -665,6 +665,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@casualbot/jest-sonar-reporter@npm:^2.2.5":
+  version: 2.2.5
+  resolution: "@casualbot/jest-sonar-reporter@npm:2.2.5"
+  dependencies:
+    mkdirp: "npm:1.0.4"
+    uuid: "npm:8.3.2"
+    xml: "npm:1.0.1"
+  checksum: dd8f1ab99f152a9b97d79ffe1374cfa8e01ecb255a385a86f1c352f32e8340d402e52a15955ca1cabe91cb1546d044a582c6266f5e51a3d7f6185fe8d7147663
+  languageName: node
+  linkType: hard
+
 "@colors/colors@npm:1.5.0":
   version: 1.5.0
   resolution: "@colors/colors@npm:1.5.0"
@@ -6298,15 +6309,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-sonar-reporter@npm:2.0.0":
-  version: 2.0.0
-  resolution: "jest-sonar-reporter@npm:2.0.0"
-  dependencies:
-    xml: "npm:^1.0.1"
-  checksum: 135fc3ebf5ef5021cc861e9f21af28f35cfd5a23f49b848842170ad9ed74d7002375f001546a3a6a3fdb9b835f941685a4d4cb55b6a3263a1f608f2130fd7586
-  languageName: node
-  linkType: hard
-
 "jest-util@npm:^29.0.0, jest-util@npm:^29.1.2":
   version: 29.1.2
   resolution: "jest-util@npm:29.1.2"
@@ -7162,6 +7164,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"mkdirp@npm:1.0.4, mkdirp@npm:^1.0.3, mkdirp@npm:^1.0.4":
+  version: 1.0.4
+  resolution: "mkdirp@npm:1.0.4"
+  bin:
+    mkdirp: bin/cmd.js
+  checksum: 123361119829ab8115234f36ed8ef8f697b0f6f83ec9f9bc8f76da587487976d74bc874ffa892e7a66df607fa8f2cc758eed8db225e9cd3a84846350209e53db
+  languageName: node
+  linkType: hard
+
 "mkdirp@npm:^0.5.4":
   version: 0.5.6
   resolution: "mkdirp@npm:0.5.6"
@@ -7170,15 +7181,6 @@ __metadata:
   bin:
     mkdirp: bin/cmd.js
   checksum: 8d9642f5caa481eaf1ec556a101c6a5b1528fa20067afd92115d053dc17043efc52c9b77ade0c0115bca4ebb74169e84cacc7f6004db3d1bd4171e131d512cc5
-  languageName: node
-  linkType: hard
-
-"mkdirp@npm:^1.0.3, mkdirp@npm:^1.0.4":
-  version: 1.0.4
-  resolution: "mkdirp@npm:1.0.4"
-  bin:
-    mkdirp: bin/cmd.js
-  checksum: 123361119829ab8115234f36ed8ef8f697b0f6f83ec9f9bc8f76da587487976d74bc874ffa892e7a66df607fa8f2cc758eed8db225e9cd3a84846350209e53db
   languageName: node
   linkType: hard
 
@@ -10311,7 +10313,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"xml@npm:^1.0.1":
+"xml@npm:1.0.1":
   version: 1.0.1
   resolution: "xml@npm:1.0.1"
   checksum: b6fb9e69e0d256fef5678f538b9a61897c3254f1731503203e7efaefe179feb7f4cbee11a683ebff66aabcebc3d374c680a67a2942f23bd29cee6c56d66dfc06
@@ -10449,6 +10451,7 @@ __metadata:
     "@byndyusoft/pino-logger-factory": "npm:3.0.0"
     "@byndyusoft/sonar-coverage-reporter": "npm:1.0.0"
     "@byndyusoft/tsconfig": "npm:1.2.0"
+    "@casualbot/jest-sonar-reporter": "npm:^2.2.5"
     "@digikare/nestjs-prom": "npm:1.0.0"
     "@nestjs/axios": "npm:0.1.0"
     "@nestjs/cli": "npm:8.2.8"
@@ -10474,7 +10477,6 @@ __metadata:
     jest: "npm:29.1.2"
     jest-extended: "npm:3.1.0"
     jest-mock-extended: "npm:3.0.1"
-    jest-sonar-reporter: "npm:2.0.0"
     lodash: "npm:4.17.21"
     nestjs-pino: "npm:3.1.1"
     pg: "npm:8.8.0"
