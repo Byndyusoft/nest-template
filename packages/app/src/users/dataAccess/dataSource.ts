@@ -44,6 +44,7 @@ export class EntityManager {
 }
 
 class CreateQueryBuilder {
+  public affected = 0;
   public generatedMaps = [];
 
   public execute(): Promise<CreateQueryBuilder>  {
@@ -52,7 +53,22 @@ class CreateQueryBuilder {
     });
   }
 
+  public set(get?: unknown): CreateQueryBuilder {
+    Object.assign({}, get);
+    return this;
+  }
+
   public values(get: unknown): CreateQueryBuilder {
+    Object.assign({}, get);
+    return this;
+  }
+
+  public where(get?: unknown): CreateQueryBuilder {
+    Object.assign({}, get);
+    return this;
+  }
+
+  public whereEntity(get?: unknown): CreateQueryBuilder {
     Object.assign({}, get);
     return this;
   }
@@ -64,6 +80,11 @@ class CreateQueryBuilder {
   }
 
   public returning(get: unknown): CreateQueryBuilder {
+    Object.assign({}, get);
+    return this;
+  }
+
+  public update(get?: unknown): CreateQueryBuilder {
     Object.assign({}, get);
     return this;
   }

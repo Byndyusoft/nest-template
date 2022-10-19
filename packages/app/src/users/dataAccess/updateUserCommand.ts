@@ -21,7 +21,6 @@ import {
   InternalServerErrorException,
 } from "@nestjs/common";
 import _ from "lodash";
-import { DataSource, EntityManager } from "typeorm";
 import { QueryDeepPartialEntity } from "typeorm/query-builder/QueryPartialEntity";
 
 import { UserDto } from "ᐸDtosᐳ";
@@ -31,6 +30,8 @@ import {
   UserEntityToUserDtoMapper,
   UserEntityToUserOutboxDtoMapper,
 } from "../mappers";
+
+import { DataSource, EntityManager } from "./dataSource";
 
 export interface IUpdateUserCommandOptions {
   readonly userId: string;
@@ -50,7 +51,7 @@ export class UpdateUserCommand {
 
   public execute(options: IUpdateUserCommandOptions): Promise<UserDto> {
     return this.tracingService.traceAsyncFunction(UpdateUserCommand.name, () =>
-      this.dataSource.transaction((entityManager) =>
+      this.dataSource.transaction((entityManager: EntityManager) =>
         this.executeTransaction(entityManager, options),
       ),
     );
