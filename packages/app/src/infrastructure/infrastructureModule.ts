@@ -15,6 +15,13 @@
  */
 
 import {
+  KafkaClusterConfigDto,
+  KafkaConsumerConfigDto,
+  KafkaModule,
+  KafkaProducerConfigDto,
+  KafkaSchemaRegistryArgsConfigDto,
+} from "@byndyusoft/nest-kafka";
+import {
   OpenTracingModule,
   TracedHttpModule,
 } from "@byndyusoft/nest-opentracing";
@@ -82,6 +89,24 @@ ApiTags("Infrastructure")(PromController);
     HealthCheckModule,
     // Extra modules
     PgModule,
+    KafkaModule.registerAsync({
+      inject: [ConfigDto],
+      useFactory: (config: ConfigDto) => ({
+        connections: [
+          {
+            cluster: KafkaClusterConfigDto.toRawConfig(config.kafka.cluster),
+            consumer: KafkaConsumerConfigDto.toRawConfig(config.kafka.consumer),
+            producer: KafkaProducerConfigDto.toRawConfig(config.kafka.producer),
+            schemaRegistry: {
+              args: KafkaSchemaRegistryArgsConfigDto.toRawConfig(
+                config.kafka.schemaRegistry,
+              ),
+            },
+          },
+        ],
+        topicPickerArgs: [config],
+      }),
+    }),
     // ExceptionsModule must be registered after all modules with exception filters
     ExceptionsModule,
   ],

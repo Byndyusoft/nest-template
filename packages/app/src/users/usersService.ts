@@ -14,6 +14,12 @@
  * limitations under the License.
  */
 
+import {
+  InjectKafkaProducer,
+  InjectKafkaSchemaRegistry,
+  KafkaProducer,
+  KafkaSchemaRegistry,
+} from "@byndyusoft/nest-kafka";
 import { Injectable } from "@nestjs/common";
 
 import {
@@ -25,6 +31,8 @@ import {
   UpdateUserDto,
   UserDto,
 } from "ᐸDtosᐳ";
+
+import { ConfigDto } from "../infrastructure";
 
 import {
   CreateUserUseCase,
@@ -42,10 +50,37 @@ export class UsersService {
     private readonly getUserByIdUseCase: GetUserByIdUseCase,
     private readonly listUsersUseCase: ListUsersUseCase,
     private readonly updateUserUseCase: UpdateUserUseCase,
+    @InjectKafkaProducer()
+    private readonly kafkaProducer: KafkaProducer,
+    @InjectKafkaSchemaRegistry()
+    private readonly kafkaSchemaRegistry: KafkaSchemaRegistry,
+    private readonly config: ConfigDto,
   ) {}
 
-  public createUser(body: CreateUserDto): Promise<UserDto> {
-    return this.createUserUseCase.execute(body);
+  public async createUser(body: CreateUserDto): Promise<UserDto> {
+    const user = await this.createUserUseCase.execute(body);
+
+    const schemaId = await this.kafkaSchemaRegistry.getLatestSchemaId(
+      `${this.config.kafka.topic}-value`,
+    );
+
+    const userAvro = await this.kafkaSchemaRegistry.encode(schemaId, user);
+
+    await this.kafkaProducer.send({
+      topic: this.config.kafka.topic,
+      messages: [
+        {
+          key: user.userId,
+          value: userAvro,
+          headers: {
+            "app.name": "nest-template",
+            "app.magic_array": ["1", "2"],
+          },
+        },
+      ],
+    });
+
+    return user;
   }
 
   public deleteUser(
