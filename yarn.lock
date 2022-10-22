@@ -1467,18 +1467,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/typeorm@npm:8.1.4":
-  version: 8.1.4
-  resolution: "@nestjs/typeorm@npm:8.1.4"
+"@nestjs/typeorm@npm:9.0.1":
+  version: 9.0.1
+  resolution: "@nestjs/typeorm@npm:9.0.1"
   dependencies:
     uuid: "npm:8.3.2"
   peerDependencies:
-    "@nestjs/common": ^8.0.0
-    "@nestjs/core": ^8.0.0
+    "@nestjs/common": ^8.0.0 || ^9.0.0
+    "@nestjs/core": ^8.0.0 || ^9.0.0
     reflect-metadata: ^0.1.13
     rxjs: ^7.2.0
     typeorm: ^0.3.0
-  checksum: daafb37d6bdef0949fee18a67acb866b40777de181fa9511dd652d0fdd562ba0cfc7c08f1c956cbb2615023fc85bf13a6a5b081be0535e76856591247bdbd53e
+  checksum: 00c51e542496078fb03ae837c4a5aac3e27a69b8e053216f6f6adabd73f0f837eadde87be6836973993920e682d0a8244d4f1f0716c19e90f8a1cb17b1ac53a4
   languageName: node
   linkType: hard
 
@@ -10460,7 +10460,7 @@ __metadata:
     "@nestjs/platform-express": "npm:8.4.7"
     "@nestjs/schematics": "npm:8.0.11"
     "@nestjs/terminus": "npm:8.1.1"
-    "@nestjs/typeorm": "npm:8.1.4"
+    "@nestjs/typeorm": "npm:9.0.1"
     "@types/express": "npm:4.17.14"
     "@types/jaeger-client": "npm:3.18.3"
     "@types/jest": "npm:29.1.1"
