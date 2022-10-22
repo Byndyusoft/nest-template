@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Byndyusoft
+ * Copyright 2022 Byndyusoft
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,9 +14,10 @@
  * limitations under the License.
  */
 
-export * from "./apiClientConfigDto";
-export * from "./apiClientHeadersConfigDto";
-export * from "./configDto";
-export * from "./httpConfigDto";
-export * from "./loggerConfigDto";
-export * from "./pgConfigDto";
+import { IsOptional, IsString } from "class-validator";
+
+export class ApiClientHeadersConfigDto {
+  @IsString()
+  @IsOptional()
+  public readonly "x-gateway-apikey"?: string;
+}

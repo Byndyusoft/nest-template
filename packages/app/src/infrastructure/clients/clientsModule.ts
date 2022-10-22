@@ -17,10 +17,22 @@
 import { HttpModule, HttpService } from "@nestjs/axios";
 import { Module, OnModuleInit } from "@nestjs/common";
 
+import { ClientModule } from "ᐸClientᐳ";
+
 import { ConfigDto } from "../config";
 
 @Module({
-  imports: [HttpModule],
+  imports: [
+    HttpModule,
+    ClientModule.registerAsync({
+      imports: [HttpModule],
+      inject: [HttpService, ConfigDto],
+      useFactory: (httpService: HttpService, config: ConfigDto) => ({
+        axios: httpService.axiosRef,
+        config: config.echoApiClient,
+      }),
+    }),
+  ],
 })
 export class ClientsModule implements OnModuleInit {
   public constructor(

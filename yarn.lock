@@ -10478,6 +10478,7 @@ __metadata:
   resolution: "ᐸAppᐳ@workspace:packages/app"
   dependencies:
     "@byndyusoft/class-validator-extended": "npm:1.0.1"
+    "@byndyusoft/nest-http-client": "npm:1.2.1-rc.1"
     "@byndyusoft/nest-opentracing": "npm:2.3.2"
     "@byndyusoft/nest-swagger": "npm:6.1.2-1"
     "@byndyusoft/pino-logger-factory": "npm:3.0.0"
@@ -10500,6 +10501,7 @@ __metadata:
     "@types/node": "npm:16.11.68"
     "@types/pg": "npm:8.6.5"
     "@types/source-map-support": "npm:0.5.6"
+    axios: "npm:0.27.2"
     class-transformer: "npm:0.5.1"
     class-validator: "npm:0.13.2"
     dotenv: "npm:16.0.3"
@@ -10523,13 +10525,14 @@ __metadata:
     tslib: "npm:2.4.0"
     typeorm: "npm:0.3.10"
     typescript: "npm:4.8.4"
+    ᐸClientᐳ: "workspace:*"
     ᐸDtos testingᐳ: "workspace:*"
     ᐸDtosᐳ: "workspace:*"
     ᐸEntitiesᐳ: "workspace:*"
   languageName: unknown
   linkType: soft
 
-"ᐸClientᐳ@workspace:packages/client":
+"ᐸClientᐳ@workspace:*, ᐸClientᐳ@workspace:packages/client":
   version: 0.0.0-use.local
   resolution: "ᐸClientᐳ@workspace:packages/client"
   dependencies:
