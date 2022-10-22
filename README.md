@@ -35,6 +35,16 @@ Some code conventions are enforced automatically by ESLint + Prettier + markdown
 - Add or change the documentation as needed
 - Open pull request in the correct branch. Target the project's `master` branch
 
+## Running locally
+
+Service can be run locally using the following command:
+
+```bash
+yarn install
+yarn run build
+yarn run start
+```
+
 ## Maintainers
 
 - [@Byndyusoft/owners](https://github.com/orgs/Byndyusoft/teams/owners) <<github.maintain@byndyusoft.com>>

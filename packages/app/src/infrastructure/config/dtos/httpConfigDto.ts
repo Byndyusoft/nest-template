@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { IsInt, IsIP, Max, Min } from "class-validator";
+import { IsInt, IsIP, IsString, Max, Min } from "class-validator";
 
 export class HttpConfigDto {
   @IsInt()
@@ -24,6 +24,9 @@ export class HttpConfigDto {
 
   @IsIP()
   public readonly host!: string;
+
+  @IsString()
+  public readonly swaggerServer!: string;
 
   @IsInt()
   @Min(0)

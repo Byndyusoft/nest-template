@@ -15,16 +15,13 @@
  */
 
 import os from "os";
-import path from "path";
 
 import { LogLevel } from "@byndyusoft/pino-logger-factory";
 import { DynamicModule, Module } from "@nestjs/common";
 import { plainToClass } from "class-transformer";
 import { validate } from "class-validator";
-import dotenv from "dotenv";
 
 import { ConfigDto } from "./dtos";
-import { ConfigEnvToken } from "./tokens";
 
 @Module({})
 export class ConfigModule {
@@ -34,24 +31,12 @@ export class ConfigModule {
       global: true,
       providers: [
         {
-          provide: ConfigEnvToken,
-          useFactory: () => ConfigModule.configEnvFactory(),
-        },
-        {
           provide: ConfigDto,
           useFactory: () => ConfigModule.configFactory(),
         },
       ],
-      exports: [ConfigEnvToken, ConfigDto],
+      exports: [ConfigDto],
     };
-  }
-
-  private static configEnvFactory(): string {
-    dotenv.config({
-      path: path.join(process.cwd(), ".env"),
-    });
-
-    return process.env.CONFIG_ENV ?? "unknown";
   }
 
   private static async configFactory(): Promise<ConfigDto> {
@@ -63,6 +48,7 @@ export class ConfigModule {
 
   private static loadConfig(): ConfigDto {
     const plainConfig: ConfigDto = {
+      configEnv: process.env.CONFIG_ENV as string,
       pg: {
         writeConnectionString: process.env.PG_WRITE_CONNECTION_STRING as string,
         readConnectionString: process.env.PG_READ_CONNECTION_STRING as string,
@@ -72,6 +58,7 @@ export class ConfigModule {
       http: {
         port: Number(process.env.HTTP_PORT ?? "8080"),
         host: process.env.HTTP_HOST ?? "0.0.0.0",
+        swaggerServer: process.env.SWAGGER_SERVER ?? "/",
         defaultClientTimeout: Number(
           process.env.HTTP_DEFAULT_CLIENT_TIMEOUT ?? "60000",
         ),
