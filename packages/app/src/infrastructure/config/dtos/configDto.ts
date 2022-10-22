@@ -17,6 +17,7 @@
 import { Type } from "class-transformer";
 import { IsDefined, IsString, ValidateNested } from "class-validator";
 
+import { ApiClientConfigDto } from "./apiClientConfigDto";
 import { HttpConfigDto } from "./httpConfigDto";
 import { LoggerConfigDto } from "./loggerConfigDto";
 import { PgConfigDto } from "./pgConfigDto";
@@ -29,6 +30,11 @@ export class ConfigDto {
   @IsDefined()
   @ValidateNested()
   public readonly pg!: PgConfigDto;
+
+  @Type(() => ApiClientConfigDto)
+  @IsDefined()
+  @ValidateNested()
+  public readonly echoApiClient!: ApiClientConfigDto;
 
   @Type(() => HttpConfigDto)
   @IsDefined()

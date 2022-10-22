@@ -45,7 +45,12 @@ export class UsersClient {
   }
 
   public getUserById(request: ParamsWithUserIdDto): Promise<UserDto> {
-    return this.httpClient.endpoint("GET /users/{userId}", request);
+    return this.httpClient.endpoint("GET /users/{userId}", {
+      ...request,
+      headers: {
+        "x-api-business-unit": "009",
+      },
+    });
   }
 
   public listUsers(

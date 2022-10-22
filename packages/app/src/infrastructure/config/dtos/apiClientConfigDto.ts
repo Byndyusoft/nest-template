@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Byndyusoft
+ * Copyright 2022 Byndyusoft
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,9 +14,18 @@
  * limitations under the License.
  */
 
-export * from "./apiClientConfigDto";
-export * from "./apiClientHeadersConfigDto";
-export * from "./configDto";
-export * from "./httpConfigDto";
-export * from "./loggerConfigDto";
-export * from "./pgConfigDto";
+import { AxiosRequestHeaders } from "axios";
+import { Type } from "class-transformer";
+import { IsDefined, IsString, ValidateNested } from "class-validator";
+
+import { ApiClientHeadersConfigDto } from "./apiClientHeadersConfigDto";
+
+export class ApiClientConfigDto {
+  @IsString()
+  public readonly baseURL!: string;
+
+  @Type(() => ApiClientHeadersConfigDto)
+  @IsDefined()
+  @ValidateNested()
+  public readonly headers!: ApiClientHeadersConfigDto & AxiosRequestHeaders;
+}

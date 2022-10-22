@@ -55,6 +55,12 @@ export class ConfigModule {
         connectionTimeout: Number(process.env.PG_CONNECTION_TIMEOUT ?? "60000"),
         poolSize: Number(process.env.PG_POOL_SIZE ?? "10"),
       },
+      echoApiClient: {
+        baseURL: "http://localhost:8080",
+        headers: {
+          "x-gateway-apikey": "secret-gateway-token",
+        },
+      },
       http: {
         port: Number(process.env.HTTP_PORT ?? "8080"),
         host: process.env.HTTP_HOST ?? "0.0.0.0",
