@@ -19,9 +19,11 @@
 import "reflect-metadata";
 import "source-map-support/register";
 
+import { KafkaConsumer } from "@byndyusoft/nest-kafka";
 import { DocumentBuilder, SwaggerModule } from "@byndyusoft/nest-swagger";
 import { ValidationPipe, VersioningType } from "@nestjs/common";
 import { NestFactory } from "@nestjs/core";
+import { MicroserviceOptions } from "@nestjs/microservices";
 import {
   ExpressAdapter,
   NestExpressApplication,
@@ -86,6 +88,12 @@ async function bootstrap(): Promise<void> {
 
   const config = app.get(ConfigDto);
   await app.listen(config.http.port, config.http.host);
+
+  app.connectMicroservice<MicroserviceOptions>({
+    strategy: app.get(KafkaConsumer),
+  });
+
+  await app.startAllMicroservices();
 
   logger.log(
     "Nest application listening on %s",

@@ -55,6 +55,32 @@ export class ConfigModule {
         connectionTimeout: Number(process.env.PG_CONNECTION_TIMEOUT ?? "60000"),
         poolSize: Number(process.env.PG_POOL_SIZE ?? "10"),
       },
+      kafka: {
+        cluster: {
+          brokers: process.env.KAFKA_BROKERS as string,
+          saslMechanism: process.env.KAFKA_SASL_MECHANISM,
+          username: process.env.KAFKA_USERNAME,
+          password: process.env.KAFKA_PASSWORD,
+          ssl: process.env.KAFKA_SSL,
+          ca: process.env.KAFKA_CA,
+        },
+        consumer: {
+          groupId: process.env.KAFKA_CONSUMER_GROUP_ID as string,
+          allowAutoTopicCreation:
+            process.env.KAFKA_CONSUMER_ALLOW_AUTO_TOPIC_CREATION ?? true,
+        },
+        producer: {
+          allowAutoTopicCreation:
+            process.env.KAFKA_PRODUCER_ALLOW_AUTO_TOPIC_CREATION ?? true,
+        },
+        schemaRegistry: {
+          host: process.env.KAFKA_SCHEMA_REGISTRY_HOST as string,
+          username: process.env.KAFKA_SCHEMA_REGISTRY_USERNAME,
+          password: process.env.KAFKA_SCHEMA_REGISTRY_PASSWORD,
+        },
+        topic: process.env.KAFKA_TOPIC as string,
+        errorTopic: process.env.KAFKA_ERROR_TOPIC as string,
+      },
       http: {
         port: Number(process.env.HTTP_PORT ?? "8080"),
         host: process.env.HTTP_HOST ?? "0.0.0.0",

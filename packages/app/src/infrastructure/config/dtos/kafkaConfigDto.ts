@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Byndyusoft
+ * Copyright 2022 Byndyusoft
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,35 +14,39 @@
  * limitations under the License.
  */
 
+import {
+  KafkaClusterConfigDto,
+  KafkaConsumerConfigDto,
+  KafkaProducerConfigDto,
+  KafkaSchemaRegistryArgsConfigDto,
+} from "@byndyusoft/nest-kafka";
 import { Type } from "class-transformer";
 import { IsDefined, IsString, ValidateNested } from "class-validator";
 
-import { HttpConfigDto } from "./httpConfigDto";
-import { KafkaConfigDto } from "./kafkaConfigDto";
-import { LoggerConfigDto } from "./loggerConfigDto";
-import { PgConfigDto } from "./pgConfigDto";
+export class KafkaConfigDto {
+  @Type(() => KafkaClusterConfigDto)
+  @IsDefined()
+  @ValidateNested()
+  public readonly cluster!: KafkaClusterConfigDto;
 
-export class ConfigDto {
+  @Type(() => KafkaConsumerConfigDto)
+  @IsDefined()
+  @ValidateNested()
+  public readonly consumer!: KafkaConsumerConfigDto;
+
+  @Type(() => KafkaProducerConfigDto)
+  @IsDefined()
+  @ValidateNested()
+  public readonly producer!: KafkaProducerConfigDto;
+
+  @Type(() => KafkaSchemaRegistryArgsConfigDto)
+  @IsDefined()
+  @ValidateNested()
+  public readonly schemaRegistry!: KafkaSchemaRegistryArgsConfigDto;
+
   @IsString()
-  public readonly configEnv!: string;
+  public readonly topic!: string;
 
-  @Type(() => PgConfigDto)
-  @IsDefined()
-  @ValidateNested()
-  public readonly pg!: PgConfigDto;
-
-  @Type(() => KafkaConfigDto)
-  @IsDefined()
-  @ValidateNested()
-  public readonly kafka!: KafkaConfigDto;
-
-  @Type(() => HttpConfigDto)
-  @IsDefined()
-  @ValidateNested()
-  public readonly http!: HttpConfigDto;
-
-  @Type(() => LoggerConfigDto)
-  @IsDefined()
-  @ValidateNested()
-  public readonly logger!: LoggerConfigDto;
+  @IsString()
+  public readonly errorTopic!: string;
 }

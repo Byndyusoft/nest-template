@@ -16,5 +16,6 @@
 
 export * from "./configDto";
 export * from "./httpConfigDto";
+export * from "./kafkaConfigDto";
 export * from "./loggerConfigDto";
 export * from "./pgConfigDto";
