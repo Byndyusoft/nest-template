@@ -607,28 +607,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@byndyusoft/nest-swagger@npm:5.2.1-1":
-  version: 5.2.1-1
-  resolution: "@byndyusoft/nest-swagger@npm:5.2.1-1"
-  dependencies:
-    "@nestjs/mapped-types": "npm:1.0.1"
-    lodash: "npm:4.17.21"
-    path-to-regexp: "npm:3.2.0"
-  peerDependencies:
-    "@nestjs/common": ^8.0.0
-    "@nestjs/core": ^8.0.0
-    fastify-swagger: "*"
-    reflect-metadata: ^0.1.12
-    swagger-ui-express: "*"
-  peerDependenciesMeta:
-    fastify-swagger:
-      optional: true
-    swagger-ui-express:
-      optional: true
-  checksum: 72a60cb75995c05ccabffcdabc2807ebc5e5edb019b50e778fd6a207af401efac19dfeaa1987b8f2dd64926a7f505c231345936eb611b10ce6ebd2228af641a1
-  languageName: node
-  linkType: hard
-
 "@byndyusoft/pino-logger-factory@npm:3.0.0":
   version: 3.0.0
   resolution: "@byndyusoft/pino-logger-factory@npm:3.0.0"
@@ -1430,6 +1408,28 @@ __metadata:
   peerDependencies:
     typescript: ^3.4.5 || ^4.3.5
   checksum: 1ce9afab5bc260aac2e7b8712fd0b278335dabe979dbe00d2b99eedcd87678b1caaace4bcd7db5ed190e4de74052000261d574a468e99eda22898c62b783a788
+  languageName: node
+  linkType: hard
+
+"@nestjs/swagger@npm:5.2.1":
+  version: 5.2.1
+  resolution: "@nestjs/swagger@npm:5.2.1"
+  dependencies:
+    "@nestjs/mapped-types": "npm:1.0.1"
+    lodash: "npm:4.17.21"
+    path-to-regexp: "npm:3.2.0"
+  peerDependencies:
+    "@nestjs/common": ^8.0.0
+    "@nestjs/core": ^8.0.0
+    fastify-swagger: "*"
+    reflect-metadata: ^0.1.12
+    swagger-ui-express: "*"
+  peerDependenciesMeta:
+    fastify-swagger:
+      optional: true
+    swagger-ui-express:
+      optional: true
+  checksum: 3dc84a3394721f7d37e33cd7599e2a00e651593eec5fbdb50d91c5f5df70a090b0c3de76873fd3d2bd2822c978cdf383a5cc442692110db4294e1ec4116cd1db
   languageName: node
   linkType: hard
 
@@ -10447,7 +10447,6 @@ __metadata:
   dependencies:
     "@byndyusoft/class-validator-extended": "npm:1.0.1"
     "@byndyusoft/nest-opentracing": "npm:2.3.2"
-    "@byndyusoft/nest-swagger": "npm:5.2.1-1"
     "@byndyusoft/pino-logger-factory": "npm:3.0.0"
     "@byndyusoft/sonar-coverage-reporter": "npm:1.0.0"
     "@byndyusoft/tsconfig": "npm:1.2.0"
@@ -10459,6 +10458,7 @@ __metadata:
     "@nestjs/core": "npm:8.4.7"
     "@nestjs/platform-express": "npm:8.4.7"
     "@nestjs/schematics": "npm:8.0.11"
+    "@nestjs/swagger": "npm:5.2.1"
     "@nestjs/terminus": "npm:8.1.1"
     "@nestjs/typeorm": "npm:8.1.4"
     "@types/express": "npm:4.17.14"
@@ -10505,10 +10505,10 @@ __metadata:
     "@byndyusoft/class-validator-extended": "npm:1.0.1"
     "@byndyusoft/nest-dynamic-module": "npm:1.0.0"
     "@byndyusoft/nest-http-client": "npm:1.2.0"
-    "@byndyusoft/nest-swagger": "npm:5.2.1-1"
     "@byndyusoft/tsconfig": "npm:1.2.0"
     "@nestjs/common": "npm:8.4.7"
     "@nestjs/core": "npm:8.4.7"
+    "@nestjs/swagger": "npm:5.2.1"
     "@types/proper-url-join": "npm:2.1.1"
     "@types/qs": "npm:6.9.7"
     axios: "npm:0.27.2"
@@ -10536,11 +10536,11 @@ __metadata:
   dependencies:
     "@byndyusoft/class-validator-extended": "npm:1.0.1"
     "@byndyusoft/dto-factory": "npm:^1.0.1"
-    "@byndyusoft/nest-swagger": "npm:5.2.1-1"
     "@byndyusoft/tsconfig": "npm:1.2.0"
     "@faker-js/faker": "npm:^7.5.0"
     "@nestjs/common": "npm:8.4.7"
     "@nestjs/core": "npm:8.4.7"
+    "@nestjs/swagger": "npm:5.2.1"
     "@types/lodash": "npm:4.14.186"
     class-transformer: "npm:0.5.1"
     class-validator: "npm:0.13.2"
@@ -10561,12 +10561,12 @@ __metadata:
   resolution: "ᐸDtosᐳ@workspace:packages/dtos"
   dependencies:
     "@byndyusoft/class-validator-extended": "npm:1.0.1"
-    "@byndyusoft/nest-swagger": "npm:5.2.1-1"
     "@byndyusoft/tsconfig": "npm:1.2.0"
     "@nestjs/cli": "npm:8.2.8"
     "@nestjs/common": "npm:8.4.7"
     "@nestjs/core": "npm:8.4.7"
     "@nestjs/schematics": "npm:8.0.11"
+    "@nestjs/swagger": "npm:5.2.1"
     class-transformer: "npm:0.5.1"
     class-validator: "npm:0.13.2"
     reflect-metadata: "npm:0.1.13"
@@ -10576,7 +10576,7 @@ __metadata:
     typescript: "npm:4.7.4"
   peerDependencies:
     "@byndyusoft/class-validator-extended": ^1.0.0
-    "@byndyusoft/nest-swagger": ^5.2.1-1
+    "@nestjs/swagger": ^5.2.1-1
     class-transformer: ^0.5.1
     class-validator: ^0.13.2
   languageName: unknown
@@ -10587,10 +10587,10 @@ __metadata:
   resolution: "ᐸEntitiesᐳ@workspace:packages/entities"
   dependencies:
     "@byndyusoft/class-validator-extended": "npm:1.0.1"
-    "@byndyusoft/nest-swagger": "npm:5.2.1-1"
     "@byndyusoft/tsconfig": "npm:1.2.0"
     "@nestjs/common": "npm:8.4.7"
     "@nestjs/core": "npm:8.4.7"
+    "@nestjs/swagger": "npm:5.2.1"
     class-transformer: "npm:0.5.1"
     class-validator: "npm:0.13.2"
     reflect-metadata: "npm:0.1.13"
@@ -10611,10 +10611,10 @@ __metadata:
   resolution: "ᐸMigratorᐳ@workspace:packages/migrator"
   dependencies:
     "@byndyusoft/class-validator-extended": "npm:1.0.1"
-    "@byndyusoft/nest-swagger": "npm:5.2.1-1"
     "@byndyusoft/tsconfig": "npm:1.2.0"
     "@nestjs/common": "npm:8.4.7"
     "@nestjs/core": "npm:8.4.7"
+    "@nestjs/swagger": "npm:5.2.1"
     "@types/node": "npm:16.11.64"
     "@types/pg": "npm:8.6.5"
     class-transformer: "npm:0.5.1"

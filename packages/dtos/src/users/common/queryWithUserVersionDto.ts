@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { PickType } from "@byndyusoft/nest-swagger";
+import { PickType } from "@nestjs/swagger";
 
 import { UserDto } from "./userDto";
 

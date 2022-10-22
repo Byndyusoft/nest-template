@@ -4,7 +4,7 @@
   "compilerOptions": {
     "plugins": [
       {
-        "name": "@byndyusoft/nest-swagger",
+        "name": "@nestjs/swagger",
         "options": {
           "dtoFileNameSuffix": ["Dto.ts", "Entity.ts"],
           "controllerFileNameSuffix": "Controller.ts",
