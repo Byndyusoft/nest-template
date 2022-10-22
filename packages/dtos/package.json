@@ -29,12 +29,12 @@
   },
   "devDependencies": {
     "@byndyusoft/class-validator-extended": "1.0.1",
-    "@byndyusoft/nest-swagger": "6.1.2-1",
     "@byndyusoft/tsconfig": "1.2.0",
     "@nestjs/cli": "9.1.4",
     "@nestjs/common": "9.1.5",
     "@nestjs/core": "9.1.5",
     "@nestjs/schematics": "9.0.3",
+    "@nestjs/swagger": "6.1.2",
     "class-transformer": "0.5.1",
     "class-validator": "0.13.2",
     "reflect-metadata": "0.1.13",
@@ -44,7 +44,7 @@
   },
   "peerDependencies": {
     "@byndyusoft/class-validator-extended": "^1.0.0",
-    "@byndyusoft/nest-swagger": "^6.1.2-1",
+    "@nestjs/swagger": "^6.1.2",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.13.2"
   },

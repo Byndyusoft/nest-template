@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-import { ApiTags } from "@byndyusoft/nest-swagger";
 import {
   Body,
   Controller,
@@ -26,6 +25,7 @@ import {
   Post,
   Query,
 } from "@nestjs/common";
+import { ApiTags } from "@nestjs/swagger";
 
 import {
   CreateUserDto,
