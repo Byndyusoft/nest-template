@@ -22,19 +22,15 @@ import {
 import { Module } from "@nestjs/common";
 import { LoggerModule as PinoLoggerModule } from "nestjs-pino";
 
-import { ConfigDto, ConfigEnvToken } from "../config";
+import { ConfigDto } from "../config";
 import { PackageJsonDto } from "../packageJson";
 
 // We need increase nestjs-pino LoggerModule topological level for correct middlewares register
 @Module({
   imports: [
     PinoLoggerModule.forRootAsync({
-      inject: [ConfigEnvToken, ConfigDto, PackageJsonDto],
-      useFactory: (
-        configEnv: string,
-        config: ConfigDto,
-        packageJson: PackageJsonDto,
-      ) => ({
+      inject: [ConfigDto, PackageJsonDto],
+      useFactory: (config: ConfigDto, packageJson: PackageJsonDto) => ({
         pinoHttp: new PinoHttpLoggerOptionsBuilder()
           .withLogger(
             new PinoLoggerFactory().create(
@@ -42,7 +38,7 @@ import { PackageJsonDto } from "../packageJson";
                 .withBase({
                   name: packageJson.name,
                   version: packageJson.version,
-                  env: configEnv,
+                  env: config.configEnv,
                 })
                 .withLevel(config.logger.level)
                 .withPrettyPrint(config.logger.pretty)

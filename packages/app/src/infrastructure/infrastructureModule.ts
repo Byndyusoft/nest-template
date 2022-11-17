@@ -31,7 +31,7 @@ import { ExceptionsModule } from "./exceptions/exceptionsModule";
 import { HealthCheckModule } from "./healthCheck/healthCheckModule";
 import { LoggerModule } from "./logger/loggerModule";
 import { PackageJsonModule } from "./packageJson/packageJsonModule";
-import { ConfigEnvToken } from "./config";
+import { ConfigDto } from "./config";
 import { PackageJsonDto } from "./packageJson";
 
 ApiTags("Infrastructure")(PromController);
@@ -45,8 +45,8 @@ ApiTags("Infrastructure")(PromController);
     ClientsModule,
     // @byndyusoft/nest-opentracing
     OpenTracingModule.forRootAsync({
-      inject: [ConfigEnvToken, PackageJsonDto],
-      useFactory: (configEnv: string, packageJson: PackageJsonDto) => ({
+      inject: [ConfigDto, PackageJsonDto],
+      useFactory: (configDto: ConfigDto, packageJson: PackageJsonDto) => ({
         tracer: initTracerFromEnv(
           {
             serviceName: packageJson.name,
@@ -54,7 +54,7 @@ ApiTags("Infrastructure")(PromController);
           {
             tags: {
               version: packageJson.version,
-              env: configEnv,
+              env: configDto.configEnv,
             },
           },
         ),
@@ -79,6 +79,8 @@ ApiTags("Infrastructure")(PromController);
       },
     }),
     HealthCheckModule,
+    // Extra modules
+    PgModule,
     // ExceptionsModule must be registered after all modules with exception filters
     ExceptionsModule,
   ],

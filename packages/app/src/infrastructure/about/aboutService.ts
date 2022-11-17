@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-import { Inject, Injectable } from "@nestjs/common";
+import { Injectable } from "@nestjs/common";
 
-import { ConfigEnvToken } from "../config";
+import { ConfigDto } from "../config";
 import { PackageJsonDto } from "../packageJson";
 
 import { AboutDto } from "./dtos";
@@ -24,7 +24,7 @@ import { AboutDto } from "./dtos";
 @Injectable()
 export class AboutService {
   public constructor(
-    @Inject(ConfigEnvToken) private readonly configEnv: string,
+    private readonly config: ConfigDto,
     private readonly packageJson: PackageJsonDto,
   ) {}
 
@@ -32,7 +32,7 @@ export class AboutService {
     return {
       name: this.packageJson.name,
       version: this.packageJson.version,
-      env: this.configEnv,
+      env: this.config.configEnv,
     };
   }
 }
