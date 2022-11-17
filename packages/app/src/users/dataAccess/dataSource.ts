@@ -24,6 +24,28 @@ export class DataSource {
   }
 }
 
+export class Repository<T> {
+  public constructor(private readonly entity: T) {
+    Object.assign({}, this.entity);
+  }
+
+
+  public find<U>(argument: U): Promise<T[] | []> {
+    Object.assign({}, argument);
+    return new Promise(resolve => {
+      resolve([this.entity]);
+    });
+  }
+
+  public findOne<U>(argument: U): Promise<U[] | []> {
+    return new Promise(resolve => {
+      resolve([argument]);
+    });
+  }
+}
+
+export declare function In<T>(value: T[]): never;
+
 export class EntityManager {
 
   public createQueryBuilder(): CreateQueryBuilder {
@@ -47,7 +69,7 @@ class CreateQueryBuilder {
   public affected = 0;
   public generatedMaps = [];
 
-  public execute(): Promise<CreateQueryBuilder>  {
+  public execute(): Promise<CreateQueryBuilder> {
     return new Promise(resolve => {
       resolve(this);
     });

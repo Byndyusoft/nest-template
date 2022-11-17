@@ -16,10 +16,8 @@
 
 import { TracingService } from "@byndyusoft/nest-opentracing";
 import { Injectable } from "@nestjs/common";
-import { InjectRepository } from "@nestjs/typeorm";
 import _ from "lodash";
-import { In, Repository } from "typeorm";
-
+import { Repository, In } from "./dataSource";
 import { UserDto } from "ᐸDtosᐳ";
 import { UserEntity } from "ᐸEntitiesᐳ";
 
@@ -35,11 +33,11 @@ export interface IListUsersQueryOptions {
 
 @Injectable()
 export class ListUsersQuery {
+  private userRepository  = new Repository<UserEntity>(new UserEntity);
+
   public constructor(
     private readonly tracingService: TracingService,
     private readonly userEntityToUserDtoMapper: UserEntityToUserDtoMapper,
-    @InjectRepository(UserEntity)
-    private readonly userRepository: Repository<UserEntity>,
   ) {}
 
   public ask(options: IListUsersQueryOptions): Promise<UserDto[]> {

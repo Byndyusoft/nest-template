@@ -79,8 +79,6 @@ ApiTags("Infrastructure")(PromController);
       },
     }),
     HealthCheckModule,
-    // Extra modules
-    PgModule,
     // ExceptionsModule must be registered after all modules with exception filters
     ExceptionsModule,
   ],

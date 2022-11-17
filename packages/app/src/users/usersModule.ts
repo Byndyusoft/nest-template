@@ -15,21 +15,19 @@
  */
 
 import { Module } from "@nestjs/common";
-import { TypeOrmModule } from "@nestjs/typeorm";
-
-import * as entities from "ᐸEntitiesᐳ";
 
 import * as dataAccess from "./dataAccess";
 import * as mappers from "./mappers";
 import * as useCases from "./useCases";
 import { UsersController } from "./usersController";
 import { UsersService } from "./usersService";
+import { DataSource } from "./dataAccess/dataSource";
 
 @Module({
-  imports: [TypeOrmModule.forFeature(Object.values(entities))],
   controllers: [UsersController],
   providers: [
     UsersService,
+    DataSource,
     ...Object.values(dataAccess),
     ...Object.values(mappers),
     ...Object.values(useCases),
