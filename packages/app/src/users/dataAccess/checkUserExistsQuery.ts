@@ -16,9 +16,10 @@
 
 import { TracingService } from "@byndyusoft/nest-opentracing";
 import { Injectable } from "@nestjs/common";
-import { Repository } from "./dataSource";
 
 import { UserEntity } from "ᐸEntitiesᐳ";
+
+import { Repository } from "./dataSource";
 
 export interface ICheckUserExistsQueryOptions {
   readonly userId: string;
@@ -26,11 +27,9 @@ export interface ICheckUserExistsQueryOptions {
 
 @Injectable()
 export class CheckUserExistsQuery {
-  private userRepository  = new Repository<UserEntity>(new UserEntity);
-
   public constructor(
     private readonly tracingService: TracingService,
-    // private readonly userRepository: Repository<UserEntity>,
+    private readonly userRepository: Repository<UserEntity>,
   ) {}
 
   public ask(options: ICheckUserExistsQueryOptions): Promise<boolean> {

@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+
 import { UserDto } from "ᐸDtosᐳ";
 
 export class DataSource {
@@ -46,6 +47,12 @@ export class Repository<T> {
 
 export declare function In<T>(value: T[]): never;
 
+declare type _QueryDeepPartialEntity<T> = {
+  [P in keyof T]?: (_QueryDeepPartialEntity<T[P]>);
+};
+
+export declare type QueryDeepPartialEntity<T> = _QueryDeepPartialEntity<T>;
+
 export class EntityManager {
 
   public createQueryBuilder(): CreateQueryBuilder {
@@ -75,7 +82,22 @@ class CreateQueryBuilder {
     });
   }
 
+  public insert(get?: unknown): CreateQueryBuilder {
+    Object.assign({}, get);
+    return this;
+  }
+
+  public returning(get: unknown): CreateQueryBuilder {
+    Object.assign({}, get);
+    return this;
+  }
+
   public set(get?: unknown): CreateQueryBuilder {
+    Object.assign({}, get);
+    return this;
+  }
+
+  public update(get?: unknown): CreateQueryBuilder {
     Object.assign({}, get);
     return this;
   }
@@ -91,22 +113,6 @@ class CreateQueryBuilder {
   }
 
   public whereEntity(get?: unknown): CreateQueryBuilder {
-    Object.assign({}, get);
-    return this;
-  }
-
-  // eslint-disable-next-line @typescript-eslint/member-ordering
-  public insert(get?: unknown): CreateQueryBuilder {
-    Object.assign({}, get);
-    return this;
-  }
-
-  public returning(get: unknown): CreateQueryBuilder {
-    Object.assign({}, get);
-    return this;
-  }
-
-  public update(get?: unknown): CreateQueryBuilder {
     Object.assign({}, get);
     return this;
   }

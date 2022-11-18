@@ -21,12 +21,13 @@ import * as mappers from "./mappers";
 import * as useCases from "./useCases";
 import { UsersController } from "./usersController";
 import { UsersService } from "./usersService";
-import { DataSource } from "./dataAccess/dataSource";
+import { DataSource, Repository } from "./dataAccess/dataSource";
 
 @Module({
   controllers: [UsersController],
   providers: [
     UsersService,
+    Repository,
     DataSource,
     ...Object.values(dataAccess),
     ...Object.values(mappers),

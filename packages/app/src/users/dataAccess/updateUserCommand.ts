@@ -21,7 +21,6 @@ import {
   InternalServerErrorException,
 } from "@nestjs/common";
 import _ from "lodash";
-import { QueryDeepPartialEntity } from "typeorm/query-builder/QueryPartialEntity";
 
 import { UserDto } from "ᐸDtosᐳ";
 import { UserEntity, UserOutboxEntity } from "ᐸEntitiesᐳ";
@@ -31,7 +30,7 @@ import {
   UserEntityToUserOutboxDtoMapper,
 } from "../mappers";
 
-import { DataSource, EntityManager } from "./dataSource";
+import { DataSource, EntityManager, QueryDeepPartialEntity } from "./dataSource";
 
 export interface IUpdateUserCommandOptions {
   readonly userId: string;

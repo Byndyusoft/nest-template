@@ -33,11 +33,10 @@ export interface IListUsersQueryOptions {
 
 @Injectable()
 export class ListUsersQuery {
-  private userRepository  = new Repository<UserEntity>(new UserEntity);
-
   public constructor(
     private readonly tracingService: TracingService,
     private readonly userEntityToUserDtoMapper: UserEntityToUserDtoMapper,
+    private readonly userRepository: Repository<UserEntity>,
   ) {}
 
   public ask(options: IListUsersQueryOptions): Promise<UserDto[]> {

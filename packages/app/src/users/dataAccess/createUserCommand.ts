@@ -16,9 +16,6 @@
 
 import { TracingService } from "@byndyusoft/nest-opentracing";
 import { Injectable } from "@nestjs/common";
-import {
-  QueryDeepPartialEntity,
-} from "typeorm/query-builder/QueryPartialEntity";
 
 import { UserDto } from "ᐸDtosᐳ";
 import { UserEntity, UserOutboxEntity } from "ᐸEntitiesᐳ";
@@ -28,7 +25,7 @@ import {
   UserEntityToUserOutboxDtoMapper,
 } from "../mappers";
 
-import { DataSource, EntityManager } from "./dataSource";
+import { DataSource, EntityManager, QueryDeepPartialEntity } from "./dataSource";
 
 export interface ICreateUserCommandOptions {
   readonly payload: QueryDeepPartialEntity<UserEntity>;
