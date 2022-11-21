@@ -51,6 +51,12 @@ yarn run start
 - [@Byndyusoft/team](https://github.com/orgs/Byndyusoft/teams/team)
 - [@KillWolfVlad](https://github.com/KillWolfVlad)
 
+## Wiki
+
+- [Home](https://github.com/Byndyusoft/nest-template/wiki)
+- [PostgreSQL](https://github.com/Byndyusoft/nest-template/wiki/PostgreSQL)
+- [add-typeOrm](https://github.com/Byndyusoft/nest-template/wiki/add-typeOrm)
+
 ## License
 
 This repository is released under version 2.0 of the
