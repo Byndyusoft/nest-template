@@ -17,8 +17,8 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "yarn packages/dtos run build && yarn packages/client run build && yarn packages/dtosTesting run build && yarn packages/entities run build && yarn packages/migrator run build && yarn packages/app run build",
-    "build:src": "yarn packages/dtos run build:src && yarn packages/client run build:src && yarn packages/dtosTesting run build:src && yarn packages/entities run build:src && yarn packages/migrator run build:src && yarn packages/app run build:src",
+    "build": "yarn workspaces foreach --topological-dev --parallel --exclude root run build",
+    "build:src": "yarn workspaces foreach --topological-dev --parallel --exclude root run build:src",
     "postinstall": "(husky install) || true",
     "lint": "yarn run lint:eslint && yarn run lint:markdown && yarn run lint:prettier",
     "lint:eslint": "eslint --ignore-path ./.gitignore --max-warnings 0 --ext .ts,.js .",
