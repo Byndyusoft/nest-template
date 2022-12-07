@@ -45,6 +45,14 @@ yarn run build
 yarn run start
 ```
 
+## CLI Commands
+
+Replace author in all packages
+
+```bash
+yarn command:dev author
+```
+
 ## Maintainers
 
 - [@Byndyusoft/owners](https://github.com/orgs/Byndyusoft/teams/owners) <<github.maintain@byndyusoft.com>>

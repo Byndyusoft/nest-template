@@ -928,6 +928,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@golevelup/nestjs-discovery@npm:3.0.0":
+  version: 3.0.0
+  resolution: "@golevelup/nestjs-discovery@npm:3.0.0"
+  dependencies:
+    lodash: "npm:^4.17.15"
+  checksum: be820b3d9924efaa28259897ed75017a25e45c2ecf8b8dc0c2ce35dbcb4af0a6be81fe1053bfd7a485f0e39e07fa584edf03c1ca6620b83819c42cd1206d1369
+  languageName: node
+  linkType: hard
+
 "@humanwhocodes/config-array@npm:^0.11.6":
   version: 0.11.6
   resolution: "@humanwhocodes/config-array@npm:0.11.6"
@@ -3385,6 +3394,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"commander@npm:9.4.0":
+  version: 9.4.0
+  resolution: "commander@npm:9.4.0"
+  checksum: b1a41144b2e6875163df93dee54c446f2c086d7c8176febaca87ee2b4b177398de3e7b5297e0e70fb2d7ad835398b05c90bc218683daeeece5cef65f9a3a1202
+  languageName: node
+  linkType: hard
+
 "commander@npm:^2.20.0":
   version: 2.20.3
   resolution: "commander@npm:2.20.3"
@@ -3552,7 +3568,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cosmiconfig@npm:^7.0.0, cosmiconfig@npm:^7.0.1":
+"cosmiconfig@npm:7.0.1, cosmiconfig@npm:^7.0.0, cosmiconfig@npm:^7.0.1":
   version: 7.0.1
   resolution: "cosmiconfig@npm:7.0.1"
   dependencies:
@@ -7291,6 +7307,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"nest-commander@npm:^3.3.0":
+  version: 3.3.0
+  resolution: "nest-commander@npm:3.3.0"
+  dependencies:
+    "@golevelup/nestjs-discovery": "npm:3.0.0"
+    commander: "npm:9.4.0"
+    cosmiconfig: "npm:7.0.1"
+    inquirer: "npm:8.2.4"
+  peerDependencies:
+    "@nestjs/common": ^8.0.0 || ^9.0.0
+    "@nestjs/core": ^8.0.0 || ^9.0.0
+    "@types/inquirer": ^8.1.3
+  checksum: c9ec8380582891cdb8c85d5a57fd51aaca220aee14ec8e96ba10cf2ac01d4a6a98d79c8c746baff7911fc330530e05f55c97847e2276202c80c4211e4ad2d943
+  languageName: node
+  linkType: hard
+
 "nestjs-pino@npm:3.1.1":
   version: 3.1.1
   resolution: "nestjs-pino@npm:3.1.1"
@@ -10510,6 +10542,7 @@ __metadata:
     jest-extended: "npm:3.1.0"
     jest-mock-extended: "npm:3.0.1"
     lodash: "npm:4.17.21"
+    nest-commander: "npm:^3.3.0"
     nestjs-pino: "npm:3.1.1"
     pg: "npm:8.8.0"
     pino: "npm:8.7.0"

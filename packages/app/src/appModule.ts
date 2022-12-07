@@ -16,9 +16,10 @@
 
 import { DynamicModule, Module } from "@nestjs/common";
 
+import * as commands from "./infrastructure/commands";
 import { UsersModule } from "./users/usersModule";
 
-@Module({})
+@Module({ imports: Object.values(commands) })
 export class AppModule {
   public static async register(): Promise<DynamicModule> {
     // InfrastructureModule must be imported last, see InjectPinoLogger in nestjs-pino for more details
