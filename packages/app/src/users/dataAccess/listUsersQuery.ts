@@ -17,7 +17,7 @@
 import { TracingService } from "@byndyusoft/nest-opentracing";
 import { Injectable } from "@nestjs/common";
 import _ from "lodash";
-import { Repository, In } from "./dataSource";
+
 import { UserDto } from "ᐸDtosᐳ";
 import { UserEntity } from "ᐸEntitiesᐳ";
 
@@ -34,35 +34,25 @@ export interface IListUsersQueryOptions {
 @Injectable()
 export class ListUsersQuery {
   public constructor(
-    private readonly tracingService: TracingService,
     private readonly userEntityToUserDtoMapper: UserEntityToUserDtoMapper,
-    private readonly userRepository: Repository<UserEntity>,
+    private readonly tracingService: TracingService,
   ) {}
 
   public ask(options: IListUsersQueryOptions): Promise<UserDto[]> {
-    return this.tracingService.traceAsyncFunction(
-      ListUsersQuery.name,
-      async () => {
-        const users = await this.userRepository.find({
-          where: _.omitBy(
-            {
-              userId: options.userIds ? In(options.userIds) : undefined,
-              name: options.names ? In(options.names) : undefined,
-              email: options.emails ? In(options.emails) : undefined,
-            },
-            (value) => value === undefined,
-          ),
-          order: options.pageSize
-            ? {
-                userId: "DESC",
-              }
-            : undefined,
-          skip: options.pageToken,
-          take: options.pageSize,
-        });
+    return this.tracingService.traceAsyncFunction(ListUsersQuery.name, () => {
+      const users: UserEntity[] = [
+        {
+          userId: "1",
+          name: _.first(options.names) ?? "name",
+          email: "email",
+          userVersion: 1,
+          deletedAt: new Date(),
+        },
+      ];
 
-        return users.map((x) => this.userEntityToUserDtoMapper.map(x));
-      },
-    );
+      return Promise.resolve(
+        users.map((x) => this.userEntityToUserDtoMapper.map(x)),
+      );
+    });
   }
 }
