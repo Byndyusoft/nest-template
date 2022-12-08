@@ -14,14 +14,13 @@
  * limitations under the License.
  */
 
-
+// eslint-disable-next-line max-classes-per-file
 import { UserDto } from "ᐸDtosᐳ";
 
 export class DataSource {
-
   public transaction(enityManager: unknown): Promise<UserDto> {
     Object.assign({}, enityManager);
-    return Promise.resolve(new UserDto);
+    return Promise.resolve(new UserDto());
   }
 }
 
@@ -30,16 +29,15 @@ export class Repository<T> {
     Object.assign({}, this.entity);
   }
 
-
   public find<U>(argument: U): Promise<T[] | []> {
     Object.assign({}, argument);
-    return new Promise(resolve => {
+    return new Promise((resolve) => {
       resolve([this.entity]);
     });
   }
 
   public findOne<U>(argument: U): Promise<U[] | []> {
-    return new Promise(resolve => {
+    return new Promise((resolve) => {
       resolve([argument]);
     });
   }
@@ -47,16 +45,17 @@ export class Repository<T> {
 
 export declare function In<T>(value: T[]): never;
 
+// eslint-disable-next-line @typescript-eslint/naming-convention
 declare type _QueryDeepPartialEntity<T> = {
-  [P in keyof T]?: (_QueryDeepPartialEntity<T[P]>);
+  [P in keyof T]?: _QueryDeepPartialEntity<T[P]>;
 };
 
+// eslint-disable-next-line @typescript-eslint/naming-convention
 export declare type QueryDeepPartialEntity<T> = _QueryDeepPartialEntity<T>;
 
 export class EntityManager {
-
   public createQueryBuilder(): CreateQueryBuilder {
-    return new CreateQueryBuilder;
+    return new CreateQueryBuilder();
   }
 
   public getRepository(get?: unknown): EntityManager {
@@ -66,7 +65,7 @@ export class EntityManager {
 
   public insert(get: unknown): Promise<string> {
     Object.assign({}, get);
-    return new Promise(resolve => {
+    return new Promise((resolve) => {
       resolve("test");
     });
   }
@@ -77,7 +76,7 @@ class CreateQueryBuilder {
   public generatedMaps = [];
 
   public execute(): Promise<CreateQueryBuilder> {
-    return new Promise(resolve => {
+    return new Promise((resolve) => {
       resolve(this);
     });
   }
