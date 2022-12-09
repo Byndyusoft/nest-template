@@ -1456,21 +1456,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/typeorm@npm:9.0.1":
-  version: 9.0.1
-  resolution: "@nestjs/typeorm@npm:9.0.1"
-  dependencies:
-    uuid: "npm:8.3.2"
-  peerDependencies:
-    "@nestjs/common": ^8.0.0 || ^9.0.0
-    "@nestjs/core": ^8.0.0 || ^9.0.0
-    reflect-metadata: ^0.1.13
-    rxjs: ^7.2.0
-    typeorm: ^0.3.0
-  checksum: 00c51e542496078fb03ae837c4a5aac3e27a69b8e053216f6f6adabd73f0f837eadde87be6836973993920e682d0a8244d4f1f0716c19e90f8a1cb17b1ac53a4
-  languageName: node
-  linkType: hard
-
 "@nodelib/fs.scandir@npm:2.1.5":
   version: 2.1.5
   resolution: "@nodelib/fs.scandir@npm:2.1.5"
@@ -10492,7 +10477,6 @@ __metadata:
     "@nestjs/platform-express": "npm:9.1.5"
     "@nestjs/schematics": "npm:9.0.3"
     "@nestjs/terminus": "npm:9.1.2"
-    "@nestjs/typeorm": "npm:9.0.1"
     "@types/express": "npm:4.17.14"
     "@types/jaeger-client": "npm:3.18.3"
     "@types/jest": "npm:29.2.0"
@@ -10521,7 +10505,6 @@ __metadata:
     source-map-support: "npm:0.5.21"
     ts-jest: "npm:29.0.3"
     tslib: "npm:2.4.0"
-    typeorm: "npm:0.3.10"
     typescript: "npm:4.8.4"
     ᐸDtos testingᐳ: "workspace:*"
     ᐸDtosᐳ: "workspace:*"
