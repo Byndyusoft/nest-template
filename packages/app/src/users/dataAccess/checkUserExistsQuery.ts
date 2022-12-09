@@ -17,9 +17,7 @@
 import { TracingService } from "@byndyusoft/nest-opentracing";
 import { Injectable } from "@nestjs/common";
 
-import { UserEntity } from "ᐸEntitiesᐳ";
-
-import { Repository } from "./dataSource";
+import { UserDto } from "ᐸDtosᐳ";
 
 export interface ICheckUserExistsQueryOptions {
   readonly userId: string;
@@ -27,25 +25,20 @@ export interface ICheckUserExistsQueryOptions {
 
 @Injectable()
 export class CheckUserExistsQuery {
-  public constructor(
-    private readonly tracingService: TracingService,
-    private readonly userRepository: Repository<UserEntity>,
-  ) {}
+  public constructor(private readonly tracingService: TracingService) {}
 
   public ask(options: ICheckUserExistsQueryOptions): Promise<boolean> {
     return this.tracingService.traceAsyncFunction(
       CheckUserExistsQuery.name,
-      async () => {
-        const user = await this.userRepository.findOne({
-          where: {
-            userId: options.userId,
-          },
-          select: {
-            userId: true,
-          },
-        });
+      () => {
+        const user: UserDto = {
+          name: `user${options.userId}`,
+          userId: options.userId,
+          email: `user${options.userId}@example.com`,
+          userVersion: 1,
+        };
 
-        return !!user;
+        return Promise.resolve(!!user);
       },
     );
   }

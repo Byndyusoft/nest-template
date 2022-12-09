@@ -18,60 +18,23 @@ import { TracingService } from "@byndyusoft/nest-opentracing";
 import { Injectable } from "@nestjs/common";
 
 import { UserDto } from "ᐸDtosᐳ";
-import { UserEntity, UserOutboxEntity } from "ᐸEntitiesᐳ";
-
-import {
-  UserEntityToUserDtoMapper,
-  UserEntityToUserOutboxDtoMapper,
-} from "../mappers";
-
-import { DataSource, EntityManager, QueryDeepPartialEntity } from "./dataSource";
 
 export interface ICreateUserCommandOptions {
-  readonly payload: QueryDeepPartialEntity<UserEntity>;
+  readonly payload: { name: string; email: string };
 }
 
 @Injectable()
 export class CreateUserCommand {
-  public constructor(
-    private readonly dataSource: DataSource,
-    private readonly tracingService: TracingService,
-    private readonly userEntityToUserDtoMapper: UserEntityToUserDtoMapper,
-    private readonly userEntityToUserOutboxDtoMapper: UserEntityToUserOutboxDtoMapper,
-  ) {}
+  public constructor(private readonly tracingService: TracingService) {}
 
   public execute(options: ICreateUserCommandOptions): Promise<UserDto> {
     return this.tracingService.traceAsyncFunction(CreateUserCommand.name, () =>
-      this.dataSource.transaction((entityManager: EntityManager) =>
-        this.executeTransaction(entityManager, options),
-      ),
+      Promise.resolve({
+        name: `user${options.payload.name}`,
+        userId: "1",
+        email: `user${options.payload.email}@example.com`,
+        userVersion: 1,
+      }),
     );
-  }
-
-  private async executeTransaction(
-    entityManager: EntityManager,
-    options: ICreateUserCommandOptions,
-  ): Promise<UserDto> {
-    const userRepository = entityManager.getRepository(UserEntity);
-
-    const userOutboxRepository = entityManager.getRepository(UserOutboxEntity);
-
-    const insertResult = await userRepository
-      .createQueryBuilder()
-      .insert()
-      .values(options.payload)
-      .returning(UserEntity.columns)
-      .execute();
-
-    const [insertedEntity] = insertResult.generatedMaps as UserEntity[];
-
-    const now = new Date();
-
-    await userOutboxRepository.insert({
-      entity: this.userEntityToUserOutboxDtoMapper.map(insertedEntity),
-      timestamp: now,
-    });
-
-    return this.userEntityToUserDtoMapper.map(insertedEntity);
   }
 }

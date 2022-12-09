@@ -16,7 +16,6 @@
 
 import { Module } from "@nestjs/common";
 
-import { DataSource, Repository } from "./dataAccess/dataSource";
 import * as dataAccess from "./dataAccess";
 import * as mappers from "./mappers";
 import * as useCases from "./useCases";
@@ -27,8 +26,6 @@ import { UsersService } from "./usersService";
   controllers: [UsersController],
   providers: [
     UsersService,
-    Repository,
-    DataSource,
     ...Object.values(dataAccess),
     ...Object.values(mappers),
     ...Object.values(useCases),
