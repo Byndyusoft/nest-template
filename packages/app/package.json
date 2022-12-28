@@ -67,7 +67,7 @@
       "jest-extended/all"
     ],
     "testEnvironment": "node",
-    "testRegex": ".*\\.spec\\.ts$",
+    "testRegex": ".*\\.test\\.ts$",
     "transform": {
       "^.+\\.ts$": "ts-jest"
     }
