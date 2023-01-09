@@ -3,6 +3,7 @@
 import "reflect-metadata";
 import "source-map-support/register";
 
+import { Logger, LoggerErrorInterceptor } from "@byndyusoft/nest-pino";
 import { DocumentBuilder, SwaggerModule } from "@byndyusoft/nest-swagger";
 import { ValidationPipe, VersioningType } from "@nestjs/common";
 import { NestFactory } from "@nestjs/core";
@@ -11,7 +12,6 @@ import {
   NestExpressApplication,
 } from "@nestjs/platform-express";
 import helmet from "helmet";
-import { Logger, LoggerErrorInterceptor } from "nestjs-pino";
 
 import { AppModule } from "./appModule";
 import { ConfigDto, PackageJsonDto } from "./infrastructure";

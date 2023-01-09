@@ -1,15 +1,15 @@
+import { LoggerModule as PinoLoggerModule } from "@byndyusoft/nest-pino";
 import {
   PinoHttpLoggerOptionsBuilder,
   PinoLoggerFactory,
   PinoLoggerOptionsBuilder,
 } from "@byndyusoft/pino-logger-factory";
 import { Module } from "@nestjs/common";
-import { LoggerModule as PinoLoggerModule } from "nestjs-pino";
 
 import { ConfigDto } from "../config";
 import { PackageJsonDto } from "../packageJson";
 
-// We need increase nestjs-pino LoggerModule topological level for correct middlewares register
+// We need increase nest-pino LoggerModule topological level for correct middlewares register
 @Module({
   imports: [
     PinoLoggerModule.forRootAsync({
