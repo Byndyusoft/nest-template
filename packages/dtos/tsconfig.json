@@ -1,6 +1,9 @@
 {
   "extends": "@byndyusoft/tsconfig/tsconfig.node18.json",
   "compilerOptions": {
+    // Modules
+    "module": "ESNext",
+    "moduleResolution": "Node",
     // Emit
     "outDir": "./dist"
   },

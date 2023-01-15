@@ -53,7 +53,7 @@ function setupSwagger(app: NestExpressApplication): void {
   SwaggerModule.setup("api", app, SwaggerModule.createDocument(app, options));
 }
 
-async function bootstrap(): Promise<void> {
+try {
   const app = await NestFactory.create<NestExpressApplication>(
     await AppModule.register(),
     new ExpressAdapter(),
@@ -76,9 +76,7 @@ async function bootstrap(): Promise<void> {
     await app.getUrl(),
     "NestApplication",
   );
-}
-
-bootstrap().catch((error) => {
+} catch (error) {
   console.error(error);
   process.exit(1);
-});
+}

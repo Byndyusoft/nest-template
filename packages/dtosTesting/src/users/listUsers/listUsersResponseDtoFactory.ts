@@ -1,9 +1,11 @@
-import { makeDtoFactory } from "@byndyusoft/dto-factory";
+import dtoFactory from "@byndyusoft/dto-factory"; // TODO: make ESM
 import { faker } from "@faker-js/faker";
 
 import { ListUsersResponseDto } from "ᐸDtosᐳ";
 
 import { userDtoFactory } from "../common";
+
+const { makeDtoFactory } = dtoFactory;
 
 export const listUsersResponseDtoFactory = makeDtoFactory<ListUsersResponseDto>(
   () => ({

@@ -13,14 +13,15 @@
   },
   "license": "Apache-2.0",
   "author": "Byndyusoft",
+  "type": "module",
   "scripts": {
     "prebuild": "shx rm -rf ./dist",
     "build": "yarn run prebuild && yarn run build:src",
     "build:src": "nest build",
-    "start": "nest start --exec \"yarn node -r dotenv/config\"",
-    "start:prod": "yarn node ./dist/main.js",
-    "test": "jest",
-    "test:cov": "jest --coverage"
+    "start": "nest start --exec \"yarn node -r dotenv/config -r suppress-experimental-warnings --experimental-specifier-resolution=node\"",
+    "start:prod": "yarn node -r suppress-experimental-warnings --experimental-specifier-resolution=node ./dist/main.js",
+    "test": "yarn node -r suppress-experimental-warnings --experimental-vm-modules $(yarn bin jest)",
+    "test:cov": "yarn node -r suppress-experimental-warnings --experimental-vm-modules $(yarn bin jest) --coverage"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -40,6 +41,9 @@
       "lcov",
       "text",
       "@byndyusoft/sonar-coverage-reporter"
+    ],
+    "extensionsToTreatAsEsm": [
+      ".ts"
     ],
     "moduleFileExtensions": [
       "ts",
@@ -69,7 +73,12 @@
     "testEnvironment": "node",
     "testRegex": ".*\\.test\\.ts$",
     "transform": {
-      "^.+\\.ts$": "ts-jest"
+      "^.+\\.ts$": [
+        "ts-jest",
+        {
+          "useESM": true
+        }
+      ]
     }
   },
   "dependencies": {
@@ -96,6 +105,7 @@
     "reflect-metadata": "0.1.13",
     "rxjs": "7.8.0",
     "source-map-support": "0.5.21",
+    "suppress-experimental-warnings": "1.1.3",
     "tslib": "2.4.1",
     "typeorm": "0.3.11",
     "ᐸDtosᐳ": "workspace:*",

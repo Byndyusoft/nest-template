@@ -1,7 +1,4 @@
-import {
-  TransformToArray,
-  TransformToNumber,
-} from "@byndyusoft/class-validator-extended";
+import classValidatorExtended from "@byndyusoft/class-validator-extended"; // TODO: make ESM
 import { ApiPropertyOptional } from "@byndyusoft/nest-swagger";
 import {
   IsEmail,
@@ -12,6 +9,8 @@ import {
   Max,
   Min,
 } from "class-validator";
+
+const { TransformToArray, TransformToNumber } = classValidatorExtended;
 
 export class ListUsersQueryDto {
   @TransformToArray()

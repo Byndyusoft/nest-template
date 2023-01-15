@@ -6,7 +6,7 @@ import { Logger } from "@byndyusoft/nest-pino";
 import { ApiTags } from "@byndyusoft/nest-swagger";
 import { PromController, PromModule } from "@digikare/nestjs-prom";
 import { Module } from "@nestjs/common";
-import { initTracerFromEnv } from "jaeger-client";
+import jaegerClient from "jaeger-client";
 
 import { AboutModule } from "./about/aboutModule";
 import { ClientsModule } from "./clients/clientsModule";
@@ -32,7 +32,7 @@ ApiTags("Infrastructure")(PromController);
     OpenTracingModule.forRootAsync({
       inject: [ConfigDto, PackageJsonDto],
       useFactory: (configDto: ConfigDto, packageJson: PackageJsonDto) => ({
-        tracer: initTracerFromEnv(
+        tracer: jaegerClient.initTracerFromEnv(
           {
             serviceName: packageJson.name,
           },

@@ -1,5 +1,7 @@
-import { TransformToNumber } from "@byndyusoft/class-validator-extended";
+import classValidatorExtended from "@byndyusoft/class-validator-extended"; // TODO: make ESM
 import { IsEmail, IsInt, IsNumberString, IsString } from "class-validator";
+
+const { TransformToNumber } = classValidatorExtended;
 
 export class UserDto {
   /**
