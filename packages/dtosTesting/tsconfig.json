@@ -1,5 +1,5 @@
 {
-  "extends": "@byndyusoft/tsconfig/tsconfig.node16.json",
+  "extends": "@byndyusoft/tsconfig/tsconfig.node18.json",
   "compilerOptions": {
     // Emit
     "outDir": "./dist"

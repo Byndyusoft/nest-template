@@ -41,7 +41,7 @@ export class ConfigModule {
       },
       http: {
         port: Number(process.env.HTTP_PORT ?? "8080"),
-        host: process.env.HTTP_HOST ?? "0.0.0.0",
+        host: process.env.HTTP_HOST ?? "::",
         swaggerServer: process.env.SWAGGER_SERVER ?? "/",
         defaultClientTimeout: Number(
           process.env.HTTP_DEFAULT_CLIENT_TIMEOUT ?? "60000",
