@@ -1260,16 +1260,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/axios@npm:0.1.1":
-  version: 0.1.1
-  resolution: "@nestjs/axios@npm:0.1.1"
+"@nestjs/axios@npm:0.1.0":
+  version: 0.1.0
+  resolution: "@nestjs/axios@npm:0.1.0"
   dependencies:
-    axios: "npm:1.2.1"
+    axios: "npm:0.27.2"
   peerDependencies:
     "@nestjs/common": ^7.0.0 || ^8.0.0 || ^9.0.0
     reflect-metadata: ^0.1.12
     rxjs: ^6.0.0 || ^7.0.0
-  checksum: 9445271548c884efe7c0f422aa5b62573d5cfcd32471b38ee6e8ab0ca6b40e633da92e2d05576c5c37108aab2ab7b858919312fa0f70eaabe02e63f2f7d89620
+  checksum: 9a6dcdf0907382b6d0d4eb6bbc30e92c6baa4f2b898fdb04dd6e094ae7db7750fe7d98d07cf5d2d002609a5c5fa8c31b00f9df9ad9ef08b62421d1d9638b6458
   languageName: node
   linkType: hard
 
@@ -2740,17 +2740,6 @@ __metadata:
     follow-redirects: "npm:^1.14.9"
     form-data: "npm:^4.0.0"
   checksum: 4cd898afe90caaf05307fc5a0da4c61012493b6bfd4937fff9774455c01d368db583b17c4737e73853f149b32e615487930b491661682a1f69a1973b1f533bb7
-  languageName: node
-  linkType: hard
-
-"axios@npm:1.2.1":
-  version: 1.2.1
-  resolution: "axios@npm:1.2.1"
-  dependencies:
-    follow-redirects: "npm:^1.15.0"
-    form-data: "npm:^4.0.0"
-    proxy-from-env: "npm:^1.1.0"
-  checksum: cd68dc519d7dbb3e2a0fd0788409fa633c1f6e36deb9e1069f04e8d38678c0ef0113db527589ae8f48ad448600ff9e4893c84e78bd9759fb719cfa82ee105167
   languageName: node
   linkType: hard
 
@@ -4989,7 +4978,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"follow-redirects@npm:^1.14.9, follow-redirects@npm:^1.15.0":
+"follow-redirects@npm:^1.14.9":
   version: 1.15.2
   resolution: "follow-redirects@npm:1.15.2"
   peerDependenciesMeta:
@@ -8572,13 +8561,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"proxy-from-env@npm:^1.1.0":
-  version: 1.1.0
-  resolution: "proxy-from-env@npm:1.1.0"
-  checksum: 0bba2ef7c8374b384e94e4477764e53df66fcdfa7d19e2c4a063cb39eea979c139ce13981970223665422e72b7d149609a927046e2e40ab340b84d91af082591
-  languageName: node
-  linkType: hard
-
 "pump@npm:^3.0.0":
   version: 3.0.0
   resolution: "pump@npm:3.0.0"
@@ -10866,7 +10848,7 @@ __metadata:
     "@byndyusoft/tsconfig": "npm:1.2.0"
     "@casualbot/jest-sonar-reporter": "npm:2.2.7"
     "@digikare/nestjs-prom": "npm:1.0.0"
-    "@nestjs/axios": "npm:0.1.1"
+    "@nestjs/axios": "npm:0.1.0"
     "@nestjs/cli": "npm:9.1.8"
     "@nestjs/common": "npm:9.2.1"
     "@nestjs/core": "npm:9.2.1"
