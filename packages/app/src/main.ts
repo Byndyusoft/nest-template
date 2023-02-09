@@ -30,7 +30,6 @@ function setupApp(app: NestExpressApplication): void {
 
   app.useGlobalPipes(
     new ValidationPipe({
-      forbidNonWhitelisted: true,
       transform: true,
       whitelist: true,
     }),
