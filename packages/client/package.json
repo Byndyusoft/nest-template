@@ -27,31 +27,31 @@
   "dependencies": {
     "proper-url-join": "^2.1.1",
     "qs": "^6.11.0",
-    "tslib": "^2.4.0"
+    "tslib": "^2.4.1"
   },
   "devDependencies": {
     "@byndyusoft/class-validator-extended": "1.0.1",
     "@byndyusoft/nest-dynamic-module": "1.0.0",
-    "@byndyusoft/nest-http-client": "1.2.1-rc.1",
+    "@byndyusoft/nest-http-client": "1.2.1",
     "@byndyusoft/nest-swagger": "6.1.2-1",
     "@byndyusoft/tsconfig": "1.2.0",
-    "@nestjs/common": "9.1.5",
-    "@nestjs/core": "9.1.5",
+    "@nestjs/common": "9.2.1",
+    "@nestjs/core": "9.2.1",
     "@types/proper-url-join": "2.1.1",
     "@types/qs": "6.9.7",
     "axios": "0.27.2",
     "class-transformer": "0.5.1",
-    "class-validator": "0.13.2",
+    "class-validator": "0.14.0",
     "reflect-metadata": "0.1.13",
-    "rxjs": "7.5.7",
+    "rxjs": "7.8.0",
     "shx": "0.3.4",
-    "typescript": "4.8.4",
+    "typescript": "4.9.4",
     "ᐸDtosᐳ": "workspace:*"
   },
   "peerDependencies": {
-    "@byndyusoft/nest-http-client": "^1.2.1-rc.1",
-    "@nestjs/common": "^9.1.4",
-    "rxjs": "^7.5.7",
+    "@byndyusoft/nest-http-client": "^1.2.1",
+    "@nestjs/common": "^9.2.1",
+    "rxjs": "^7.8.0",
     "ᐸDtosᐳ": "workspace:*"
   },
   "engines": {
