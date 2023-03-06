@@ -17,11 +17,10 @@
 import { Injectable } from "@nestjs/common";
 
 import { UserOutboxDto } from "ᐸDtosᐳ";
-import { UserEntity } from "ᐸEntitiesᐳ";
 
 @Injectable()
 export class UserEntityToUserOutboxDtoMapper {
-  public map(value: UserEntity): UserOutboxDto {
+  public map(value: UserOutboxDto): UserOutboxDto {
     return {
       userId: value.userId,
       name: value.name,

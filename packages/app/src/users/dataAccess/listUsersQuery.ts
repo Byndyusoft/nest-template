@@ -19,7 +19,6 @@ import { Injectable } from "@nestjs/common";
 import _ from "lodash";
 
 import { UserDto } from "ᐸDtosᐳ";
-import { UserEntity } from "ᐸEntitiesᐳ";
 
 import { UserEntityToUserDtoMapper } from "../mappers";
 
@@ -40,13 +39,12 @@ export class ListUsersQuery {
 
   public ask(options: IListUsersQueryOptions): Promise<UserDto[]> {
     return this.tracingService.traceAsyncFunction(ListUsersQuery.name, () => {
-      const users: UserEntity[] = [
+      const users: UserDto[] = [
         {
           userId: "1",
           name: _.first(options.names) ?? "name",
           email: "email",
           userVersion: 1,
-          deletedAt: new Date(),
         },
       ];
 
