@@ -29,8 +29,6 @@
     "lint:prettier": "prettier --ignore-path ./.gitignore --check \"./**/*.{ts,js,json,yaml,yml,md}\"",
     "lint:prettier:fix": "prettier --ignore-path ./.gitignore --write \"./**/*.{ts,js,json,yaml,yml,md}\"",
     "start": "yarn packages/app run start",
-    "start:migrator": "yarn packages/migrator run start",
-    "start:migrator:prod": "yarn packages/migrator run start:prod",
     "start:prod": "yarn packages/app run start:prod",
     "test": "yarn packages/app run test",
     "test:cov": "yarn packages/app run test:cov"

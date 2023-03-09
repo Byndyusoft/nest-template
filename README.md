@@ -13,8 +13,6 @@ Monorepo structure is described in root [package.json](./package.json) and conta
 - [client](./packages/client) - service client
 - [dtos](./packages/dtos) - common dtos between service and its client
 - [dtosTesting](./packages/dtosTesting) - dtos factories for unit tests
-- [entities](./packages/dtosTesting) - entities
-- [migrator](./packages/migrator) - service migrator
 
 ## Prerequisites
 
@@ -50,6 +48,12 @@ yarn run start
 - [@Byndyusoft/owners](https://github.com/orgs/Byndyusoft/teams/owners) <<github.maintain@byndyusoft.com>>
 - [@Byndyusoft/team](https://github.com/orgs/Byndyusoft/teams/team)
 - [@KillWolfVlad](https://github.com/KillWolfVlad)
+
+## Wiki
+
+- [Home](https://github.com/Byndyusoft/nest-template/wiki)
+- [PostgreSQL](https://github.com/Byndyusoft/nest-template/wiki/PostgreSQL)
+- [add-typeOrm](https://github.com/Byndyusoft/nest-template/wiki/add-typeOrm)
 
 ## License
 

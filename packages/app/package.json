@@ -84,7 +84,6 @@
     "@nestjs/core": "9.2.1",
     "@nestjs/platform-express": "9.2.1",
     "@nestjs/terminus": "9.1.4",
-    "@nestjs/typeorm": "9.0.1",
     "class-transformer": "0.5.1",
     "class-validator": "0.14.0",
     "helmet": "6.0.1",
@@ -97,9 +96,7 @@
     "rxjs": "7.8.0",
     "source-map-support": "0.5.21",
     "tslib": "2.4.1",
-    "typeorm": "0.3.11",
-    "ᐸDtosᐳ": "workspace:*",
-    "ᐸEntitiesᐳ": "workspace:*"
+    "ᐸDtosᐳ": "workspace:*"
   },
   "devDependencies": {
     "@byndyusoft/sonar-coverage-reporter": "1.0.0",
