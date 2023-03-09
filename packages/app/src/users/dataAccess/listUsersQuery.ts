@@ -4,8 +4,6 @@ import _ from "lodash";
 
 import { UserDto } from "ᐸDtosᐳ";
 
-import { UserEntityToUserDtoMapper } from "../mappers";
-
 export interface IListUsersQueryOptions {
   readonly userIds?: string[];
   readonly names?: string[];
@@ -16,10 +14,7 @@ export interface IListUsersQueryOptions {
 
 @Injectable()
 export class ListUsersQuery {
-  public constructor(
-    private readonly userEntityToUserDtoMapper: UserEntityToUserDtoMapper,
-    private readonly tracingService: TracingService,
-  ) {}
+  public constructor(private readonly tracingService: TracingService) {}
 
   public ask(options: IListUsersQueryOptions): Promise<UserDto[]> {
     return this.tracingService.traceAsyncFunction(ListUsersQuery.name, () => {
@@ -32,9 +27,7 @@ export class ListUsersQuery {
         },
       ];
 
-      return Promise.resolve(
-        users.map((x) => this.userEntityToUserDtoMapper.map(x)),
-      );
+      return Promise.resolve(users);
     });
   }
 }
