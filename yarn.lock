@@ -8274,9 +8274,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pino-pretty@npm:9.1.1":
-  version: 9.1.1
-  resolution: "pino-pretty@npm:9.1.1"
+"pino-pretty@npm:10.0.0":
+  version: 10.0.0
+  resolution: "pino-pretty@npm:10.0.0"
   dependencies:
     colorette: "npm:^2.0.7"
     dateformat: "npm:^4.6.3"
@@ -8294,7 +8294,7 @@ __metadata:
     strip-json-comments: "npm:^3.1.1"
   bin:
     pino-pretty: bin.js
-  checksum: 1822e0ca3b711e34c279373ff168dcde092765f1f317a1255b7dbc11621a815791c168c1f0d51bbd23c3565b50dfeb776480c178d37a6f3aa92f9fe89eec710b
+  checksum: 54557150dec7368dbe28ee57a94cee67501a8503226c8f6efc32e61665844297f592a9ce49653a77b7e04e148cebe8e6cb3fac7b883de49207fe117d28b89ec6
   languageName: node
   linkType: hard
 
@@ -10876,7 +10876,7 @@ __metadata:
     pg: "npm:8.8.0"
     pino: "npm:8.8.0"
     pino-http: "npm:8.3.1"
-    pino-pretty: "npm:9.1.1"
+    pino-pretty: "npm:10.0.0"
     reflect-metadata: "npm:0.1.13"
     rxjs: "npm:7.8.0"
     shx: "npm:0.3.4"
