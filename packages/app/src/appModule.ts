@@ -1,7 +1,11 @@
 import { DynamicModule, Module } from "@nestjs/common";
 
+import { CliModule } from "./cli/cliModule";
 import { UsersModule } from "./users/usersModule";
 
+// @Module({
+//   imports: [CliModule],
+// })
 @Module({})
 export class AppModule {
   public static async register(): Promise<DynamicModule> {
@@ -12,7 +16,7 @@ export class AppModule {
 
     return {
       module: AppModule,
-      imports: [UsersModule, InfrastructureModule],
+      imports: [UsersModule, InfrastructureModule, CliModule],
     };
   }
 }
