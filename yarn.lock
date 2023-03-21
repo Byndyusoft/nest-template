@@ -5085,6 +5085,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"generator-change-name@link:/C:/Users/user/Desktop/gen/generator-change-name::locator=root%40workspace%3A.":
+  version: 0.0.0-use.local
+  resolution: "generator-change-name@link:/C:/Users/user/Desktop/gen/generator-change-name::locator=root%40workspace%3A."
+  languageName: node
+  linkType: soft
+
+"generator-nest-pgmodule@link:/C:/Users/user/Desktop/gen/generator-nest-pgmodule::locator=root%40workspace%3A.":
+  version: 0.0.0-use.local
+  resolution: "generator-nest-pgmodule@link:/C:/Users/user/Desktop/gen/generator-nest-pgmodule::locator=root%40workspace%3A."
+  languageName: node
+  linkType: soft
+
 "gensync@npm:^1.0.0-beta.2":
   version: 1.0.0-beta.2
   resolution: "gensync@npm:1.0.0-beta.2"
@@ -8888,6 +8900,8 @@ __metadata:
     "@commitlint/cli": "npm:17.4.0"
     "@commitlint/config-conventional": "npm:17.4.0"
     eslint: "npm:8.31.0"
+    generator-change-name: "link:/C:/Users/user/Desktop/gen/generator-change-name"
+    generator-nest-pgmodule: "link:/C:/Users/user/Desktop/gen/generator-nest-pgmodule"
     husky: "npm:8.0.3"
     lint-staged: "npm:13.1.0"
     markdownlint-cli: "npm:0.33.0"
