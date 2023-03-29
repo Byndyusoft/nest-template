@@ -42,9 +42,7 @@
     "lint-staged": "13.1.0",
     "markdownlint-cli": "0.33.0",
     "prettier": "2.8.2",
-    "prettier-plugin-packagejson": "2.3.0",
-    "generator-change-name": "link:/C:/Users/user/Desktop/gen/generator-change-name",
-    "generator-nest-pgmodule": "link:/C:/Users/user/Desktop/gen/generator-nest-pgmodule"
+    "prettier-plugin-packagejson": "2.3.0"
   },
   "packageManager": "yarn@4.0.0-rc.26"
 }
