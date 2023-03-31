@@ -10290,6 +10290,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"typescript@npm:5.0.3":
+  version: 5.0.3
+  resolution: "typescript@npm:5.0.3"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 45ee631503499861d77d7a7b1d49fb5c62ae6bb5a99cdf5110f3e21c627397f5f76cf3d67ee0b223a33cfad469ea18de7650cab7a529b1376f5218a27b81671e
+  languageName: node
+  linkType: hard
+
 "typescript@patch:typescript@npm%3A4.9.4#optional!builtin<compat/typescript>, typescript@patch:typescript@npm%3A^4.6.4#optional!builtin<compat/typescript>":
   version: 4.9.4
   resolution: "typescript@patch:typescript@npm%3A4.9.4#optional!builtin<compat/typescript>::version=4.9.4&hash=701156"
@@ -10297,6 +10307,16 @@ __metadata:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: b53b083cf90883c6c73d66ce2e8b39115f06a642dfc538085c32e030687cf9872c5ea8720c5f361d4d2d14a8af946bb5423e0bf6b472b11f776e020ba6332ced
+  languageName: node
+  linkType: hard
+
+"typescript@patch:typescript@npm%3A5.0.3#optional!builtin<compat/typescript>":
+  version: 5.0.3
+  resolution: "typescript@patch:typescript@npm%3A5.0.3#optional!builtin<compat/typescript>::version=5.0.3&hash=701156"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: b7877c1596dcddd821ef3b6da12c4b29950bcaa5ab313a9fd20f78ac672be01964431f0cbe5fcfef8ac4d1606629b7a9c493e0b52090139fb77addc37abce542
   languageName: node
   linkType: hard
 
@@ -10884,7 +10904,7 @@ __metadata:
     ts-jest: "npm:29.0.3"
     tslib: "npm:2.4.1"
     typeorm: "npm:0.3.11"
-    typescript: "npm:4.9.4"
+    typescript: "npm:5.0.3"
     ᐸDtos testingᐳ: "workspace:*"
     ᐸDtosᐳ: "workspace:*"
     ᐸEntitiesᐳ: "workspace:*"
@@ -10913,7 +10933,7 @@ __metadata:
     rxjs: "npm:7.8.0"
     shx: "npm:0.3.4"
     tslib: "npm:^2.4.1"
-    typescript: "npm:4.9.4"
+    typescript: "npm:5.0.3"
     ᐸDtosᐳ: "workspace:*"
   peerDependencies:
     "@byndyusoft/nest-http-client": ^1.2.1
@@ -10942,7 +10962,7 @@ __metadata:
     rxjs: "npm:7.8.0"
     shx: "npm:0.3.4"
     tslib: "npm:^2.4.1"
-    typescript: "npm:4.9.4"
+    typescript: "npm:5.0.3"
     ᐸDtosᐳ: "workspace:*"
   peerDependencies:
     ᐸDtosᐳ: "workspace:*"
@@ -10966,7 +10986,7 @@ __metadata:
     rxjs: "npm:7.8.0"
     shx: "npm:0.3.4"
     tslib: "npm:^2.4.1"
-    typescript: "npm:4.9.4"
+    typescript: "npm:5.0.3"
   peerDependencies:
     "@byndyusoft/class-validator-extended": ^1.0.1
     "@byndyusoft/nest-swagger": ^6.1.2-1
@@ -10991,7 +11011,7 @@ __metadata:
     shx: "npm:0.3.4"
     tslib: "npm:^2.4.1"
     typeorm: "npm:0.3.11"
-    typescript: "npm:4.9.4"
+    typescript: "npm:5.0.3"
     ᐸDtosᐳ: "workspace:*"
   peerDependencies:
     typeorm: ^0.3.11
@@ -11019,7 +11039,7 @@ __metadata:
     shx: "npm:0.3.4"
     tslib: "npm:2.4.1"
     typeorm: "npm:0.3.11"
-    typescript: "npm:4.9.4"
+    typescript: "npm:5.0.3"
     ᐸDtosᐳ: "workspace:*"
     ᐸEntitiesᐳ: "workspace:*"
   languageName: unknown
