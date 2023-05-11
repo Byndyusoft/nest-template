@@ -922,10 +922,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@faker-js/faker@npm:^7.6.0":
-  version: 7.6.0
-  resolution: "@faker-js/faker@npm:7.6.0"
-  checksum: 8dfdb631c3c420d8352d5ff5bc97d97d8d6890c8c74d7385ae9838cb47bef5e56ce611f4052ce414a55320426ffff4135fe927f46417c44b1b3301b7fd93851a
+"@faker-js/faker@npm:^8.0.0":
+  version: 8.0.0
+  resolution: "@faker-js/faker@npm:8.0.0"
+  checksum: 0875eaaed0cbd80277b628a3255dd3b6a696372dad6633d691d4a13a42c9096a858b41bdcb447dce51db8be2bd8080659aa84df9b656e14410f6b7d0eb2559f8
   languageName: node
   linkType: hard
 
@@ -11155,7 +11155,7 @@ __metadata:
     "@byndyusoft/dto-factory": "npm:^1.0.1"
     "@byndyusoft/nest-swagger": "npm:6.3.0-1"
     "@byndyusoft/tsconfig": "npm:1.2.0"
-    "@faker-js/faker": "npm:^7.6.0"
+    "@faker-js/faker": "npm:^8.0.0"
     "@nestjs/common": "npm:9.3.12"
     "@nestjs/core": "npm:9.3.12"
     "@types/lodash": "npm:4.14.192"
