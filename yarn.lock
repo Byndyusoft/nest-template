@@ -3998,9 +3998,9 @@ __metadata:
   linkType: hard
 
 "electron-to-chromium@npm:^1.4.284":
-  version: 1.4.350
-  resolution: "electron-to-chromium@npm:1.4.350"
-  checksum: 9dfafbe4184155e70c371252eed23c34e272ce1c289e2f6b767c665748528eff0e67531c0b85bc3860b77d6c7680cedcf8e24b42c6f7217c73a2101743fb6ad2
+  version: 1.4.351
+  resolution: "electron-to-chromium@npm:1.4.351"
+  checksum: e3fa85f5632d209fc77b886b994fc049644e57e8d80e9043cf2143cd6697ac5fe5cfb790457e13f2d524926c1310f3950adbcd9c0a3e6e91a120a910cb54f5e8
   languageName: node
   linkType: hard
 
@@ -8580,9 +8580,9 @@ __metadata:
   linkType: hard
 
 "process-warning@npm:^2.0.0":
-  version: 2.1.0
-  resolution: "process-warning@npm:2.1.0"
-  checksum: 9de38687f1cc3bd29c71b603ad7552adce966d95ab152616e8231bcf1fb1c78c7e21c6612b0caa4eecb13363d9a65fc187e6ea2beabde307a06d672ad3c4a387
+  version: 2.2.0
+  resolution: "process-warning@npm:2.2.0"
+  checksum: 3f7bd8403a96e9098e0f0775471f851a57a7871415f818726808e88dd2018e613de6baa80c59aefff89e3f67a73e9bb9d49d825942e0c8c59e4c13f81e3b448c
   languageName: node
   linkType: hard
 
