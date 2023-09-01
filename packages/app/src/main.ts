@@ -11,7 +11,6 @@ import {
   ExpressAdapter,
   NestExpressApplication,
 } from "@nestjs/platform-express";
-import helmet from "helmet";
 
 import { AppModule } from "./appModule";
 import { ConfigDto, PackageJsonDto } from "./infrastructure";
@@ -23,8 +22,6 @@ function setupApp(app: NestExpressApplication): void {
     type: VersioningType.URI,
     prefix: "api/v",
   });
-
-  app.use(helmet());
 
   app.enableCors();
 

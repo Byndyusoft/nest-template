@@ -7,7 +7,7 @@ export class AppModule {
   public static async register(): Promise<DynamicModule> {
     // InfrastructureModule must be imported last, due to decorated providers
     const { InfrastructureModule } = await import(
-      "./infrastructure/infrastructureModule"
+      "./infrastructure/infrastructureModule.js"
     );
 
     return {

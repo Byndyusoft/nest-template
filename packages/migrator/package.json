@@ -23,27 +23,27 @@
     "start:prod": "typeorm migration:run -d ./dist/dataSource.js"
   },
   "dependencies": {
-    "@byndyusoft/class-validator-extended": "1.0.1",
-    "@byndyusoft/nest-swagger": "6.3.0-1",
-    "@nestjs/common": "9.3.12",
-    "@nestjs/core": "9.3.12",
+    "@byndyusoft/class-validator-extended": "1.2.0",
+    "@byndyusoft/nest-swagger": "7.1.9-1",
+    "@nestjs/common": "10.2.4",
+    "@nestjs/core": "10.2.4",
     "class-transformer": "0.5.1",
     "class-validator": "0.14.0",
-    "dotenv": "16.0.3",
-    "pg": "8.10.0",
+    "dotenv": "16.3.1",
+    "pg": "8.11.3",
     "reflect-metadata": "0.1.13",
-    "rxjs": "7.8.0",
-    "tslib": "2.5.0",
-    "typeorm": "0.3.12",
+    "rxjs": "7.8.1",
+    "tslib": "2.6.2",
+    "typeorm": "0.3.17",
     "ᐸDtosᐳ": "workspace:*",
     "ᐸEntitiesᐳ": "workspace:*"
   },
   "devDependencies": {
-    "@byndyusoft/tsconfig": "1.2.0",
-    "@types/node": "16.18.23",
-    "@types/pg": "8.6.6",
+    "@byndyusoft/tsconfig": "2.0.0",
+    "@types/node": "20.5.7",
+    "@types/pg": "8.10.2",
     "shx": "0.3.4",
-    "typescript": "5.0.3"
+    "typescript": "5.2.2"
   },
   "engines": {
     "node": ">=16"
