@@ -640,9 +640,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@byndyusoft/pino-logger-factory@npm:3.0.1":
-  version: 3.0.1
-  resolution: "@byndyusoft/pino-logger-factory@npm:3.0.1"
+"@byndyusoft/pino-logger-factory@npm:3.0.2-rc.1":
+  version: 3.0.2-rc.1
+  resolution: "@byndyusoft/pino-logger-factory@npm:3.0.2-rc.1"
   dependencies:
     camel-case: "npm:^4.1.2"
     murmurhash: "npm:^2.0.1"
@@ -650,7 +650,7 @@ __metadata:
   peerDependencies:
     pino: ^8.0.0
     pino-http: ^8.0.0
-  checksum: 1455174d129f988023176b412f1260e47e84476071a5a28b52c6eceeea8cbdd77e8877e2599a3af18a4ce4e8fc236cc5f721cd3a8b902e24ab63f3148e926cbd
+  checksum: c20db108a632296b63c5a2e9187dd6cc7a67168ea019cf69edae8967ea59b237f3054771ac009261bbe97831448b2a1c597940a899f3e7fb171e26e7ede61c50
   languageName: node
   linkType: hard
 
@@ -11600,7 +11600,7 @@ __metadata:
     "@byndyusoft/nest-opentracing": "npm:2.3.2"
     "@byndyusoft/nest-pino": "npm:3.4.0-1"
     "@byndyusoft/nest-swagger": "npm:7.1.9-1"
-    "@byndyusoft/pino-logger-factory": "npm:3.0.1"
+    "@byndyusoft/pino-logger-factory": "npm:3.0.2-rc.1"
     "@byndyusoft/sonar-coverage-reporter": "npm:1.0.0"
     "@byndyusoft/tsconfig": "npm:2.0.0"
     "@casualbot/jest-sonar-reporter": "npm:2.2.7"

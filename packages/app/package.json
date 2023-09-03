@@ -77,7 +77,7 @@
     "@byndyusoft/nest-opentracing": "2.3.2",
     "@byndyusoft/nest-pino": "3.4.0-1",
     "@byndyusoft/nest-swagger": "7.1.9-1",
-    "@byndyusoft/pino-logger-factory": "3.0.1",
+    "@byndyusoft/pino-logger-factory": "3.0.2-rc.1",
     "@digikare/nestjs-prom": "1.0.0",
     "@nestjs/axios": "3.0.0",
     "@nestjs/common": "10.2.4",
