@@ -5530,10 +5530,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"helmet@npm:6.0.1":
-  version: 6.0.1
-  resolution: "helmet@npm:6.0.1"
-  checksum: a323b75c7b9afe431981e32555db48c70c2985005ab34ee2188a60fa887c97469bdf05f44c34fac5d50f4c69431f847c231996e8cdd897a68c53c1fc46eef571
+"helmet@npm:7.1.0":
+  version: 7.1.0
+  resolution: "helmet@npm:7.1.0"
+  checksum: 5570755ea0c10325ce99bab7befc79adfa9fcac4b9c8c341d24fada6c49358900604c446d1ac6372fb7168b381e36bcf9ce64d00007fb2ad6823b2214f0dd8de
   languageName: node
   linkType: hard
 
@@ -11091,7 +11091,7 @@ __metadata:
     class-validator: "npm:0.14.0"
     dotenv: "npm:16.0.3"
     express: "npm:4.18.2"
-    helmet: "npm:6.0.1"
+    helmet: "npm:7.1.0"
     jaeger-client: "npm:3.19.0"
     jest: "npm:29.5.0"
     jest-extended: "npm:3.2.4"
