@@ -1506,18 +1506,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/typeorm@npm:9.0.1":
-  version: 9.0.1
-  resolution: "@nestjs/typeorm@npm:9.0.1"
+"@nestjs/typeorm@npm:10.0.2":
+  version: 10.0.2
+  resolution: "@nestjs/typeorm@npm:10.0.2"
   dependencies:
-    uuid: "npm:8.3.2"
+    uuid: "npm:9.0.1"
   peerDependencies:
-    "@nestjs/common": ^8.0.0 || ^9.0.0
-    "@nestjs/core": ^8.0.0 || ^9.0.0
-    reflect-metadata: ^0.1.13
+    "@nestjs/common": ^8.0.0 || ^9.0.0 || ^10.0.0
+    "@nestjs/core": ^8.0.0 || ^9.0.0 || ^10.0.0
+    reflect-metadata: ^0.1.13 || ^0.2.0
     rxjs: ^7.2.0
     typeorm: ^0.3.0
-  checksum: 00c51e542496078fb03ae837c4a5aac3e27a69b8e053216f6f6adabd73f0f837eadde87be6836973993920e682d0a8244d4f1f0716c19e90f8a1cb17b1ac53a4
+  checksum: c5cc5d0a34a35ebfbf1b5860f66b94a5d78442bb5816addef585ac24e1f3bce9f33828067a115a17c39f564613bbd1759d00b35d6f265c4eea42545096df735b
   languageName: node
   linkType: hard
 
@@ -10635,6 +10635,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"uuid@npm:9.0.1":
+  version: 9.0.1
+  resolution: "uuid@npm:9.0.1"
+  bin:
+    uuid: dist/bin/uuid
+  checksum: 1e8544639b27fbae6a51b4b64d1b2c707c91abb70e3c478819e9dbe3982cbf246bbc749196ce1440d1d0fcc10811d27a2c3127f64b570d168dc7a2e664bf36b9
+  languageName: node
+  linkType: hard
+
 "uuid@npm:^3.2.1":
   version: 3.4.0
   resolution: "uuid@npm:3.4.0"
@@ -11079,7 +11088,7 @@ __metadata:
     "@nestjs/platform-express": "npm:9.3.12"
     "@nestjs/schematics": "npm:9.1.0"
     "@nestjs/terminus": "npm:9.2.2"
-    "@nestjs/typeorm": "npm:9.0.1"
+    "@nestjs/typeorm": "npm:10.0.2"
     "@types/express": "npm:4.17.17"
     "@types/jaeger-client": "npm:3.18.4"
     "@types/jest": "npm:29.5.0"
