@@ -2757,6 +2757,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"axios@npm:1.6.8":
+  version: 1.6.8
+  resolution: "axios@npm:1.6.8"
+  dependencies:
+    follow-redirects: "npm:^1.15.6"
+    form-data: "npm:^4.0.0"
+    proxy-from-env: "npm:^1.1.0"
+  checksum: 2c9a6999afa69c58fcb472d5f446bc59b6fad8e5ffe318bf8c83c8a3b104962a9574d0a56643e991cfef15c2ccbe18b172c097631611e6854f6fa9159b96a819
+  languageName: node
+  linkType: hard
+
 "axobject-query@npm:^3.1.1":
   version: 3.1.1
   resolution: "axobject-query@npm:3.1.1"
@@ -5026,6 +5037,16 @@ __metadata:
     debug:
       optional: true
   checksum: 930171f8b81bf00e9368df4b17f3b835934762d51192632af53a51a8a608d5510a1ffbc6da5761dce9996cdbd750740490ca844320e5ff11cdaf2329a5a69647
+  languageName: node
+  linkType: hard
+
+"follow-redirects@npm:^1.15.6":
+  version: 1.15.6
+  resolution: "follow-redirects@npm:1.15.6"
+  peerDependenciesMeta:
+    debug:
+      optional: true
+  checksum: 6c901e5591f99ed82e3a7af8ad8cc95b751967128cf98206bbd72fc91b5f7f6abb241f57d5b600a8373b59a3d4a954d151d4eacf56134d5bd2d6630b0ba080ce
   languageName: node
   linkType: hard
 
@@ -8684,6 +8705,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"proxy-from-env@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "proxy-from-env@npm:1.1.0"
+  checksum: 0bba2ef7c8374b384e94e4477764e53df66fcdfa7d19e2c4a063cb39eea979c139ce13981970223665422e72b7d149609a927046e2e40ab340b84d91af082591
+  languageName: node
+  linkType: hard
+
 "pump@npm:^3.0.0":
   version: 3.0.0
   resolution: "pump@npm:3.0.0"
@@ -11128,7 +11156,7 @@ __metadata:
     "@nestjs/core": "npm:9.3.12"
     "@types/proper-url-join": "npm:2.1.1"
     "@types/qs": "npm:6.9.7"
-    axios: "npm:0.27.2"
+    axios: "npm:1.6.8"
     class-transformer: "npm:0.5.1"
     class-validator: "npm:0.14.0"
     proper-url-join: "npm:^2.1.1"
