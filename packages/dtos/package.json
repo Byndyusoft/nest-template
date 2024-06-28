@@ -30,7 +30,7 @@
   "devDependencies": {
     "@byndyusoft/class-validator-extended": "1.0.1",
     "@byndyusoft/nest-swagger": "6.3.0-1",
-    "@byndyusoft/tsconfig": "1.2.0",
+    "@byndyusoft/tsconfig": "2.1.0",
     "@nestjs/cli": "9.3.0",
     "@nestjs/common": "9.3.12",
     "@nestjs/core": "9.3.12",
