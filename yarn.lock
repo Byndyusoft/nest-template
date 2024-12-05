@@ -1290,16 +1290,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/axios@npm:0.1.0":
-  version: 0.1.0
-  resolution: "@nestjs/axios@npm:0.1.0"
-  dependencies:
-    axios: "npm:0.27.2"
+"@nestjs/axios@npm:3.1.3":
+  version: 3.1.3
+  resolution: "@nestjs/axios@npm:3.1.3"
   peerDependencies:
-    "@nestjs/common": ^7.0.0 || ^8.0.0 || ^9.0.0
-    reflect-metadata: ^0.1.12
+    "@nestjs/common": ^7.0.0 || ^8.0.0 || ^9.0.0 || ^10.0.0
+    axios: ^1.3.1
     rxjs: ^6.0.0 || ^7.0.0
-  checksum: 9a6dcdf0907382b6d0d4eb6bbc30e92c6baa4f2b898fdb04dd6e094ae7db7750fe7d98d07cf5d2d002609a5c5fa8c31b00f9df9ad9ef08b62421d1d9638b6458
+  checksum: d179ad868f03edbb170a46ebe1293f5f8629bfb7910e74ffde388a0abb15e1b2dbd3a8e36f6feee48e0679c6d1eb768a2c21e48cfb1dedf64c4ca042421770da
   languageName: node
   linkType: hard
 
@@ -11072,7 +11070,7 @@ __metadata:
     "@byndyusoft/tsconfig": "npm:1.2.0"
     "@casualbot/jest-sonar-reporter": "npm:2.2.7"
     "@digikare/nestjs-prom": "npm:1.0.0"
-    "@nestjs/axios": "npm:0.1.0"
+    "@nestjs/axios": "npm:3.1.3"
     "@nestjs/cli": "npm:9.3.0"
     "@nestjs/common": "npm:9.3.12"
     "@nestjs/core": "npm:9.3.12"
