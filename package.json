@@ -36,7 +36,7 @@
     "test:cov": "yarn packages/app run test:cov"
   },
   "devDependencies": {
-    "@byndyusoft/eslint-config": "2.2.1",
+    "@byndyusoft/eslint-config": "3.0.1",
     "@commitlint/cli": "17.5.1",
     "@commitlint/config-conventional": "17.4.4",
     "eslint": "8.37.0",
