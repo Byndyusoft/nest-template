@@ -39,7 +39,7 @@
     "@nestjs/core": "9.3.12",
     "@types/proper-url-join": "2.1.1",
     "@types/qs": "6.9.7",
-    "axios": "0.27.2",
+    "axios": "1.7.9",
     "class-transformer": "0.5.1",
     "class-validator": "0.14.0",
     "reflect-metadata": "0.1.13",
