@@ -1,6 +1,6 @@
+import { IncomingMessage } from "http";
 import * as process from "process";
 
-import { getNodeAutoInstrumentations } from "@opentelemetry/auto-instrumentations-node";
 import { AsyncLocalStorageContextManager } from "@opentelemetry/context-async-hooks";
 import {
   CompositePropagator,
@@ -8,6 +8,11 @@ import {
   W3CTraceContextPropagator,
 } from "@opentelemetry/core";
 import { OTLPTraceExporter } from "@opentelemetry/exporter-trace-otlp-http";
+import {
+  ExpressInstrumentation,
+  ExpressLayerType,
+} from "@opentelemetry/instrumentation-express";
+import { HttpInstrumentation } from "@opentelemetry/instrumentation-http";
 import { B3InjectEncoding, B3Propagator } from "@opentelemetry/propagator-b3";
 import { JaegerPropagator } from "@opentelemetry/propagator-jaeger";
 import { NodeSDK } from "@opentelemetry/sdk-node";
@@ -17,7 +22,10 @@ const exporter = new OTLPTraceExporter({
   url: String(process.env.JAEGER_ENDPOINT),
 });
 
+const ignoreUrls = ["_healthz", "_readiness", "metrics", "swagger"];
+
 const otelSDK = new NodeSDK({
+  serviceName: process.env.SERVICE_NAME,
   spanProcessors: [new BatchSpanProcessor(exporter)],
   contextManager: new AsyncLocalStorageContextManager(),
   textMapPropagator: new CompositePropagator({
@@ -31,7 +39,18 @@ const otelSDK = new NodeSDK({
       }),
     ],
   }),
-  instrumentations: [getNodeAutoInstrumentations()],
+  instrumentations: [
+    new HttpInstrumentation({
+      ignoreIncomingRequestHook(request: IncomingMessage) {
+        return ignoreUrls
+          ? ignoreUrls.some((x) => !!request.url?.includes(x))
+          : false;
+      },
+    }),
+    new ExpressInstrumentation({
+      ignoreLayersType: Object.values(ExpressLayerType),
+    }),
+  ],
 });
 
 export default otelSDK;

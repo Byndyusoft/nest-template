@@ -47,7 +47,11 @@ function setupSwagger(app: NestExpressApplication): void {
     .addServer(config.http.swaggerServer)
     .build();
 
-  SwaggerModule.setup("api", app, SwaggerModule.createDocument(app, options));
+  SwaggerModule.setup(
+    "swagger",
+    app,
+    SwaggerModule.createDocument(app, options),
+  );
 }
 
 async function bootstrap(): Promise<void> {
