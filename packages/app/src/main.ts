@@ -7,10 +7,7 @@ import { Logger, LoggerErrorInterceptor } from "@byndyusoft/nest-pino";
 import { DocumentBuilder, SwaggerModule } from "@byndyusoft/nest-swagger";
 import { ValidationPipe, VersioningType } from "@nestjs/common";
 import { NestFactory } from "@nestjs/core";
-import {
-  ExpressAdapter,
-  NestExpressApplication,
-} from "@nestjs/platform-express";
+import { NestExpressApplication } from "@nestjs/platform-express";
 import helmet from "helmet";
 
 import { AppModule } from "./appModule";
@@ -59,7 +56,6 @@ async function bootstrap(): Promise<void> {
 
   const app = await NestFactory.create<NestExpressApplication>(
     await AppModule.register(),
-    new ExpressAdapter(),
     {
       bufferLogs: true,
     },
