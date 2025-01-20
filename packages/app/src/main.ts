@@ -15,6 +15,7 @@ import helmet from "helmet";
 
 import { AppModule } from "./appModule";
 import { ConfigDto, PackageJsonDto } from "./infrastructure";
+import otelSDK from "./tracing";
 
 function setupApp(app: NestExpressApplication): void {
   app.enableShutdownHooks();
@@ -53,6 +54,9 @@ function setupSwagger(app: NestExpressApplication): void {
 }
 
 async function bootstrap(): Promise<void> {
+  // Start SDK before nestjs factory create
+  otelSDK.start();
+
   const app = await NestFactory.create<NestExpressApplication>(
     await AppModule.register(),
     new ExpressAdapter(),
