@@ -1,11 +1,11 @@
-# ᐸDtosᐳ
+# open-telemetry-example-dtos
 
 ᐸDtos descriptionᐳ
 
 ## Install
 
 ```bash
-yarn add ᐸDtosᐳ @byndyusoft/class-validator-extended @byndyusoft/nest-swagger class-transformer class-validator
+yarn add open-telemetry-example-dtos @byndyusoft/class-validator-extended @byndyusoft/nest-swagger class-transformer class-validator
 ```
 
 You also need install all required peer dependencies.

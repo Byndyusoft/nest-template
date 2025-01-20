@@ -2,10 +2,9 @@ import { TracingService } from "@byndyusoft/nest-opentracing";
 import { Injectable } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
 import _ from "lodash";
+import { UserDto } from "open-telemetry-example-dtos";
+import { UserEntity } from "open-telemetry-example-entities";
 import { In, Repository } from "typeorm";
-
-import { UserDto } from "ᐸDtosᐳ";
-import { UserEntity } from "ᐸEntitiesᐳ";
 
 import { UserEntityToUserDtoMapper } from "../mappers";
 

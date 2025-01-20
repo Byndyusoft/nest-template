@@ -1,6 +1,8 @@
 import { mock, MockProxy } from "jest-mock-extended";
-
-import { createUserDtoFactory, userDtoFactory } from "ᐸDtos testingᐳ";
+import {
+  createUserDtoFactory,
+  userDtoFactory,
+} from "open-telemetry-example-dtos-testing";
 
 import { CreateUserCommand } from "../../../src/users/dataAccess";
 import { CreateUserUseCase } from "../../../src/users/useCases";

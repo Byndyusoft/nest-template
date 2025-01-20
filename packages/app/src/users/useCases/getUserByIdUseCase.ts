@@ -1,6 +1,5 @@
 import { Injectable } from "@nestjs/common";
-
-import { ParamsWithUserIdDto, UserDto } from "ᐸDtosᐳ";
+import { ParamsWithUserIdDto, UserDto } from "open-telemetry-example-dtos";
 
 import { ListUsersQuery } from "../dataAccess";
 import { UserNotFoundException } from "../exceptions";

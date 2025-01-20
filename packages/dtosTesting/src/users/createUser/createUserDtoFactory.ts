@@ -1,7 +1,6 @@
 import { makeDtoFactory } from "@byndyusoft/dto-factory";
 import _ from "lodash";
-
-import { CreateUserDto } from "ᐸDtosᐳ";
+import { CreateUserDto } from "open-telemetry-example-dtos";
 
 import { userDtoFactory } from "../common";
 

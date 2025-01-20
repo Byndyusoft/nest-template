@@ -1,6 +1,8 @@
 import { Injectable } from "@nestjs/common";
-
-import { ListUsersQueryDto, ListUsersResponseDto } from "ᐸDtosᐳ";
+import {
+  ListUsersQueryDto,
+  ListUsersResponseDto,
+} from "open-telemetry-example-dtos";
 
 import { ListUsersQuery } from "../dataAccess";
 

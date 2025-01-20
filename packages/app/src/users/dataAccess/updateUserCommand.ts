@@ -5,11 +5,10 @@ import {
   InternalServerErrorException,
 } from "@nestjs/common";
 import _ from "lodash";
+import { UserDto } from "open-telemetry-example-dtos";
+import { UserEntity, UserOutboxEntity } from "open-telemetry-example-entities";
 import { DataSource, EntityManager } from "typeorm";
 import { QueryDeepPartialEntity } from "typeorm/query-builder/QueryPartialEntity";
-
-import { UserDto } from "ᐸDtosᐳ";
-import { UserEntity, UserOutboxEntity } from "ᐸEntitiesᐳ";
 
 import {
   UserEntityToUserDtoMapper,

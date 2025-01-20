@@ -1,5 +1,5 @@
 {
-  "name": "ᐸDtos testingᐳ",
+  "name": "open-telemetry-example-dtos-testing",
   "version": "0.0.0-development",
   "description": "ᐸDtos testing descriptionᐳ",
   "homepage": "https://github.com/Byndyusoft/ᐸRepository nameᐳ#readme",
@@ -39,14 +39,14 @@
     "@types/lodash": "4.14.192",
     "class-transformer": "0.5.1",
     "class-validator": "0.14.0",
+    "open-telemetry-example-dtos": "workspace:*",
     "reflect-metadata": "0.1.13",
     "rxjs": "7.8.0",
     "shx": "0.3.4",
-    "typescript": "5.0.3",
-    "ᐸDtosᐳ": "workspace:*"
+    "typescript": "5.0.3"
   },
   "peerDependencies": {
-    "ᐸDtosᐳ": "workspace:*"
+    "open-telemetry-example-dtos": "workspace:*"
   },
   "engines": {
     "node": ">=16"

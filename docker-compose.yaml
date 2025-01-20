@@ -1,0 +1,23 @@
+version: "3.8"
+
+services:
+  ##############################################################################
+  jaeger:
+    image: jaegertracing/all-in-one:1.65.0
+    restart: "no"
+    ports:
+      - 4317:4317 # accept OpenTelemetry Protocol (OTLP) over gRPC
+      - 4318:4318 # accept OpenTelemetry Protocol (OTLP) over HTTP
+      - 14268:14268 # accept jaeger.thrift directly from clients
+      - 16686:16686 # serve frontend
+    environment:
+      - OTEL_TRACES_SAMPLER=always_off
+  ##############################################################################
+  pg:
+    image: postgres:15.3-bookworm
+    restart: "no"
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: postgres
+  ##############################################################################

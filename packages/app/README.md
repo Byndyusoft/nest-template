@@ -1,4 +1,4 @@
-# ᐸAppᐳ
+# open-telemetry-example
 
 ᐸApp descriptionᐳ
 

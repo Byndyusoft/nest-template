@@ -10,7 +10,6 @@ import {
   Post,
   Query,
 } from "@nestjs/common";
-
 import {
   CreateUserDto,
   ListUsersQueryDto,
@@ -19,7 +18,7 @@ import {
   QueryWithUserVersionDto,
   UpdateUserDto,
   UserDto,
-} from "ᐸDtosᐳ";
+} from "open-telemetry-example-dtos";
 
 import { ApiCommonResponses } from "../infrastructure";
 

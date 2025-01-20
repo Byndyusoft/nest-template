@@ -1,7 +1,6 @@
 import { makeDtoFactory } from "@byndyusoft/dto-factory";
 import { faker } from "@faker-js/faker";
-
-import { UserDto } from "ᐸDtosᐳ";
+import { UserDto } from "open-telemetry-example-dtos";
 
 export const userDtoFactory = makeDtoFactory<UserDto>(() => ({
   userId: String(faker.datatype.number()),

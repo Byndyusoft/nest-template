@@ -1,10 +1,9 @@
 import { mock, MockProxy } from "jest-mock-extended";
-
 import {
   paramsWithUserIdDtoFactory,
   queryWithUserVersionDtoFactory,
   userDtoFactory,
-} from "ᐸDtos testingᐳ";
+} from "open-telemetry-example-dtos-testing";
 
 import { UpdateUserCommand } from "../../../src/users/dataAccess";
 import {

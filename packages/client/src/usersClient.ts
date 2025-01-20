@@ -1,6 +1,5 @@
 import { HttpClient } from "@byndyusoft/nest-http-client";
 import { Injectable } from "@nestjs/common";
-
 import {
   CreateUserDto,
   ListUsersQueryDto,
@@ -9,7 +8,7 @@ import {
   QueryWithUserVersionDto,
   UpdateUserDto,
   UserDto,
-} from "ᐸDtosᐳ";
+} from "open-telemetry-example-dtos";
 
 @Injectable()
 export class UsersClient {

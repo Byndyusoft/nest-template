@@ -1,6 +1,9 @@
 import { Injectable } from "@nestjs/common";
-
-import { ParamsWithUserIdDto, QueryWithUserVersionDto, UserDto } from "ᐸDtosᐳ";
+import {
+  ParamsWithUserIdDto,
+  QueryWithUserVersionDto,
+  UserDto,
+} from "open-telemetry-example-dtos";
 
 import { UpdateUserCommand } from "../dataAccess";
 

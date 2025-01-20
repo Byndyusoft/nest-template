@@ -1,6 +1,5 @@
 import { Injectable } from "@nestjs/common";
-
-import { CreateUserDto, UserDto } from "ᐸDtosᐳ";
+import { CreateUserDto, UserDto } from "open-telemetry-example-dtos";
 
 import { CreateUserCommand } from "../dataAccess";
 

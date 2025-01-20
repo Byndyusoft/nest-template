@@ -1,5 +1,5 @@
 {
-  "name": "ᐸMigratorᐳ",
+  "name": "open-telemetry-example-migrator",
   "version": "0.0.0-development",
   "private": true,
   "description": "ᐸMigrator descriptionᐳ",
@@ -30,13 +30,13 @@
     "class-transformer": "0.5.1",
     "class-validator": "0.14.0",
     "dotenv": "16.0.3",
+    "open-telemetry-example-dtos": "workspace:*",
+    "open-telemetry-example-entities": "workspace:*",
     "pg": "8.10.0",
     "reflect-metadata": "0.1.13",
     "rxjs": "7.8.0",
     "tslib": "2.5.0",
-    "typeorm": "0.3.12",
-    "ᐸDtosᐳ": "workspace:*",
-    "ᐸEntitiesᐳ": "workspace:*"
+    "typeorm": "0.3.12"
   },
   "devDependencies": {
     "@byndyusoft/tsconfig": "1.2.0",

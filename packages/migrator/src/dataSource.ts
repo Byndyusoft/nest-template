@@ -3,9 +3,8 @@ import "reflect-metadata";
 import path from "path";
 
 import dotenv from "dotenv";
+import * as entities from "open-telemetry-example-entities";
 import { DataSource } from "typeorm";
-
-import * as entities from "ᐸEntitiesᐳ";
 
 dotenv.config({
   path: path.join(process.cwd(), ".env"),

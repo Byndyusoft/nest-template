@@ -8020,6 +8020,196 @@ __metadata:
   languageName: node
   linkType: hard
 
+"open-telemetry-example-client@workspace:packages/client":
+  version: 0.0.0-use.local
+  resolution: "open-telemetry-example-client@workspace:packages/client"
+  dependencies:
+    "@byndyusoft/class-validator-extended": "npm:1.0.1"
+    "@byndyusoft/nest-dynamic-module": "npm:1.0.0"
+    "@byndyusoft/nest-http-client": "npm:1.2.1"
+    "@byndyusoft/nest-swagger": "npm:6.3.0-1"
+    "@byndyusoft/tsconfig": "npm:1.2.0"
+    "@nestjs/common": "npm:9.3.12"
+    "@nestjs/core": "npm:9.3.12"
+    "@types/proper-url-join": "npm:2.1.1"
+    "@types/qs": "npm:6.9.7"
+    axios: "npm:0.27.2"
+    class-transformer: "npm:0.5.1"
+    class-validator: "npm:0.14.0"
+    open-telemetry-example-dtos: "workspace:*"
+    proper-url-join: "npm:^2.1.1"
+    qs: "npm:^6.11.1"
+    reflect-metadata: "npm:0.1.13"
+    rxjs: "npm:7.8.0"
+    shx: "npm:0.3.4"
+    tslib: "npm:^2.5.0"
+    typescript: "npm:5.0.3"
+  peerDependencies:
+    "@byndyusoft/nest-http-client": ^1.2.1
+    "@nestjs/common": ^9.2.1
+    open-telemetry-example-dtos: "workspace:*"
+    rxjs: ^7.8.0
+  languageName: unknown
+  linkType: soft
+
+"open-telemetry-example-dtos-testing@workspace:*, open-telemetry-example-dtos-testing@workspace:packages/dtosTesting":
+  version: 0.0.0-use.local
+  resolution: "open-telemetry-example-dtos-testing@workspace:packages/dtosTesting"
+  dependencies:
+    "@byndyusoft/class-validator-extended": "npm:1.0.1"
+    "@byndyusoft/dto-factory": "npm:^1.0.1"
+    "@byndyusoft/nest-swagger": "npm:6.3.0-1"
+    "@byndyusoft/tsconfig": "npm:1.2.0"
+    "@faker-js/faker": "npm:^7.6.0"
+    "@nestjs/common": "npm:9.3.12"
+    "@nestjs/core": "npm:9.3.12"
+    "@types/lodash": "npm:4.14.192"
+    class-transformer: "npm:0.5.1"
+    class-validator: "npm:0.14.0"
+    lodash: "npm:^4.17.21"
+    open-telemetry-example-dtos: "workspace:*"
+    reflect-metadata: "npm:0.1.13"
+    rxjs: "npm:7.8.0"
+    shx: "npm:0.3.4"
+    tslib: "npm:^2.5.0"
+    typescript: "npm:5.0.3"
+  peerDependencies:
+    open-telemetry-example-dtos: "workspace:*"
+  languageName: unknown
+  linkType: soft
+
+"open-telemetry-example-dtos@workspace:*, open-telemetry-example-dtos@workspace:packages/dtos":
+  version: 0.0.0-use.local
+  resolution: "open-telemetry-example-dtos@workspace:packages/dtos"
+  dependencies:
+    "@byndyusoft/class-validator-extended": "npm:1.0.1"
+    "@byndyusoft/nest-swagger": "npm:6.3.0-1"
+    "@byndyusoft/tsconfig": "npm:1.2.0"
+    "@nestjs/cli": "npm:9.3.0"
+    "@nestjs/common": "npm:9.3.12"
+    "@nestjs/core": "npm:9.3.12"
+    "@nestjs/schematics": "npm:9.1.0"
+    class-transformer: "npm:0.5.1"
+    class-validator: "npm:0.14.0"
+    reflect-metadata: "npm:0.1.13"
+    rxjs: "npm:7.8.0"
+    shx: "npm:0.3.4"
+    tslib: "npm:^2.5.0"
+    typescript: "npm:5.0.3"
+  peerDependencies:
+    "@byndyusoft/class-validator-extended": ^1.0.1
+    "@byndyusoft/nest-swagger": ^6.1.2-1
+    class-transformer: ^0.5.1
+    class-validator: ^0.14.0
+  languageName: unknown
+  linkType: soft
+
+"open-telemetry-example-entities@workspace:*, open-telemetry-example-entities@workspace:packages/entities":
+  version: 0.0.0-use.local
+  resolution: "open-telemetry-example-entities@workspace:packages/entities"
+  dependencies:
+    "@byndyusoft/class-validator-extended": "npm:1.0.1"
+    "@byndyusoft/nest-swagger": "npm:6.3.0-1"
+    "@byndyusoft/tsconfig": "npm:1.2.0"
+    "@nestjs/common": "npm:9.3.12"
+    "@nestjs/core": "npm:9.3.12"
+    class-transformer: "npm:0.5.1"
+    class-validator: "npm:0.14.0"
+    open-telemetry-example-dtos: "workspace:*"
+    reflect-metadata: "npm:0.1.13"
+    rxjs: "npm:7.8.0"
+    shx: "npm:0.3.4"
+    tslib: "npm:^2.5.0"
+    typeorm: "npm:0.3.12"
+    typescript: "npm:5.0.3"
+  peerDependencies:
+    open-telemetry-example-dtos: "workspace:*"
+    typeorm: ^0.3.11
+  languageName: unknown
+  linkType: soft
+
+"open-telemetry-example-migrator@workspace:packages/migrator":
+  version: 0.0.0-use.local
+  resolution: "open-telemetry-example-migrator@workspace:packages/migrator"
+  dependencies:
+    "@byndyusoft/class-validator-extended": "npm:1.0.1"
+    "@byndyusoft/nest-swagger": "npm:6.3.0-1"
+    "@byndyusoft/tsconfig": "npm:1.2.0"
+    "@nestjs/common": "npm:9.3.12"
+    "@nestjs/core": "npm:9.3.12"
+    "@types/node": "npm:16.18.23"
+    "@types/pg": "npm:8.6.6"
+    class-transformer: "npm:0.5.1"
+    class-validator: "npm:0.14.0"
+    dotenv: "npm:16.0.3"
+    open-telemetry-example-dtos: "workspace:*"
+    open-telemetry-example-entities: "workspace:*"
+    pg: "npm:8.10.0"
+    reflect-metadata: "npm:0.1.13"
+    rxjs: "npm:7.8.0"
+    shx: "npm:0.3.4"
+    tslib: "npm:2.5.0"
+    typeorm: "npm:0.3.12"
+    typescript: "npm:5.0.3"
+  languageName: unknown
+  linkType: soft
+
+"open-telemetry-example@workspace:packages/app":
+  version: 0.0.0-use.local
+  resolution: "open-telemetry-example@workspace:packages/app"
+  dependencies:
+    "@byndyusoft/class-validator-extended": "npm:1.0.1"
+    "@byndyusoft/nest-opentracing": "npm:2.3.2"
+    "@byndyusoft/nest-pino": "npm:3.1.2-1"
+    "@byndyusoft/nest-swagger": "npm:6.3.0-1"
+    "@byndyusoft/pino-logger-factory": "npm:3.0.1"
+    "@byndyusoft/sonar-coverage-reporter": "npm:1.0.0"
+    "@byndyusoft/tsconfig": "npm:1.2.0"
+    "@casualbot/jest-sonar-reporter": "npm:2.2.7"
+    "@digikare/nestjs-prom": "npm:1.0.0"
+    "@nestjs/axios": "npm:0.1.0"
+    "@nestjs/cli": "npm:9.3.0"
+    "@nestjs/common": "npm:9.3.12"
+    "@nestjs/core": "npm:9.3.12"
+    "@nestjs/platform-express": "npm:9.3.12"
+    "@nestjs/schematics": "npm:9.1.0"
+    "@nestjs/terminus": "npm:9.2.2"
+    "@nestjs/typeorm": "npm:9.0.1"
+    "@types/express": "npm:4.17.17"
+    "@types/jaeger-client": "npm:3.18.4"
+    "@types/jest": "npm:29.5.0"
+    "@types/lodash": "npm:4.14.192"
+    "@types/node": "npm:16.18.23"
+    "@types/pg": "npm:8.6.6"
+    "@types/source-map-support": "npm:0.5.6"
+    class-transformer: "npm:0.5.1"
+    class-validator: "npm:0.14.0"
+    dotenv: "npm:16.0.3"
+    express: "npm:4.18.2"
+    helmet: "npm:6.0.1"
+    jaeger-client: "npm:3.19.0"
+    jest: "npm:29.5.0"
+    jest-extended: "npm:3.2.4"
+    jest-mock-extended: "npm:3.0.4"
+    lodash: "npm:4.17.21"
+    open-telemetry-example-dtos: "workspace:*"
+    open-telemetry-example-dtos-testing: "workspace:*"
+    open-telemetry-example-entities: "workspace:*"
+    pg: "npm:8.10.0"
+    pino: "npm:8.11.0"
+    pino-http: "npm:8.3.3"
+    pino-pretty: "npm:10.0.0"
+    reflect-metadata: "npm:0.1.13"
+    rxjs: "npm:7.8.0"
+    shx: "npm:0.3.4"
+    source-map-support: "npm:0.5.21"
+    ts-jest: "npm:29.1.0"
+    tslib: "npm:2.5.0"
+    typeorm: "npm:0.3.12"
+    typescript: "npm:5.0.3"
+  languageName: unknown
+  linkType: soft
+
 "open@npm:^8.4.0":
   version: 8.4.2
   resolution: "open@npm:8.4.2"
@@ -11058,193 +11248,3 @@ __metadata:
   checksum: 63eceacd482622afd71290541a9823a0e5eed88a6b58a5d136a5fb8151ed4d1549c80f28d74d4ad351582f9890635d49e6cf70f8d3cc64948640f839f6a37c70
   languageName: node
   linkType: hard
-
-"ᐸAppᐳ@workspace:packages/app":
-  version: 0.0.0-use.local
-  resolution: "ᐸAppᐳ@workspace:packages/app"
-  dependencies:
-    "@byndyusoft/class-validator-extended": "npm:1.0.1"
-    "@byndyusoft/nest-opentracing": "npm:2.3.2"
-    "@byndyusoft/nest-pino": "npm:3.1.2-1"
-    "@byndyusoft/nest-swagger": "npm:6.3.0-1"
-    "@byndyusoft/pino-logger-factory": "npm:3.0.1"
-    "@byndyusoft/sonar-coverage-reporter": "npm:1.0.0"
-    "@byndyusoft/tsconfig": "npm:1.2.0"
-    "@casualbot/jest-sonar-reporter": "npm:2.2.7"
-    "@digikare/nestjs-prom": "npm:1.0.0"
-    "@nestjs/axios": "npm:0.1.0"
-    "@nestjs/cli": "npm:9.3.0"
-    "@nestjs/common": "npm:9.3.12"
-    "@nestjs/core": "npm:9.3.12"
-    "@nestjs/platform-express": "npm:9.3.12"
-    "@nestjs/schematics": "npm:9.1.0"
-    "@nestjs/terminus": "npm:9.2.2"
-    "@nestjs/typeorm": "npm:9.0.1"
-    "@types/express": "npm:4.17.17"
-    "@types/jaeger-client": "npm:3.18.4"
-    "@types/jest": "npm:29.5.0"
-    "@types/lodash": "npm:4.14.192"
-    "@types/node": "npm:16.18.23"
-    "@types/pg": "npm:8.6.6"
-    "@types/source-map-support": "npm:0.5.6"
-    class-transformer: "npm:0.5.1"
-    class-validator: "npm:0.14.0"
-    dotenv: "npm:16.0.3"
-    express: "npm:4.18.2"
-    helmet: "npm:6.0.1"
-    jaeger-client: "npm:3.19.0"
-    jest: "npm:29.5.0"
-    jest-extended: "npm:3.2.4"
-    jest-mock-extended: "npm:3.0.4"
-    lodash: "npm:4.17.21"
-    pg: "npm:8.10.0"
-    pino: "npm:8.11.0"
-    pino-http: "npm:8.3.3"
-    pino-pretty: "npm:10.0.0"
-    reflect-metadata: "npm:0.1.13"
-    rxjs: "npm:7.8.0"
-    shx: "npm:0.3.4"
-    source-map-support: "npm:0.5.21"
-    ts-jest: "npm:29.1.0"
-    tslib: "npm:2.5.0"
-    typeorm: "npm:0.3.12"
-    typescript: "npm:5.0.3"
-    ᐸDtos testingᐳ: "workspace:*"
-    ᐸDtosᐳ: "workspace:*"
-    ᐸEntitiesᐳ: "workspace:*"
-  languageName: unknown
-  linkType: soft
-
-"ᐸClientᐳ@workspace:packages/client":
-  version: 0.0.0-use.local
-  resolution: "ᐸClientᐳ@workspace:packages/client"
-  dependencies:
-    "@byndyusoft/class-validator-extended": "npm:1.0.1"
-    "@byndyusoft/nest-dynamic-module": "npm:1.0.0"
-    "@byndyusoft/nest-http-client": "npm:1.2.1"
-    "@byndyusoft/nest-swagger": "npm:6.3.0-1"
-    "@byndyusoft/tsconfig": "npm:1.2.0"
-    "@nestjs/common": "npm:9.3.12"
-    "@nestjs/core": "npm:9.3.12"
-    "@types/proper-url-join": "npm:2.1.1"
-    "@types/qs": "npm:6.9.7"
-    axios: "npm:0.27.2"
-    class-transformer: "npm:0.5.1"
-    class-validator: "npm:0.14.0"
-    proper-url-join: "npm:^2.1.1"
-    qs: "npm:^6.11.1"
-    reflect-metadata: "npm:0.1.13"
-    rxjs: "npm:7.8.0"
-    shx: "npm:0.3.4"
-    tslib: "npm:^2.5.0"
-    typescript: "npm:5.0.3"
-    ᐸDtosᐳ: "workspace:*"
-  peerDependencies:
-    "@byndyusoft/nest-http-client": ^1.2.1
-    "@nestjs/common": ^9.2.1
-    rxjs: ^7.8.0
-    ᐸDtosᐳ: "workspace:*"
-  languageName: unknown
-  linkType: soft
-
-"ᐸDtos testingᐳ@workspace:*, ᐸDtos testingᐳ@workspace:packages/dtosTesting":
-  version: 0.0.0-use.local
-  resolution: "ᐸDtos testingᐳ@workspace:packages/dtosTesting"
-  dependencies:
-    "@byndyusoft/class-validator-extended": "npm:1.0.1"
-    "@byndyusoft/dto-factory": "npm:^1.0.1"
-    "@byndyusoft/nest-swagger": "npm:6.3.0-1"
-    "@byndyusoft/tsconfig": "npm:1.2.0"
-    "@faker-js/faker": "npm:^7.6.0"
-    "@nestjs/common": "npm:9.3.12"
-    "@nestjs/core": "npm:9.3.12"
-    "@types/lodash": "npm:4.14.192"
-    class-transformer: "npm:0.5.1"
-    class-validator: "npm:0.14.0"
-    lodash: "npm:^4.17.21"
-    reflect-metadata: "npm:0.1.13"
-    rxjs: "npm:7.8.0"
-    shx: "npm:0.3.4"
-    tslib: "npm:^2.5.0"
-    typescript: "npm:5.0.3"
-    ᐸDtosᐳ: "workspace:*"
-  peerDependencies:
-    ᐸDtosᐳ: "workspace:*"
-  languageName: unknown
-  linkType: soft
-
-"ᐸDtosᐳ@workspace:*, ᐸDtosᐳ@workspace:packages/dtos":
-  version: 0.0.0-use.local
-  resolution: "ᐸDtosᐳ@workspace:packages/dtos"
-  dependencies:
-    "@byndyusoft/class-validator-extended": "npm:1.0.1"
-    "@byndyusoft/nest-swagger": "npm:6.3.0-1"
-    "@byndyusoft/tsconfig": "npm:1.2.0"
-    "@nestjs/cli": "npm:9.3.0"
-    "@nestjs/common": "npm:9.3.12"
-    "@nestjs/core": "npm:9.3.12"
-    "@nestjs/schematics": "npm:9.1.0"
-    class-transformer: "npm:0.5.1"
-    class-validator: "npm:0.14.0"
-    reflect-metadata: "npm:0.1.13"
-    rxjs: "npm:7.8.0"
-    shx: "npm:0.3.4"
-    tslib: "npm:^2.5.0"
-    typescript: "npm:5.0.3"
-  peerDependencies:
-    "@byndyusoft/class-validator-extended": ^1.0.1
-    "@byndyusoft/nest-swagger": ^6.1.2-1
-    class-transformer: ^0.5.1
-    class-validator: ^0.14.0
-  languageName: unknown
-  linkType: soft
-
-"ᐸEntitiesᐳ@workspace:*, ᐸEntitiesᐳ@workspace:packages/entities":
-  version: 0.0.0-use.local
-  resolution: "ᐸEntitiesᐳ@workspace:packages/entities"
-  dependencies:
-    "@byndyusoft/class-validator-extended": "npm:1.0.1"
-    "@byndyusoft/nest-swagger": "npm:6.3.0-1"
-    "@byndyusoft/tsconfig": "npm:1.2.0"
-    "@nestjs/common": "npm:9.3.12"
-    "@nestjs/core": "npm:9.3.12"
-    class-transformer: "npm:0.5.1"
-    class-validator: "npm:0.14.0"
-    reflect-metadata: "npm:0.1.13"
-    rxjs: "npm:7.8.0"
-    shx: "npm:0.3.4"
-    tslib: "npm:^2.5.0"
-    typeorm: "npm:0.3.12"
-    typescript: "npm:5.0.3"
-    ᐸDtosᐳ: "workspace:*"
-  peerDependencies:
-    typeorm: ^0.3.11
-    ᐸDtosᐳ: "workspace:*"
-  languageName: unknown
-  linkType: soft
-
-"ᐸMigratorᐳ@workspace:packages/migrator":
-  version: 0.0.0-use.local
-  resolution: "ᐸMigratorᐳ@workspace:packages/migrator"
-  dependencies:
-    "@byndyusoft/class-validator-extended": "npm:1.0.1"
-    "@byndyusoft/nest-swagger": "npm:6.3.0-1"
-    "@byndyusoft/tsconfig": "npm:1.2.0"
-    "@nestjs/common": "npm:9.3.12"
-    "@nestjs/core": "npm:9.3.12"
-    "@types/node": "npm:16.18.23"
-    "@types/pg": "npm:8.6.6"
-    class-transformer: "npm:0.5.1"
-    class-validator: "npm:0.14.0"
-    dotenv: "npm:16.0.3"
-    pg: "npm:8.10.0"
-    reflect-metadata: "npm:0.1.13"
-    rxjs: "npm:7.8.0"
-    shx: "npm:0.3.4"
-    tslib: "npm:2.5.0"
-    typeorm: "npm:0.3.12"
-    typescript: "npm:5.0.3"
-    ᐸDtosᐳ: "workspace:*"
-    ᐸEntitiesᐳ: "workspace:*"
-  languageName: unknown
-  linkType: soft

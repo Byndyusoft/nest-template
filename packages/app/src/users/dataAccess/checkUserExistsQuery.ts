@@ -1,9 +1,8 @@
 import { TracingService } from "@byndyusoft/nest-opentracing";
 import { Injectable } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
+import { UserEntity } from "open-telemetry-example-entities";
 import { Repository } from "typeorm";
-
-import { UserEntity } from "ᐸEntitiesᐳ";
 
 export interface ICheckUserExistsQueryOptions {
   readonly userId: string;
