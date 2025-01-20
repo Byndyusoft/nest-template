@@ -1,4 +1,3 @@
-import { TracingService } from "@byndyusoft/nest-opentracing";
 import {
   ConflictException,
   Injectable,
@@ -26,16 +25,13 @@ export interface IUpdateUserCommandOptions {
 export class UpdateUserCommand {
   public constructor(
     private readonly dataSource: DataSource,
-    private readonly tracingService: TracingService,
     private readonly userEntityToUserDtoMapper: UserEntityToUserDtoMapper,
     private readonly userEntityToUserOutboxDtoMapper: UserEntityToUserOutboxDtoMapper,
   ) {}
 
   public execute(options: IUpdateUserCommandOptions): Promise<UserDto> {
-    return this.tracingService.traceAsyncFunction(UpdateUserCommand.name, () =>
-      this.dataSource.transaction((entityManager) =>
-        this.executeTransaction(entityManager, options),
-      ),
+    return this.dataSource.transaction((entityManager) =>
+      this.executeTransaction(entityManager, options),
     );
   }
 

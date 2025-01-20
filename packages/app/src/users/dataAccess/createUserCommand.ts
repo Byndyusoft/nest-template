@@ -1,4 +1,3 @@
-import { TracingService } from "@byndyusoft/nest-opentracing";
 import { Injectable } from "@nestjs/common";
 import { UserDto } from "open-telemetry-example-dtos";
 import { UserEntity, UserOutboxEntity } from "open-telemetry-example-entities";
@@ -18,16 +17,13 @@ export interface ICreateUserCommandOptions {
 export class CreateUserCommand {
   public constructor(
     private readonly dataSource: DataSource,
-    private readonly tracingService: TracingService,
     private readonly userEntityToUserDtoMapper: UserEntityToUserDtoMapper,
     private readonly userEntityToUserOutboxDtoMapper: UserEntityToUserOutboxDtoMapper,
   ) {}
 
-  public execute(options: ICreateUserCommandOptions): Promise<UserDto> {
-    return this.tracingService.traceAsyncFunction(CreateUserCommand.name, () =>
-      this.dataSource.transaction((entityManager) =>
-        this.executeTransaction(entityManager, options),
-      ),
+  public async execute(options: ICreateUserCommandOptions): Promise<UserDto> {
+    return this.dataSource.transaction((entityManager) =>
+      this.executeTransaction(entityManager, options),
     );
   }
 

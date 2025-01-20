@@ -74,7 +74,6 @@
   },
   "dependencies": {
     "@byndyusoft/class-validator-extended": "1.0.1",
-    "@byndyusoft/nest-opentracing": "2.3.2",
     "@byndyusoft/nest-pino": "3.1.2-1",
     "@byndyusoft/nest-swagger": "6.3.0-1",
     "@byndyusoft/pino-logger-factory": "3.0.1",
@@ -97,7 +96,6 @@
     "class-transformer": "0.5.1",
     "class-validator": "0.14.0",
     "helmet": "6.0.1",
-    "jaeger-client": "3.19.0",
     "lodash": "4.17.21",
     "nestjs-otel": "6.1.2",
     "open-telemetry-example-dtos": "workspace:*",
