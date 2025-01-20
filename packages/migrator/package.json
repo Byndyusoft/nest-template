@@ -39,7 +39,7 @@
     "ᐸEntitiesᐳ": "workspace:*"
   },
   "devDependencies": {
-    "@byndyusoft/tsconfig": "1.2.0",
+    "@byndyusoft/tsconfig": "2.2.0",
     "@types/node": "16.18.23",
     "@types/pg": "8.6.6",
     "shx": "0.3.4",

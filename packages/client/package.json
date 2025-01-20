@@ -34,7 +34,7 @@
     "@byndyusoft/nest-dynamic-module": "1.0.0",
     "@byndyusoft/nest-http-client": "1.2.1",
     "@byndyusoft/nest-swagger": "6.3.0-1",
-    "@byndyusoft/tsconfig": "1.2.0",
+    "@byndyusoft/tsconfig": "2.2.0",
     "@nestjs/common": "9.3.12",
     "@nestjs/core": "9.3.12",
     "@types/proper-url-join": "2.1.1",

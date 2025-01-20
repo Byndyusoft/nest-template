@@ -103,7 +103,7 @@
   },
   "devDependencies": {
     "@byndyusoft/sonar-coverage-reporter": "1.0.0",
-    "@byndyusoft/tsconfig": "1.2.0",
+    "@byndyusoft/tsconfig": "2.2.0",
     "@casualbot/jest-sonar-reporter": "2.2.7",
     "@nestjs/cli": "9.3.0",
     "@nestjs/schematics": "9.1.0",
