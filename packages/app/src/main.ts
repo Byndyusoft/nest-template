@@ -10,9 +10,9 @@ import { NestFactory } from "@nestjs/core";
 import { NestExpressApplication } from "@nestjs/platform-express";
 import helmet from "helmet";
 
+import otelSDK from "./infrastructure/openTelemetry/tracing";
 import { AppModule } from "./appModule";
 import { ConfigDto, PackageJsonDto } from "./infrastructure";
-import otelSDK from "./tracing";
 
 function setupApp(app: NestExpressApplication): void {
   app.enableShutdownHooks();
