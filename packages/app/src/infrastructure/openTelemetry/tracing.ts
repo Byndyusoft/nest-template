@@ -13,6 +13,7 @@ import {
   ExpressLayerType,
 } from "@opentelemetry/instrumentation-express";
 import { HttpInstrumentation } from "@opentelemetry/instrumentation-http";
+import { PinoInstrumentation } from "@opentelemetry/instrumentation-pino";
 import { B3InjectEncoding, B3Propagator } from "@opentelemetry/propagator-b3";
 import { JaegerPropagator } from "@opentelemetry/propagator-jaeger";
 import { NodeSDK } from "@opentelemetry/sdk-node";
@@ -50,6 +51,7 @@ const otelSDK = new NodeSDK({
     new ExpressInstrumentation({
       ignoreLayersType: Object.values(ExpressLayerType),
     }),
+    new PinoInstrumentation(),
   ],
 });
 
