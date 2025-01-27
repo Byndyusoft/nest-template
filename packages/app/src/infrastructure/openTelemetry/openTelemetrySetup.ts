@@ -1,6 +1,7 @@
 import { IncomingMessage } from "http";
 import * as process from "process";
 
+import { Span } from "@opentelemetry/api";
 import { AsyncLocalStorageContextManager } from "@opentelemetry/context-async-hooks";
 import {
   CompositePropagator,
@@ -12,6 +13,8 @@ import {
   ExpressLayerType,
 } from "@opentelemetry/instrumentation-express";
 import { HttpInstrumentation } from "@opentelemetry/instrumentation-http";
+import { KafkaJsInstrumentation } from "@opentelemetry/instrumentation-kafkajs";
+import { MessageInfo } from "@opentelemetry/instrumentation-kafkajs/build/src/types";
 import { PgInstrumentation } from "@opentelemetry/instrumentation-pg";
 import { PinoInstrumentation } from "@opentelemetry/instrumentation-pino";
 import { JaegerPropagator } from "@opentelemetry/propagator-jaeger";
@@ -45,6 +48,13 @@ export const openTelemetrySetup = (serviceName: string): void => {
       }),
       new PinoInstrumentation(),
       new PgInstrumentation(),
+      // не заработало. возможно, из-за зависимости от open-tracing в nest-kafka
+      new KafkaJsInstrumentation({
+        consumerHook(span: Span, info: MessageInfo) {
+          span.setAttribute("topic", info.topic);
+          span.setAttribute("partition", info.message.partition ?? "");
+        },
+      }),
     ],
   });
 

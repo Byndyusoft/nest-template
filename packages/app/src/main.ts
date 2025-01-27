@@ -7,10 +7,12 @@ import fs from "fs/promises";
 import path from "path";
 import process from "process";
 
+import { KafkaConsumer, KafkaRetryConsumer } from "@byndyusoft/nest-kafka";
 import { Logger, LoggerErrorInterceptor } from "@byndyusoft/nest-pino";
 import { DocumentBuilder, SwaggerModule } from "@byndyusoft/nest-swagger";
 import { ValidationPipe, VersioningType } from "@nestjs/common";
 import { NestFactory } from "@nestjs/core";
+import { MicroserviceOptions } from "@nestjs/microservices";
 import { NestExpressApplication } from "@nestjs/platform-express";
 import helmet from "helmet";
 
@@ -58,6 +60,16 @@ function setupSwagger(app: NestExpressApplication): void {
   );
 }
 
+function setupKafkaConsumer(app: NestExpressApplication): void {
+  app.connectMicroservice<MicroserviceOptions>({
+    strategy: app.get(KafkaConsumer),
+  });
+
+  app.connectMicroservice<MicroserviceOptions>({
+    strategy: app.get(KafkaRetryConsumer),
+  });
+}
+
 async function bootstrap(): Promise<void> {
   // Start SDK before nestjs factory create
   const packageJsonPath = path.join(process.cwd(), "package.json");
@@ -79,9 +91,11 @@ async function bootstrap(): Promise<void> {
 
   setupApp(app);
   setupSwagger(app);
+  setupKafkaConsumer(app);
 
   const config = app.get(ConfigDto);
   await app.listen(config.http.port, config.http.host);
+  await app.startAllMicroservices();
 
   logger.log(
     "Nest application listening on %s",
