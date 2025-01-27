@@ -3,6 +3,10 @@
 import "reflect-metadata";
 import "source-map-support/register";
 
+import fs from "fs/promises";
+import path from "path";
+import process from "process";
+
 import { Logger, LoggerErrorInterceptor } from "@byndyusoft/nest-pino";
 import { DocumentBuilder, SwaggerModule } from "@byndyusoft/nest-swagger";
 import { ValidationPipe, VersioningType } from "@nestjs/common";
@@ -10,7 +14,7 @@ import { NestFactory } from "@nestjs/core";
 import { NestExpressApplication } from "@nestjs/platform-express";
 import helmet from "helmet";
 
-import otelSDK from "./infrastructure/openTelemetry/tracing";
+import { openTelemetrySetup } from "./infrastructure/openTelemetry/openTelemetrySetup";
 import { AppModule } from "./appModule";
 import { ConfigDto, PackageJsonDto } from "./infrastructure";
 
@@ -56,7 +60,12 @@ function setupSwagger(app: NestExpressApplication): void {
 
 async function bootstrap(): Promise<void> {
   // Start SDK before nestjs factory create
-  otelSDK.start();
+  const packageJsonPath = path.join(process.cwd(), "package.json");
+  const packageJson = JSON.parse(
+    await fs.readFile(packageJsonPath, "utf8"),
+  ) as PackageJsonDto;
+
+  openTelemetrySetup(packageJson.name);
 
   const app = await NestFactory.create<NestExpressApplication>(
     await AppModule.register(),
