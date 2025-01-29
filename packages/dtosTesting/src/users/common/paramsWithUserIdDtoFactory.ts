@@ -1,7 +1,6 @@
 import { makeDtoFactory } from "@byndyusoft/dto-factory";
 import _ from "lodash";
-
-import { ParamsWithUserIdDto } from "ᐸDtosᐳ";
+import { ParamsWithUserIdDto } from "open-telemetry-example-dtos";
 
 import { userDtoFactory } from "./userDtoFactory";
 

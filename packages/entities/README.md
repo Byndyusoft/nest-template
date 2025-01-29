@@ -1,11 +1,11 @@
-# ᐸEntitiesᐳ
+# open-telemetry-example-entities
 
 ᐸEntities descriptionᐳ
 
 ## Install
 
 ```bash
-yarn add ᐸEntitiesᐳ ᐸDtosᐳ typeorm
+yarn add open-telemetry-example-entities open-telemetry-example-dtos typeorm
 ```
 
 You also need install all required peer dependencies.

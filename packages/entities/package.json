@@ -1,5 +1,5 @@
 {
-  "name": "ᐸEntitiesᐳ",
+  "name": "open-telemetry-example-entities",
   "version": "0.0.0-development",
   "description": "ᐸEntities descriptionᐳ",
   "homepage": "https://github.com/Byndyusoft/ᐸRepository nameᐳ#readme",
@@ -35,16 +35,16 @@
     "@nestjs/core": "9.3.12",
     "class-transformer": "0.5.1",
     "class-validator": "0.14.0",
+    "open-telemetry-example-dtos": "workspace:*",
     "reflect-metadata": "0.1.13",
     "rxjs": "7.8.0",
     "shx": "0.3.4",
     "typeorm": "0.3.12",
-    "typescript": "5.0.3",
-    "ᐸDtosᐳ": "workspace:*"
+    "typescript": "5.0.3"
   },
   "peerDependencies": {
-    "typeorm": "^0.3.11",
-    "ᐸDtosᐳ": "workspace:*"
+    "open-telemetry-example-dtos": "workspace:*",
+    "typeorm": "^0.3.11"
   },
   "engines": {
     "node": ">=16"

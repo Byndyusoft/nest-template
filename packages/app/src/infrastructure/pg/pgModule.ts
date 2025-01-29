@@ -1,7 +1,6 @@
 import { Module } from "@nestjs/common";
 import { TypeOrmModule } from "@nestjs/typeorm";
-
-import * as entities from "ᐸEntitiesᐳ";
+import * as entities from "open-telemetry-example-entities";
 
 import { ConfigDto } from "../config";
 

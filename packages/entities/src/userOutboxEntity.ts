@@ -1,6 +1,5 @@
+import { UserOutboxDto } from "open-telemetry-example-dtos";
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
-
-import { UserOutboxDto } from "ᐸDtosᐳ";
 
 @Entity({
   name: "users_outbox",

@@ -1,15 +1,13 @@
-import { TracingService } from "@byndyusoft/nest-opentracing";
 import {
   ConflictException,
   Injectable,
   InternalServerErrorException,
 } from "@nestjs/common";
 import _ from "lodash";
+import { UserDto } from "open-telemetry-example-dtos";
+import { UserEntity, UserOutboxEntity } from "open-telemetry-example-entities";
 import { DataSource, EntityManager } from "typeorm";
 import { QueryDeepPartialEntity } from "typeorm/query-builder/QueryPartialEntity";
-
-import { UserDto } from "ᐸDtosᐳ";
-import { UserEntity, UserOutboxEntity } from "ᐸEntitiesᐳ";
 
 import {
   UserEntityToUserDtoMapper,
@@ -27,16 +25,13 @@ export interface IUpdateUserCommandOptions {
 export class UpdateUserCommand {
   public constructor(
     private readonly dataSource: DataSource,
-    private readonly tracingService: TracingService,
     private readonly userEntityToUserDtoMapper: UserEntityToUserDtoMapper,
     private readonly userEntityToUserOutboxDtoMapper: UserEntityToUserOutboxDtoMapper,
   ) {}
 
   public execute(options: IUpdateUserCommandOptions): Promise<UserDto> {
-    return this.tracingService.traceAsyncFunction(UpdateUserCommand.name, () =>
-      this.dataSource.transaction((entityManager) =>
-        this.executeTransaction(entityManager, options),
-      ),
+    return this.dataSource.transaction((entityManager) =>
+      this.executeTransaction(entityManager, options),
     );
   }
 

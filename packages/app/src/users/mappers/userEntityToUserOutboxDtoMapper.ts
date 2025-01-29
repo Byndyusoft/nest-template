@@ -1,7 +1,6 @@
 import { Injectable } from "@nestjs/common";
-
-import { UserOutboxDto } from "ᐸDtosᐳ";
-import { UserEntity } from "ᐸEntitiesᐳ";
+import { UserOutboxDto } from "open-telemetry-example-dtos";
+import { UserEntity } from "open-telemetry-example-entities";
 
 @Injectable()
 export class UserEntityToUserOutboxDtoMapper {

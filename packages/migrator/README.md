@@ -1,4 +1,4 @@
-# ᐸMigratorᐳ
+# open-telemetry-example-migrator
 
 ᐸMigrator descriptionᐳ
 

@@ -1,7 +1,6 @@
 import { makeDtoFactory } from "@byndyusoft/dto-factory";
 import { faker } from "@faker-js/faker";
-
-import { ListUsersResponseDto } from "ᐸDtosᐳ";
+import { ListUsersResponseDto } from "open-telemetry-example-dtos";
 
 import { userDtoFactory } from "../common";
 

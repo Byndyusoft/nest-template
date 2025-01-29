@@ -1,11 +1,11 @@
-# ᐸClientᐳ
+# open-telemetry-example-client
 
 ᐸClient descriptionᐳ
 
 ## Install
 
 ```bash
-yarn add ᐸClientᐳ ᐸDtosᐳ @nestjs/axios @nestjs/common rxjs
+yarn add open-telemetry-example-client open-telemetry-example-dtos @nestjs/axios @nestjs/common rxjs
 ```
 
 You also need install all required peer dependencies.

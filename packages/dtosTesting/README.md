@@ -1,11 +1,11 @@
-# ᐸDtos testingᐳ
+# open-telemetry-example-dtos-testing
 
 ᐸDtos testing descriptionᐳ
 
 ## Install
 
 ```bash
-yarn add --dev ᐸDtos testingᐳ ᐸDtosᐳ
+yarn add --dev open-telemetry-example-dtos-testing open-telemetry-example-dtos
 ```
 
 You also need install all required peer dependencies.

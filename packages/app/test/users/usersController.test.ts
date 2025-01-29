@@ -1,5 +1,4 @@
 import { mock, MockProxy } from "jest-mock-extended";
-
 import {
   createUserDtoFactory,
   listUsersQueryDtoFactory,
@@ -8,7 +7,7 @@ import {
   queryWithUserVersionDtoFactory,
   updateUserDtoFactory,
   userDtoFactory,
-} from "ᐸDtos testingᐳ";
+} from "open-telemetry-example-dtos-testing";
 
 import {
   CreateUserUseCase,

@@ -1,6 +1,8 @@
 import { mock, MockProxy } from "jest-mock-extended";
-
-import { paramsWithUserIdDtoFactory, userDtoFactory } from "ᐸDtos testingᐳ";
+import {
+  paramsWithUserIdDtoFactory,
+  userDtoFactory,
+} from "open-telemetry-example-dtos-testing";
 
 import { ListUsersQuery } from "../../../src/users/dataAccess";
 import { UserNotFoundException } from "../../../src/users/exceptions";

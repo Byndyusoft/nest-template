@@ -1,7 +1,6 @@
 import { makeDtoFactory } from "@byndyusoft/dto-factory";
 import { faker } from "@faker-js/faker";
-
-import { ListUsersQueryDto } from "ᐸDtosᐳ";
+import { ListUsersQueryDto } from "open-telemetry-example-dtos";
 
 export const listUsersQueryDtoFactory = makeDtoFactory<ListUsersQueryDto>(
   () => ({

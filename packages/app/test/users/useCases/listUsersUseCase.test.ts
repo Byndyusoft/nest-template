@@ -1,10 +1,9 @@
 import { mock, MockProxy } from "jest-mock-extended";
-
 import {
   listUsersQueryDtoFactory,
   listUsersResponseDtoFactory,
   userDtoFactory,
-} from "ᐸDtos testingᐳ";
+} from "open-telemetry-example-dtos-testing";
 
 import { ListUsersQuery } from "../../../src/users/dataAccess";
 import { ListUsersUseCase } from "../../../src/users/useCases";

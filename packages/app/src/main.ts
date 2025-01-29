@@ -3,16 +3,16 @@
 import "reflect-metadata";
 import "source-map-support/register";
 
+import process from "process";
+
 import { Logger, LoggerErrorInterceptor } from "@byndyusoft/nest-pino";
 import { DocumentBuilder, SwaggerModule } from "@byndyusoft/nest-swagger";
 import { ValidationPipe, VersioningType } from "@nestjs/common";
 import { NestFactory } from "@nestjs/core";
-import {
-  ExpressAdapter,
-  NestExpressApplication,
-} from "@nestjs/platform-express";
+import { NestExpressApplication } from "@nestjs/platform-express";
 import helmet from "helmet";
 
+import { otelSDK } from "./infrastructure/openTelemetry/openTelemetrySetup";
 import { AppModule } from "./appModule";
 import { ConfigDto, PackageJsonDto } from "./infrastructure";
 
@@ -49,13 +49,20 @@ function setupSwagger(app: NestExpressApplication): void {
     .addServer(config.http.swaggerServer)
     .build();
 
-  SwaggerModule.setup("api", app, SwaggerModule.createDocument(app, options));
+  SwaggerModule.setup(
+    "swagger",
+    app,
+    SwaggerModule.createDocument(app, options),
+  );
 }
 
 async function bootstrap(): Promise<void> {
+  // Start Open Telemetry before Nestjs factory creation
+  // docs: https://opentelemetry.io/docs/languages/js/getting-started/nodejs/#setup
+  otelSDK.start();
+
   const app = await NestFactory.create<NestExpressApplication>(
     await AppModule.register(),
-    new ExpressAdapter(),
     {
       bufferLogs: true,
     },
