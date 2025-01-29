@@ -1,7 +1,7 @@
 ################################################################################
 
-BUILDER_IMAGE := node:16-bullseye
-RUNTIME_IMAGE := node:16-bullseye-slim
+BUILDER_IMAGE := node:22.13.0-bookworm
+RUNTIME_IMAGE := node:22.13.0-bookworm-slim
 
 ################################################################################
 

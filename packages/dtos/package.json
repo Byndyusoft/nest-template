@@ -49,6 +49,7 @@
     "class-validator": "^0.14.0"
   },
   "engines": {
-    "node": ">=16"
+    "node": ">=22"
+
   }
 }
