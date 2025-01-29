@@ -5,17 +5,17 @@ import { ListUsersQueryDto } from "ᐸDtosᐳ";
 
 export const listUsersQueryDtoFactory = makeDtoFactory<ListUsersQueryDto>(
   () => ({
-    userIds: Array.from({ length: faker.datatype.number(10) }).map(() =>
-      String(faker.datatype.number()),
+    userIds: Array.from({ length: faker.number.int(10) }).map(() =>
+      faker.string.numeric(),
     ),
-    names: Array.from({ length: faker.datatype.number(10) }).map(() =>
-      faker.name.fullName(),
+    names: Array.from({ length: faker.number.int(10) }).map(() =>
+      faker.string.sample(),
     ),
-    emails: Array.from({ length: faker.datatype.number(10) }).map(() =>
+    emails: Array.from({ length: faker.number.int(10) }).map(() =>
       faker.internet.email(),
     ),
 
-    pageSize: faker.datatype.number(),
-    pageToken: String(faker.datatype.number()),
+    pageSize: faker.number.int(10),
+    pageToken: faker.string.numeric(),
   }),
 );

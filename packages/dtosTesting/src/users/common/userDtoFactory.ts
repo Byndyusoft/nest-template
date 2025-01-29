@@ -4,10 +4,10 @@ import { faker } from "@faker-js/faker";
 import { UserDto } from "ᐸDtosᐳ";
 
 export const userDtoFactory = makeDtoFactory<UserDto>(() => ({
-  userId: String(faker.datatype.number()),
+  userId: faker.string.numeric(),
 
-  name: faker.name.fullName(),
+  name: faker.string.sample(),
   email: faker.internet.email(),
 
-  userVersion: faker.datatype.number(),
+  userVersion: faker.number.int(),
 }));

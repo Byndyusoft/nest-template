@@ -7,8 +7,8 @@ import { userDtoFactory } from "../common";
 
 export const listUsersResponseDtoFactory = makeDtoFactory<ListUsersResponseDto>(
   () => ({
-    users: userDtoFactory.buildList(faker.datatype.number(10)),
+    users: userDtoFactory.buildList(faker.number.int(10)),
 
-    nextPageToken: String(faker.datatype.number()),
+    nextPageToken: faker.string.numeric(),
   }),
 );
