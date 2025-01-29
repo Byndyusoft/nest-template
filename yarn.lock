@@ -9064,7 +9064,6 @@ __metadata:
     jest-extended: "npm:3.2.4"
     jest-mock-extended: "npm:3.0.4"
     lodash: "npm:4.17.21"
-    nestjs-otel: "npm:6.1.2"
     open-telemetry-example-dtos: "workspace:*"
     open-telemetry-example-dtos-testing: "workspace:*"
     open-telemetry-example-entities: "workspace:*"

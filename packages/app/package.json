@@ -98,7 +98,6 @@
     "class-validator": "0.14.0",
     "helmet": "6.0.1",
     "lodash": "4.17.21",
-    "nestjs-otel": "6.1.2",
     "open-telemetry-example-dtos": "workspace:*",
     "open-telemetry-example-entities": "workspace:*",
     "pg": "8.10.0",
