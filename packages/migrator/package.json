@@ -34,9 +34,7 @@
     "reflect-metadata": "0.2.2",
     "rxjs": "7.8.1",
     "tslib": "2.8.1",
-    "typeorm": "0.3.20",
-    "ᐸDtosᐳ": "workspace:*",
-    "ᐸEntitiesᐳ": "workspace:*"
+    "typeorm": "0.3.20"
   },
   "devDependencies": {
     "@byndyusoft/tsconfig": "2.2.0",

@@ -1453,21 +1453,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/typeorm@npm:9.0.1":
-  version: 9.0.1
-  resolution: "@nestjs/typeorm@npm:9.0.1"
-  dependencies:
-    uuid: "npm:8.3.2"
-  peerDependencies:
-    "@nestjs/common": ^8.0.0 || ^9.0.0
-    "@nestjs/core": ^8.0.0 || ^9.0.0
-    reflect-metadata: ^0.1.13
-    rxjs: ^7.2.0
-    typeorm: ^0.3.0
-  checksum: 00c51e542496078fb03ae837c4a5aac3e27a69b8e053216f6f6adabd73f0f837eadde87be6836973993920e682d0a8244d4f1f0716c19e90f8a1cb17b1ac53a4
-  languageName: node
-  linkType: hard
-
 "@nodelib/fs.scandir@npm:2.1.5":
   version: 2.1.5
   resolution: "@nodelib/fs.scandir@npm:2.1.5"
@@ -11825,13 +11810,11 @@ __metadata:
     "@nestjs/platform-express": "npm:9.4.3"
     "@nestjs/schematics": "npm:9.2.0"
     "@nestjs/terminus": "npm:9.2.2"
-    "@nestjs/typeorm": "npm:9.0.1"
     "@types/express": "npm:4.17.21"
     "@types/jaeger-client": "npm:3.18.7"
     "@types/jest": "npm:29.5.14"
     "@types/lodash": "npm:4.17.15"
     "@types/node": "npm:22.12.0"
-    "@types/pg": "npm:8.11.11"
     "@types/source-map-support": "npm:0.5.10"
     class-transformer: "npm:0.5.1"
     class-validator: "npm:0.14.1"
@@ -11843,7 +11826,6 @@ __metadata:
     jest-extended: "npm:3.2.4"
     jest-mock-extended: "npm:3.0.7"
     lodash: "npm:4.17.21"
-    pg: "npm:8.13.1"
     pino: "npm:9.6.0"
     pino-http: "npm:10.4.0"
     pino-pretty: "npm:13.0.0"
@@ -11853,11 +11835,9 @@ __metadata:
     source-map-support: "npm:0.5.21"
     ts-jest: "npm:29.2.5"
     tslib: "npm:2.8.1"
-    typeorm: "npm:0.3.20"
     typescript: "npm:5.5.4"
     ᐸDtos testingᐳ: "workspace:*"
     ᐸDtosᐳ: "workspace:*"
-    ᐸEntitiesᐳ: "workspace:*"
   languageName: unknown
   linkType: soft
 
@@ -11945,30 +11925,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"ᐸEntitiesᐳ@workspace:*, ᐸEntitiesᐳ@workspace:packages/entities":
-  version: 0.0.0-use.local
-  resolution: "ᐸEntitiesᐳ@workspace:packages/entities"
-  dependencies:
-    "@byndyusoft/class-validator-extended": "npm:1.2.0"
-    "@byndyusoft/nest-swagger": "npm:7.1.9-1"
-    "@byndyusoft/tsconfig": "npm:2.2.0"
-    "@nestjs/common": "npm:9.4.3"
-    "@nestjs/core": "npm:9.4.3"
-    class-transformer: "npm:0.5.1"
-    class-validator: "npm:0.14.1"
-    reflect-metadata: "npm:0.2.2"
-    rxjs: "npm:7.8.1"
-    shx: "npm:0.3.4"
-    tslib: "npm:^2.8.1"
-    typeorm: "npm:0.3.20"
-    typescript: "npm:5.5.4"
-    ᐸDtosᐳ: "workspace:*"
-  peerDependencies:
-    typeorm: ^0.3.11
-    ᐸDtosᐳ: "workspace:*"
-  languageName: unknown
-  linkType: soft
-
 "ᐸMigratorᐳ@workspace:packages/migrator":
   version: 0.0.0-use.local
   resolution: "ᐸMigratorᐳ@workspace:packages/migrator"
@@ -11990,7 +11946,5 @@ __metadata:
     tslib: "npm:2.8.1"
     typeorm: "npm:0.3.20"
     typescript: "npm:5.5.4"
-    ᐸDtosᐳ: "workspace:*"
-    ᐸEntitiesᐳ: "workspace:*"
   languageName: unknown
   linkType: soft
