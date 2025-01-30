@@ -49,5 +49,5 @@
     "prettier": "3.4.2",
     "prettier-plugin-packagejson": "2.5.8"
   },
-  "packageManager": "yarn@4.0.0-rc.42"
+  "packageManager": "yarn@4.6.0"
 }
