@@ -17,8 +17,8 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "yarn workspaces foreach --topological-dev --parallel --exclude root run build",
-    "build:src": "yarn workspaces foreach --topological-dev --parallel --exclude root run build:src",
+    "build": "yarn workspaces foreach --all --topological-dev --parallel --exclude root run build",
+    "build:src": "yarn workspaces foreach --all --topological-dev --parallel --exclude root run build:src",
     "postinstall": "husky || true",
     "lint": "yarn run lint:eslint && yarn run lint:markdown && yarn run lint:prettier",
     "lint:eslint": "eslint --ignore-path ./.gitignore --max-warnings 0 --ext .ts,.js .",
