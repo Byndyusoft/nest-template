@@ -1520,6 +1520,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@opentelemetry/api@npm:^1.4.0":
+  version: 1.9.0
+  resolution: "@opentelemetry/api@npm:1.9.0"
+  checksum: cfb10ef16e006875ed4d2d5cb52c587a1c372c87badf02a111d35ee2eb669d05854bac017bed10a7fc690d384c6d3b1fd2d4341cd9d4be59615007e9e3a6fad9
+  languageName: node
+  linkType: hard
+
 "@pkgjs/parseargs@npm:^0.11.0":
   version: 0.11.0
   resolution: "@pkgjs/parseargs@npm:0.11.0"
@@ -9326,30 +9333,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prom-client@npm:^12.0.0":
-  version: 12.0.0
-  resolution: "prom-client@npm:12.0.0"
+"prom-client@npm:15.1.3":
+  version: 15.1.3
+  resolution: "prom-client@npm:15.1.3"
   dependencies:
+    "@opentelemetry/api": "npm:^1.4.0"
     tdigest: "npm:^0.1.1"
-  checksum: 7e86812b3f724a2dbb243cd90269afda7c142aa957d4e3553b11a917e477b6538af0f100f87b04fe6e5e00ee80ecde6a78c38b67318ee5a60ee33c025c9ff8a9
-  languageName: node
-  linkType: hard
-
-"prom-client@npm:~11.3.0":
-  version: 11.3.0
-  resolution: "prom-client@npm:11.3.0"
-  dependencies:
-    tdigest: "npm:^0.1.1"
-  checksum: 3a12ce52a382a72b3d3d04fe819b8398e7815c14a2b2ef8b5948e80fbdde96e6e38cd2efc56c0b9f32fde7540d348fad0dce2bd23229471a7dc0d75afd16806e
-  languageName: node
-  linkType: hard
-
-"prom-client@npm:~11.3.0 || ^12.0.0 || ^13.0.0 || ^14.0.0":
-  version: 14.2.0
-  resolution: "prom-client@npm:14.2.0"
-  dependencies:
-    tdigest: "npm:^0.1.1"
-  checksum: cb94a0b1f07461d58f687d379e481c6ac5d8c839e3976499fc4d20a0d214e02cdc3230e1cb9e87a17f6c015bde5473bc3afbcf9a54500d0e58f2b5f3bd9a1db1
+  checksum: 01a4c03e25f3697d31370af600a7e221d8f59e28db0ab17603f60e24a78ce962cece08b8a5156620092828b391ff7220c4a05c8bd6d3a9f3aa9c3ff930670f80
   languageName: node
   linkType: hard
 

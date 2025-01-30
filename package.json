@@ -35,6 +35,9 @@
     "test": "yarn packages/app run test",
     "test:cov": "yarn packages/app run test:cov"
   },
+  "resolutions": {
+    "prom-client": "15.1.3"
+  },
   "devDependencies": {
     "@byndyusoft/eslint-config": "3.0.1",
     "@commitlint/cli": "19.6.1",
