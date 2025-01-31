@@ -1,11 +1,7 @@
-import "reflect-metadata";
-
 import path from "path";
 
 import dotenv from "dotenv";
 import { DataSource } from "typeorm";
-
-import * as entities from "ᐸEntitiesᐳ";
 
 dotenv.config({
   path: path.join(process.cwd(), ".env"),
@@ -13,7 +9,7 @@ dotenv.config({
 
 export const AppDataSource = new DataSource({
   type: "postgres",
-  entities: Object.values(entities),
+  entities: [], // добавьте ваши entity
   migrations: ["dist/migrations/*.js"],
   migrationsTransactionMode:
     (process.env.TYPEORM_MIGRATIONS_TRANSACTION_MODE as

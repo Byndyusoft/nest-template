@@ -1,11 +1,8 @@
 {
-  "extends": "@byndyusoft/tsconfig/tsconfig.node16.json",
+  "extends": "@byndyusoft/tsconfig/tsconfig.app.node22.json",
   "compilerOptions": {
     // Emit
-    "declaration": false,
-    "declarationMap": false,
-    "outDir": "./dist",
-    "removeComments": true
+    "outDir": "./dist"
   },
   "include": ["src", "test"]
 }

@@ -16,6 +16,8 @@ import helmet from "helmet";
 import { AppModule } from "./appModule";
 import { ConfigDto, PackageJsonDto } from "./infrastructure";
 
+const swaggerPath = "api";
+
 function setupApp(app: NestExpressApplication): void {
   app.enableShutdownHooks();
 
@@ -49,7 +51,11 @@ function setupSwagger(app: NestExpressApplication): void {
     .addServer(config.http.swaggerServer)
     .build();
 
-  SwaggerModule.setup("api", app, SwaggerModule.createDocument(app, options));
+  SwaggerModule.setup(
+    swaggerPath,
+    app,
+    SwaggerModule.createDocument(app, options),
+  );
 }
 
 async function bootstrap(): Promise<void> {
@@ -70,11 +76,11 @@ async function bootstrap(): Promise<void> {
   const config = app.get(ConfigDto);
   await app.listen(config.http.port, config.http.host);
 
-  logger.log(
-    "Nest application listening on %s",
-    await app.getUrl(),
-    "NestApplication",
-  );
+  const appUrl = await app.getUrl();
+  const swaggerUrl = [appUrl, swaggerPath].join("/");
+
+  logger.log("Nest application listening on %s", appUrl, "NestApplication");
+  logger.log("Swagger available on %s", swaggerUrl, "NestApplication");
 }
 
 bootstrap().catch((error) => {
