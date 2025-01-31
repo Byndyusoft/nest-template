@@ -30,5 +30,5 @@ yarn run test:cov
 
 ## Configuring
 
-You can configure service via environment variables (see [example.env](./example.env)) for more details.
+You can configure service via environment variables (see [example.env](./.env.example)) for more details.
 For local development you can pass environment variables via `.env` file (see [dotenv](https://www.npmjs.com/package/dotenv) for more details).
