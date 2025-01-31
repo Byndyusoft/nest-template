@@ -1,6 +1,6 @@
 ################################################################################
 
-ARG RUNTIME_IMAGE=docker.art.lmru.tech/node:20.14.0-bookworm-slim
+ARG RUNTIME_IMAGE=docker.art.lmru.tech/node:22.13.0-bookworm-slim
 
 ################################################################################
 
