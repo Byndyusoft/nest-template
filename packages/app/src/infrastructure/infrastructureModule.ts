@@ -9,6 +9,7 @@ import { ConfigModule } from "./config/configModule";
 import { ExceptionsModule } from "./exceptions/exceptionsModule";
 import { HealthCheckModule } from "./healthCheck/healthCheckModule";
 import { LoggerModule } from "./logger/loggerModule";
+import { TraceModule } from "./openTelemetry/traсeModule";
 import { PackageJsonModule } from "./packageJson/packageJsonModule";
 import { PgModule } from "./pg/pgModule";
 
@@ -32,6 +33,7 @@ ApiTags("Infrastructure")(PromController);
     HealthCheckModule,
     // Extra modules
     PgModule,
+    TraceModule,
     // ExceptionsModule must be registered after all modules with exception filters
     ExceptionsModule,
   ],
