@@ -1,10 +1,12 @@
 import { HttpService } from "@nestjs/axios";
-import { Injectable, OnModuleInit } from "@nestjs/common";
+import { Inject, Injectable, OnModuleInit } from "@nestjs/common";
 import { Span, SpanStatusCode } from "@opentelemetry/api";
 import { AxiosResponse, InternalAxiosRequestConfig, isAxiosError } from "axios";
 import { TraceService } from "nestjs-otel";
 
 import { dataToString } from "./dataToString";
+import { TraceModuleOptions } from "./traceModuleOptions";
+import { TRACE_MODULE_OPTIONS_TOKEN } from "./traceModuleOptionsToken";
 
 const AXIOS_TRACE_CONFIG_KEY = Symbol("AxiosTraceInterceptor");
 
@@ -19,6 +21,8 @@ export class AxiosTraceInterceptor implements OnModuleInit {
   public constructor(
     private readonly traceService: TraceService,
     private readonly httpService: HttpService,
+    @Inject(TRACE_MODULE_OPTIONS_TOKEN)
+    private readonly options: TraceModuleOptions,
   ) {}
 
   public onModuleInit(): void {
@@ -57,6 +61,10 @@ export class AxiosTraceInterceptor implements OnModuleInit {
     config: InternalAxiosRequestConfig,
   ) => InternalAxiosRequestConfig {
     return (config) => {
+      if (!this.options.logBodies) {
+        return config;
+      }
+
       const method = (config.method ?? "").toUpperCase();
 
       const span = this.traceService.startSpan(
@@ -78,6 +86,10 @@ export class AxiosTraceInterceptor implements OnModuleInit {
 
   private responseFulfilled(): (response: AxiosResponse) => AxiosResponse {
     return (response) => {
+      if (!this.options.logBodies) {
+        return response;
+      }
+
       const span = this.getSpanFromConfig(
         response.config as AxiosRequestConfigWithSpan,
       );

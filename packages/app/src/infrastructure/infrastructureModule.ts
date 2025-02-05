@@ -33,7 +33,7 @@ ApiTags("Infrastructure")(PromController);
     HealthCheckModule,
     // Extra modules
     PgModule,
-    TraceModule,
+    TraceModule.register({ logBodies: true }),
     // ExceptionsModule must be registered after all modules with exception filters
     ExceptionsModule,
   ],
