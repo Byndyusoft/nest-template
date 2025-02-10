@@ -47,7 +47,10 @@ export class AxiosTraceInterceptor implements OnModuleInit {
           error.config as AxiosRequestConfigWithSpan,
         );
 
-        span?.setStatus({ code: SpanStatusCode.ERROR });
+        if (error.status && error.status >= 500) {
+          span?.setStatus({ code: SpanStatusCode.ERROR });
+        }
+
         span?.recordException(error);
 
         span?.end();
