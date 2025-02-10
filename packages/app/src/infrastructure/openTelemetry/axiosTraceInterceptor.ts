@@ -64,19 +64,22 @@ export class AxiosTraceInterceptor implements OnModuleInit {
     config: InternalAxiosRequestConfig,
   ) => InternalAxiosRequestConfig {
     return (config) => {
-      if (!this.options.logBodies) {
-        return config;
-      }
-
       const method = (config.method ?? "").toUpperCase();
 
       const span = this.traceService.startSpan(
         `${method} request, response logs`,
       );
 
-      span.addEvent("request", {
-        body: dataToString(config.data),
-      });
+      if (config.params) {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+        span.setAttributes(config.params);
+      }
+
+      if (this.options.logBodies) {
+        span.addEvent("request", {
+          body: dataToString(config.data),
+        });
+      }
 
       // @ts-expect-error
       config[AXIOS_TRACE_CONFIG_KEY] = {
@@ -89,17 +92,15 @@ export class AxiosTraceInterceptor implements OnModuleInit {
 
   private responseFulfilled(): (response: AxiosResponse) => AxiosResponse {
     return (response) => {
-      if (!this.options.logBodies) {
-        return response;
-      }
-
       const span = this.getSpanFromConfig(
         response.config as AxiosRequestConfigWithSpan,
       );
 
-      span?.addEvent("response", {
-        body: dataToString(response.data),
-      });
+      if (this.options.logBodies) {
+        span?.addEvent("response", {
+          body: dataToString(response.data),
+        });
+      }
 
       span?.end();
 

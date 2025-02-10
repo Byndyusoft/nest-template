@@ -28,9 +28,13 @@ export class TraceInterceptor implements NestInterceptor {
   ): Observable<unknown> {
     const currentSpan = this.traceService.getSpan();
 
-    if (this.options.logBodies) {
-      const request = context.switchToHttp().getRequest<Request>();
+    const request = context.switchToHttp().getRequest<Request>();
 
+    if (request.params) {
+      currentSpan?.setAttributes(request.params);
+    }
+
+    if (this.options.logBodies) {
       currentSpan?.addEvent("request", {
         body: dataToString(request.body),
       });
