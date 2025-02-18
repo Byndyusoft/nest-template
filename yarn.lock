@@ -547,9 +547,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@byndyusoft/pino-logger-factory@npm:3.3.0":
-  version: 3.3.0
-  resolution: "@byndyusoft/pino-logger-factory@npm:3.3.0"
+"@byndyusoft/pino-logger-factory@npm:3.3.1":
+  version: 3.3.1
+  resolution: "@byndyusoft/pino-logger-factory@npm:3.3.1"
   dependencies:
     camel-case: "npm:^4.1.2"
     murmurhash: "npm:^2.0.1"
@@ -557,7 +557,7 @@ __metadata:
   peerDependencies:
     pino: ^8.0.0 || ^9.0.0
     pino-http: ^8.0.0 || ^9.0.0 || ^10.0.0
-  checksum: 10c0/28e339e246760850a24f8969cf1e5322f7821e1f817ae4bb4eee85f287a76b978830fcedcd6e2b9f42ed5282d355a2f32854a1b284e27663852b64440e8f63f3
+  checksum: 10c0/956fcef5232d2d96ee6eedc7d811cf634b9179e8bb3a0d3cfb9bfe23592c5d7e30d0e675c5733333b8d36de308580193a7a61d8b28eb82fed4c7708699f7e51a
   languageName: node
   linkType: hard
 
@@ -601,12 +601,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/cli@npm:19.6.1":
-  version: 19.6.1
-  resolution: "@commitlint/cli@npm:19.6.1"
+"@commitlint/cli@npm:19.7.1":
+  version: 19.7.1
+  resolution: "@commitlint/cli@npm:19.7.1"
   dependencies:
     "@commitlint/format": "npm:^19.5.0"
-    "@commitlint/lint": "npm:^19.6.0"
+    "@commitlint/lint": "npm:^19.7.1"
     "@commitlint/load": "npm:^19.6.1"
     "@commitlint/read": "npm:^19.5.0"
     "@commitlint/types": "npm:^19.5.0"
@@ -614,17 +614,17 @@ __metadata:
     yargs: "npm:^17.0.0"
   bin:
     commitlint: cli.js
-  checksum: 10c0/fa7a344292f1d25533b195b061bcae0a80434490fae843ad28593c09668f48e9a74906b69f95d26df4152c56c71ab31a0bc169d333e22c6ca53dc54646a2ff19
+  checksum: 10c0/bb5e4f004f6b16078cdc7e7d6ff1a53762cefc1265af017ccef4ab789d2c562b75fe316ccc1751da6bc1172393f2427926c863298edda2e4d00c8323f2878f5b
   languageName: node
   linkType: hard
 
-"@commitlint/config-conventional@npm:19.6.0":
-  version: 19.6.0
-  resolution: "@commitlint/config-conventional@npm:19.6.0"
+"@commitlint/config-conventional@npm:19.7.1":
+  version: 19.7.1
+  resolution: "@commitlint/config-conventional@npm:19.7.1"
   dependencies:
     "@commitlint/types": "npm:^19.5.0"
     conventional-changelog-conventionalcommits: "npm:^7.0.2"
-  checksum: 10c0/984870138f5d4b947bc2ea8d12fcb8103ef9e6141d0fb50a6e387665495b80b35890d9dc025443a243a53d2a69d7c0bab1d77c5658a6e5a15a3dd7773557fad2
+  checksum: 10c0/9de7e5f1e4ac1d995293da12a646936d477c4fc50562de015df26e0b307ebf3fd2632dc8c874ba9d9a81c9540c3189e275fb6fe0b707ae6c9159c013b7dfdb56
   languageName: node
   linkType: hard
 
@@ -669,25 +669,25 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/is-ignored@npm:^19.6.0":
-  version: 19.6.0
-  resolution: "@commitlint/is-ignored@npm:19.6.0"
+"@commitlint/is-ignored@npm:^19.7.1":
+  version: 19.7.1
+  resolution: "@commitlint/is-ignored@npm:19.7.1"
   dependencies:
     "@commitlint/types": "npm:^19.5.0"
     semver: "npm:^7.6.0"
-  checksum: 10c0/64e3522598f131aefab72e78f2b0d5d78228041fbe14fd9785611bd5a4ff7dfae38288ff87b171ab2ff722342983387b6e568ab4d758f3c97866eb924252e6c5
+  checksum: 10c0/8c238002c6c7bb0a50cca2dfc001af2cec2926056e090b840e73c25f8d246ac5d8ff862d51a63900a195479869edca7889fc4c7923ffa2bb85a1475f8c469c43
   languageName: node
   linkType: hard
 
-"@commitlint/lint@npm:^19.6.0":
-  version: 19.6.0
-  resolution: "@commitlint/lint@npm:19.6.0"
+"@commitlint/lint@npm:^19.7.1":
+  version: 19.7.1
+  resolution: "@commitlint/lint@npm:19.7.1"
   dependencies:
-    "@commitlint/is-ignored": "npm:^19.6.0"
+    "@commitlint/is-ignored": "npm:^19.7.1"
     "@commitlint/parse": "npm:^19.5.0"
     "@commitlint/rules": "npm:^19.6.0"
     "@commitlint/types": "npm:^19.5.0"
-  checksum: 10c0/d7e3c6a43d89b2196362dce5abef6665869844455176103f311cab7a92f6b7be60edec4f03d27b946a65ee2ceb8ff16f5955cba1da6ecdeb9efe9f215b16f47f
+  checksum: 10c0/578e2a955c5d16e34dade2538966b5a0fed6ba4e81fcfb477ad3a62472467f80d84d0d79ec017aa5e6815ed6c71b246d660d9febb64cabb175e39eee426b2f98
   languageName: node
   linkType: hard
 
@@ -869,9 +869,9 @@ __metadata:
   linkType: hard
 
 "@faker-js/faker@npm:^9.4.0":
-  version: 9.4.0
-  resolution: "@faker-js/faker@npm:9.4.0"
-  checksum: 10c0/52f242a764b506f84f0f80e8122758a4b4a82873d72e67b5ddee9d8132c33d462705b43543dd0b86b743f54daec668a1938b9e5b9d643c606a775fb48959580c
+  version: 9.5.0
+  resolution: "@faker-js/faker@npm:9.5.0"
+  checksum: 10c0/97c983e0752e36bd2322fe0bda273e41093ae868452811b3146d33412147a03b343a6720a2e388d4c4a06c5c6ce89cad9e6c2c363008ef061a26c4fce067c22d
   languageName: node
   linkType: hard
 
@@ -1849,12 +1849,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:22.12.0":
+"@types/node@npm:*":
   version: 22.12.0
   resolution: "@types/node@npm:22.12.0"
   dependencies:
     undici-types: "npm:~6.20.0"
   checksum: 10c0/be220706732d95db2ed1c441c1e64cab90bf9a47519ce6f4c79cc5a9ec9d5c517131a149a9ac30afac1a30103e67e3a00d453ba7c1b0141608a3a7ba6397c303
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:22.13.4":
+  version: 22.13.4
+  resolution: "@types/node@npm:22.13.4"
+  dependencies:
+    undici-types: "npm:~6.20.0"
+  checksum: 10c0/3a234fa7766a3efc382cf81f66f474c26cdab2f54f43f757634c81c0444eb2160c2dabbde9741e4983078a318a88515b65416b5f1ab5478548579d7b3ead1d95
   languageName: node
   linkType: hard
 
@@ -8873,19 +8882,26 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pg-pool@npm:^3.7.0":
-  version: 3.7.0
-  resolution: "pg-pool@npm:3.7.0"
+"pg-pool@npm:^3.7.1":
+  version: 3.7.1
+  resolution: "pg-pool@npm:3.7.1"
   peerDependencies:
     pg: ">=8.0"
-  checksum: 10c0/9128673cf941f288c0cb1a74ca959a9b4f6075ef73b2cc7dece5d4db3dd7043784869e7c12bce2e69ca0df22132a419cc45c2050b4373632856fe8bae9eb94b5
+  checksum: 10c0/65bff013102684774f4cfdffbfe0a2b0614252234561d391608f7fd915477e44f5fd0e1968ecc2f42032dcf8bac241d2f724c4f3df90384567d22df37dd3b6ba
   languageName: node
   linkType: hard
 
-"pg-protocol@npm:*, pg-protocol@npm:^1.7.0":
+"pg-protocol@npm:*":
   version: 1.7.0
   resolution: "pg-protocol@npm:1.7.0"
   checksum: 10c0/c4af854d9b843c808231c0040fed89f2b9101006157df8da2bb2f62a7dde702de748d852228dc22df41cc7ffddfb526af3bcb34b278b581e9f76a060789186c1
+  languageName: node
+  linkType: hard
+
+"pg-protocol@npm:^1.7.1":
+  version: 1.7.1
+  resolution: "pg-protocol@npm:1.7.1"
+  checksum: 10c0/3168d407ddc4c0fa2403eb9b49205399d4bc53dadbafdfcc5d25fa61b860a31c25df25704cf14c8140c80f0a41061d586e5fd5ce9bf800dfb91e9ce810bc2c37
   languageName: node
   linkType: hard
 
@@ -8917,14 +8933,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pg@npm:8.13.1":
-  version: 8.13.1
-  resolution: "pg@npm:8.13.1"
+"pg@npm:8.13.3":
+  version: 8.13.3
+  resolution: "pg@npm:8.13.3"
   dependencies:
     pg-cloudflare: "npm:^1.1.1"
     pg-connection-string: "npm:^2.7.0"
-    pg-pool: "npm:^3.7.0"
-    pg-protocol: "npm:^1.7.0"
+    pg-pool: "npm:^3.7.1"
+    pg-protocol: "npm:^1.7.1"
     pg-types: "npm:^2.1.0"
     pgpass: "npm:1.x"
   peerDependencies:
@@ -8935,7 +8951,7 @@ __metadata:
   peerDependenciesMeta:
     pg-native:
       optional: true
-  checksum: 10c0/c13bc661cbdb115337bc8519254836faf4bd79106dfd7ed588c8ece8c8b2dd3b7376bfec9a9a2f7646fa095b0b310cec77a83c3ba2ea4872331446eb93fd9055
+  checksum: 10c0/7296f0e5930b35faef471be2673210cda553b30f1b8e9d176fcc286aa43248e17e09336032bf5a6bba55d2cc2d03afb8a407b5a6e6bc56ebb331c02d1a7ccc05
   languageName: node
   linkType: hard
 
@@ -9178,12 +9194,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:3.4.2":
-  version: 3.4.2
-  resolution: "prettier@npm:3.4.2"
+"prettier@npm:3.5.1":
+  version: 3.5.1
+  resolution: "prettier@npm:3.5.1"
   bin:
     prettier: bin/prettier.cjs
-  checksum: 10c0/99e076a26ed0aba4ebc043880d0f08bbb8c59a4c6641cdee6cdadf2205bdd87aa1d7823f50c3aea41e015e99878d37c58d7b5f0e663bba0ef047f94e36b96446
+  checksum: 10c0/9f6f810eae455d6e4213845151a484a2338f2e0d6a8b84ee8e13a83af8a2421ef6c1e31e61e4b135671fb57b9541f6624648880cc2061ac803e243ac898c0123
   languageName: node
   linkType: hard
 
@@ -9484,14 +9500,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"reflect-metadata@npm:0.1.14":
-  version: 0.1.14
-  resolution: "reflect-metadata@npm:0.1.14"
-  checksum: 10c0/3a6190c7f6cb224f26a012d11f9e329360c01c1945e2cbefea23976a8bacf9db6b794aeb5bf18adcb673c448a234fbc06fc41853c00a6c206b30f0777ecf019e
-  languageName: node
-  linkType: hard
-
-"reflect-metadata@npm:^0.2.1":
+"reflect-metadata@npm:0.2.2, reflect-metadata@npm:^0.2.1":
   version: 0.2.2
   resolution: "reflect-metadata@npm:0.2.2"
   checksum: 10c0/1cd93a15ea291e420204955544637c264c216e7aac527470e393d54b4bb075f10a17e60d8168ec96600c7e0b9fcc0cb0bb6e91c3fbf5b0d8c9056f04e6ac1ec2
@@ -9727,13 +9736,13 @@ __metadata:
   resolution: "root@workspace:."
   dependencies:
     "@byndyusoft/eslint-config": "npm:3.0.1"
-    "@commitlint/cli": "npm:19.6.1"
-    "@commitlint/config-conventional": "npm:19.6.0"
+    "@commitlint/cli": "npm:19.7.1"
+    "@commitlint/config-conventional": "npm:19.7.1"
     eslint: "npm:8.57.1"
     husky: "npm:9.1.7"
     lint-staged: "npm:15.4.3"
     markdownlint-cli: "npm:0.44.0"
-    prettier: "npm:3.4.2"
+    prettier: "npm:3.5.1"
     prettier-plugin-packagejson: "npm:2.5.8"
   languageName: unknown
   linkType: soft
@@ -11043,16 +11052,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:5.5.4":
-  version: 5.5.4
-  resolution: "typescript@npm:5.5.4"
-  bin:
-    tsc: bin/tsc
-    tsserver: bin/tsserver
-  checksum: 10c0/422be60f89e661eab29ac488c974b6cc0a660fb2228003b297c3d10c32c90f3bcffc1009b43876a082515a3c376b1eefcce823d6e78982e6878408b9a923199c
-  languageName: node
-  linkType: hard
-
 "typescript@npm:5.7.2":
   version: 5.7.2
   resolution: "typescript@npm:5.7.2"
@@ -11063,13 +11062,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A5.5.4#optional!builtin<compat/typescript>":
-  version: 5.5.4
-  resolution: "typescript@patch:typescript@npm%3A5.5.4#optional!builtin<compat/typescript>::version=5.5.4&hash=379a07"
+"typescript@npm:5.7.3":
+  version: 5.7.3
+  resolution: "typescript@npm:5.7.3"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 10c0/73409d7b9196a5a1217b3aaad929bf76294d3ce7d6e9766dd880ece296ee91cf7d7db6b16c6c6c630ee5096eccde726c0ef17c7dfa52b01a243e57ae1f09ef07
+  checksum: 10c0/b7580d716cf1824736cc6e628ab4cd8b51877408ba2be0869d2866da35ef8366dd6ae9eb9d0851470a39be17cbd61df1126f9e211d8799d764ea7431d5435afa
   languageName: node
   linkType: hard
 
@@ -11080,6 +11079,16 @@ __metadata:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: 10c0/f3b8082c9d1d1629a215245c9087df56cb784f9fb6f27b5d55577a20e68afe2a889c040aacff6d27e35be165ecf9dca66e694c42eb9a50b3b2c451b36b5675cb
+  languageName: node
+  linkType: hard
+
+"typescript@patch:typescript@npm%3A5.7.3#optional!builtin<compat/typescript>":
+  version: 5.7.3
+  resolution: "typescript@patch:typescript@npm%3A5.7.3#optional!builtin<compat/typescript>::version=5.7.3&hash=5786d5"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 10c0/6fd7e0ed3bf23a81246878c613423730c40e8bdbfec4c6e4d7bf1b847cbb39076e56ad5f50aa9d7ebd89877999abaee216002d3f2818885e41c907caaa192cc4
   languageName: node
   linkType: hard
 
@@ -11632,7 +11641,7 @@ __metadata:
     "@byndyusoft/nest-opentracing": "npm:2.6.0"
     "@byndyusoft/nest-pino": "npm:3.4.0-1"
     "@byndyusoft/nest-swagger": "npm:7.1.9-1"
-    "@byndyusoft/pino-logger-factory": "npm:3.3.0"
+    "@byndyusoft/pino-logger-factory": "npm:3.3.1"
     "@byndyusoft/sonar-coverage-reporter": "npm:1.0.0"
     "@byndyusoft/tsconfig": "npm:2.2.0"
     "@casualbot/jest-sonar-reporter": "npm:2.4.0"
@@ -11648,7 +11657,7 @@ __metadata:
     "@types/jaeger-client": "npm:3.18.7"
     "@types/jest": "npm:29.5.14"
     "@types/lodash": "npm:4.17.15"
-    "@types/node": "npm:22.12.0"
+    "@types/node": "npm:22.13.4"
     "@types/source-map-support": "npm:0.5.10"
     axios: "npm:1.7.9"
     class-transformer: "npm:0.5.1"
@@ -11664,13 +11673,13 @@ __metadata:
     pino: "npm:9.6.0"
     pino-http: "npm:10.4.0"
     pino-pretty: "npm:13.0.0"
-    reflect-metadata: "npm:0.1.14"
+    reflect-metadata: "npm:0.2.2"
     rxjs: "npm:7.8.1"
     shx: "npm:0.3.4"
     source-map-support: "npm:0.5.21"
     ts-jest: "npm:29.2.5"
     tslib: "npm:2.8.1"
-    typescript: "npm:5.5.4"
+    typescript: "npm:5.7.3"
     ᐸDtos testingᐳ: "workspace:*"
     ᐸDtosᐳ: "workspace:*"
   languageName: unknown
@@ -11694,11 +11703,11 @@ __metadata:
     class-validator: "npm:0.14.1"
     proper-url-join: "npm:^2.1.2"
     qs: "npm:^6.14.0"
-    reflect-metadata: "npm:0.1.14"
+    reflect-metadata: "npm:0.2.2"
     rxjs: "npm:7.8.1"
     shx: "npm:0.3.4"
     tslib: "npm:^2.8.1"
-    typescript: "npm:5.5.4"
+    typescript: "npm:5.7.3"
     ᐸDtosᐳ: "workspace:*"
   peerDependencies:
     "@byndyusoft/nest-http-client": ^1.2.1
@@ -11723,11 +11732,11 @@ __metadata:
     class-transformer: "npm:0.5.1"
     class-validator: "npm:0.14.1"
     lodash: "npm:^4.17.21"
-    reflect-metadata: "npm:0.1.14"
+    reflect-metadata: "npm:0.2.2"
     rxjs: "npm:7.8.1"
     shx: "npm:0.3.4"
     tslib: "npm:^2.8.1"
-    typescript: "npm:5.5.4"
+    typescript: "npm:5.7.3"
     ᐸDtosᐳ: "workspace:*"
   peerDependencies:
     ᐸDtosᐳ: "workspace:*"
@@ -11747,11 +11756,11 @@ __metadata:
     "@nestjs/schematics": "npm:10.2.3"
     class-transformer: "npm:0.5.1"
     class-validator: "npm:0.14.1"
-    reflect-metadata: "npm:0.1.14"
+    reflect-metadata: "npm:0.2.2"
     rxjs: "npm:7.8.1"
     shx: "npm:0.3.4"
     tslib: "npm:^2.8.1"
-    typescript: "npm:5.5.4"
+    typescript: "npm:5.7.3"
   peerDependencies:
     "@byndyusoft/class-validator-extended": ^1.0.1
     "@byndyusoft/nest-swagger": ^7.1.9-1
@@ -11765,13 +11774,13 @@ __metadata:
   resolution: "ᐸMigratorᐳ@workspace:packages/migrator"
   dependencies:
     "@byndyusoft/tsconfig": "npm:2.2.0"
-    "@types/node": "npm:22.12.0"
+    "@types/node": "npm:22.13.4"
     "@types/pg": "npm:8.11.11"
     dotenv: "npm:16.4.7"
-    pg: "npm:8.13.1"
+    pg: "npm:8.13.3"
     shx: "npm:0.3.4"
     tslib: "npm:2.8.1"
     typeorm: "npm:0.3.20"
-    typescript: "npm:5.5.4"
+    typescript: "npm:5.7.3"
   languageName: unknown
   linkType: soft
